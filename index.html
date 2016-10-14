@@ -42,31 +42,38 @@
       <div class="col s12" style="min-height:1000px;">
 
 
-            <script id="address-template" type="text/x-handlebars-template">
-              <p>
-                   {{video_por_artista_1}}
-                  <br>
-                   {{video_por_artista_2}}
-                  <br>
-                  {{video_por_artista_3}}
-              </p>
+        <script id="objetoBD1" type="text/x-handlebars-template">
 
               <ul>
-              {{#each this}}
-
-                <li>
-                   {{nombre}}
-                  <ul>
-                    <li> {{video}} </li>
-                  </ul>
-                </li>
-
-              {{/each}}
+                  {{#each val1}}<li>  {{this}} </li>{{/each}}
+                  <li> ----------------------------------------------------- </li>
+                  <li> {{val1}} </li>
+                  <li> {{val2}} </li>
+                  <li> {{val3}} </li>
+                  <li> -----------------------------------------------------  </li>
               </ul>
 
-            </script>
+        </script>
 
-            <div class="content-placeholder"></div>
+        <div class="listaBD1"></div>
+
+            <!-- ......................... -->
+
+              <script id="objetoBD2" type="text/x-handlebars-template">
+
+                    <ul>
+                    {{#each this}}
+                        <li> {{nombre}} </li>
+                        <li> {{video}} </li>
+                        <li> ---- </li>
+                    {{/each}}
+                    </ul>
+
+              </script>
+
+              <div class="listaBD2"></div>
+
+              <!-- ......................... -->
 
       </div>
     </main>

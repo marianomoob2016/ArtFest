@@ -39,9 +39,6 @@ function todosArt(base_) {
       this.cantidad_  = this.cat.length;
 
 
-
-
-
       //-----------todos los artistas en la BD------
       this.todosLosArtistas_  = function(){
         var artistas_=[];
@@ -101,6 +98,8 @@ function todosArt(base_) {
 
 
 
+
+
 //---------------------------declaracion para todos los artistas--------------------------------
 var AF = new todosArt(bd);
 var CantidadDeArtistias = AF.cantidad_;
@@ -133,21 +132,33 @@ $('.button-collapse').sideNav({
 
 
 
-//--------------------Handlebars--------------------
 
+
+
+//----------------------listaBD1---------------------------
 $(function () {
-  var theTemplateScript = $("#address-template").html();
+  var theTemplateScript = $("#objetoBD1").html();
   var theTemplate = Handlebars.compile(theTemplateScript);
   var context={
-    "video_por_artista_1": v4,
-    "video_por_artista_2": v5,
-    "video_por_artista_3": v6
+    "val1": v4,
+    "val2": v5,
+    "val3": v6
   };
-
-  //var theCompiledHtml = theTemplate(context);
+  var theCompiledHtml = theTemplate(context);
   //var theCompiledHtml = theTemplate(bd.categoria[0]);
+
+  $('.listaBD1').html(theCompiledHtml);
+});
+
+
+
+
+
+
+//----------------------listaBD2---------------------------
+$(function () {
+  var theTemplateScript = $("#objetoBD2").html();
+  var theTemplate = Handlebars.compile(theTemplateScript);
   var theCompiledHtml = theTemplate(bd2);
-  $('.content-placeholder').html(theCompiledHtml);
-
-
+  $('.listaBD2').html(theCompiledHtml);
 });
