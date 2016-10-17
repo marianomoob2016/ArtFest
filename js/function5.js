@@ -96,10 +96,23 @@ var todosArt = (function(){
       //------------------------ver resultado por opcion seleccionada de artistas--------------
        this.verResult=function(){
          var selectBox = document.getElementById("youtubersId");
-         var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-         selectedValue=AF.filtroVideo(selectedValue);
-         console.log(selectedValue);
-         $("#resultado1").html(selectedValue);
+         var vid_=[];
+         if(selectBox){
+             var selectedValue = document.getElementById("youtubersId").value;//selectBox.options[selectBox.selectedIndex].value;
+             vid_=AF.filtroVideo(selectedValue);
+             //$("#resultado1").empty(); //$("#resultado1").html(selectedValue);
+             return vid_;
+         }
+       }
+
+
+      //----------------------------------------------
+       this.cargarResult=function(){
+                   var theTemplateScript = $("#objetoSelect_").html();
+                   var theTemplate = Handlebars.compile(theTemplateScript);
+                   var context={"val1": AF.verResult()};
+                   var theCompiledHtml = theTemplate(context);
+                   $('.listaSelect_').html(theCompiledHtml);
        }
 
 
@@ -115,10 +128,6 @@ var todosArt = (function(){
 
 
 
-//---------------------------------------------------------
-
-
-
 
 
 
@@ -128,22 +137,13 @@ var CantidadDeArtistias = AF.cantidad_;
 var v4 = AF.todosLosArtistas_();
 var v5 = AF.filtroVideo("youtuber1");
 var v6 = AF.filtroNombre("youtuber1");
+var v7 = AF.verResult();
 
 //console.log(CantidadDeArtistias);
 console.log(v4,"--->  todos los artistas");
 console.log(v5,"--->  video por artista");
 console.log(v6,"--->  filtro por nombre");
-
-
-
-
-
-
-
-
-
-
-
+console.log(v7,"--->  ver resultados");
 
 
 
@@ -153,11 +153,6 @@ console.log(v6,"--->  filtro por nombre");
 //-----------------evento para el menu slider-------------------------
 $(".button-collapse").sideNav();
 $('.carousel.carousel-slider').carousel({full_width: true});
-
-
-
-
-
 
 
 
@@ -186,4 +181,15 @@ $(function () {
   var theTemplate = Handlebars.compile(theTemplateScript);
   var theCompiledHtml = theTemplate(bd2);
   $('.listaBD2').html(theCompiledHtml);
+});
+
+
+
+$(function () {
+  var theTemplateScript = $("#objetoSelect_").html();
+  var theTemplate = Handlebars.compile(theTemplateScript);
+  var context={"val1": AF.verResult()};
+  var theCompiledHtml = theTemplate(context);
+  $('.listaSelect_').html(theCompiledHtml);
+  console.log(v7);
 });

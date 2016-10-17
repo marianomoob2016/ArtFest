@@ -143,26 +143,29 @@
 
 
 
-
-
-
-    <main class="row noMargBot">
+   <main class="row noMargBot">
       <div class="col s12" style="min-height:1000px;">
 
 
-        <div class="modal_video_cont col s12 m4 l2">
-           <img src="img/.jpg">
-           <div>
-
-           </div>
-        </div>
-
+        <script id="objetoSelect_" type="text/x-handlebars-template">
+                {{#each val1}}
+                    <div class="modal_video_cont col s12 m4 l2">
+                       <img src="img/banner_header/banner_01.jpg">
+                       <div>
+                            {{this}}
+                       </div>
+                    </div>
+               {{/each}}
+         </script>
+         <div class="listaSelect_"></div>
 
 
 
         <div class="col s12">
+
         <!-- .................................................-->
         <script id="objetoBD1" type="text/x-handlebars-template">
+
               <form id="formBuscar" class="col s12">
                   <select name="youtubers" id="youtubersId"  onchange="AF.verResult();" style="display:block; max-width:150px; background:#333; color:#fff;">
                     {{#each val1}}
@@ -170,18 +173,16 @@
                     {{/each}}
                   </select>
               </form>
-              <button type="button" id="selecId">Click Me!</button>
+              <button type="button" onclick="AF.cargarResult();">Try it</button>
 
-              <div id="resultado1">
 
-              </div>
+
+              <div id="resultado1"> </div>
 
               <ul>
-                  <!-- each para una lista por metodo del objetoBD-->
                   {{#each val1}}
                       <li>  {{this}} </li>
                   {{/each}}
-
                   <li> -.-.-.-.-.-.-. </li>
                   <li> {{val1}} </li>
                   <li> {{val2}} </li>
@@ -195,25 +196,34 @@
 
 
 
-            <!-- ......................... -->
+        <!-- ......................... -->
+        <script id="objetoBD2" type="text/x-handlebars-template">
+              <ul>
+              {{#each this}}
+                  <li> {{nombre}} </li>
+                  <li> {{video}} </li>
+                  <li> ---- </li>
+              {{/each}}
+              </ul>
 
-              <script id="objetoBD2" type="text/x-handlebars-template">
+        </script>
+        <div class="listaBD2"></div>
 
-                    <ul>
-                    {{#each this}}
-                        <li> {{nombre}} </li>
-                        <li> {{video}} </li>
-                        <li> ---- </li>
-                    {{/each}}
-                    </ul>
 
-              </script>
 
-              <div class="listaBD2"></div>
 
-              <!-- ......................... -->
 
-          </div>
+
+
+
+
+
+
+
+
+
+        <!-- ......................... -->
+       </div>
 
 
 
