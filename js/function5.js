@@ -31,69 +31,91 @@ var bd2 = [
 
 
 
+
+
 //--------------------------objeto para todos los artistas---------------
+var todosArt = (function(){
+  function todosArt(base_){
 
-function todosArt(base_) {
-
-      this.cat        = base_.categoria;
-      this.cantidad_  = this.cat.length;
-
-
-      //-----------todos los artistas en la BD------
-      this.todosLosArtistas_  = function(){
-        var artistas_=[];
-        for(var i=0 ; i<this.cantidad_ ; i++){
-          artistas_.push(this.cat[i][0].nombre);
-        }
-        return artistas_;
-      }
+        this.cat        = base_.categoria;
+        this.cantidad_  = this.cat.length;
 
 
-
-
-      //-----------todas las URL de cada artista en la BD------
-      this.filtroVideo=function(artis_){
-        var vid_=[];
-        var cantidadTotal_= this.cat.length;  //cantidad de artistas
-
-        for(var i=0 ; i<cantidadTotal_ ; i++){
-            var cantidadTotalporArtista_= this.cat[i].length;  //cantidad de videos por artista
-          for(var j=0 ; j<cantidadTotalporArtista_ ; j++){
-             if(this.cat[i][j].nombre == artis_){
-                vid_.push(this.cat[i][j].video);
-             }
+        //-----------todos los artistas en la BD------
+        this.todosLosArtistas_  = function(){
+          var artistas_=[];
+          for(var i=0 ; i<this.cantidad_ ; i++){
+            artistas_.push(this.cat[i][0].nombre);
           }
+          return artistas_;
         }
-        return vid_;
-      }
-     //----------------
 
 
 
 
-      //-----------todas las URL de cada artista en la BD------
-      this.filtroNombre=function(artis_){
-        var vid_=[];
-        var cantidadTotal_= this.cat.length;  //cantidad de artistas
+        //-----------todas las URL de cada artista en la BD------
+        this.filtroVideo=function(artis_){
+          var vid_=[];
+          var cantidadTotal_= this.cat.length;  //cantidad de artistas
 
-        for(var i=0 ; i<cantidadTotal_ ; i++){
-            var cantidadTotalporArtista_= this.cat[i].length;  //cantidad de videos por artista
-          for(var j=0 ; j<cantidadTotalporArtista_ ; j++){
-             if(this.cat[i][j].nombre == artis_){
-                vid_.push(this.cat[i][j].nombre);
-             }
+          for(var i=0 ; i<cantidadTotal_ ; i++){
+              var cantidadTotalporArtista_= this.cat[i].length;  //cantidad de videos por artista
+            for(var j=0 ; j<cantidadTotalporArtista_ ; j++){
+               if(this.cat[i][j].nombre == artis_){
+                  vid_.push(this.cat[i][j].video);
+               }
+            }
           }
+          return vid_;
         }
-        return vid_;
-      }
-     //----------------
+       //----------------
 
 
 
-}
-//-------------------------------fin de objeto:todosArt----------------------------------------
+
+        //-----------todas las URL de cada artista en la BD------
+        this.filtroNombre=function(artis_){
+          var vid_=[];
+          var cantidadTotal_= this.cat.length;  //cantidad de artistas
+
+          for(var i=0 ; i<cantidadTotal_ ; i++){
+              var cantidadTotalporArtista_= this.cat[i].length;  //cantidad de videos por artista
+            for(var j=0 ; j<cantidadTotalporArtista_ ; j++){
+               if(this.cat[i][j].nombre == artis_){
+                  vid_.push(this.cat[i][j].nombre);
+               }
+            }
+          }
+          return vid_;
+        }
+       //----------------
 
 
+
+
+      //------------------------ver resultado por opcion seleccionada de artistas--------------
+       this.verResult=function(){
+         var selectBox = document.getElementById("youtubersId");
+         var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+         selectedValue=AF.filtroVideo(selectedValue);
+         console.log(selectedValue);
+         $("#resultado1").html(selectedValue);
+       }
+
+
+
+
+     }//------------fin de objeto:todosArt-----------
+
+     return todosArt;  //return objeto function
+
+}());//------------------------------
+
+
+
+
+
+//---------------------------------------------------------
 
 
 
@@ -121,13 +143,20 @@ console.log(v6,"--->  filtro por nombre");
 
 
 
+
+
+
+
+
+
+
 //-----------------evento para el menu slider-------------------------
-$('.button-collapse').sideNav({
-    menuWidth: 300, // Default is 240
-    edge: 'left', // Choose the horizontal origin
-    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-  }
-);
+$(".button-collapse").sideNav();
+$('.carousel.carousel-slider').carousel({full_width: true});
+
+
+
+
 
 
 
@@ -146,12 +175,8 @@ $(function () {
   };
   var theCompiledHtml = theTemplate(context);
   //var theCompiledHtml = theTemplate(bd.categoria[0]);
-
   $('.listaBD1').html(theCompiledHtml);
 });
-
-
-
 
 
 

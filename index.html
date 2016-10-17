@@ -7,7 +7,9 @@
 <title>Artist Fest</title>
 
 <link rel="stylesheet" href="css/normalize.css" /></link>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
 <link rel="stylesheet" href="css/style.css" /></link>
 
 
@@ -16,46 +18,182 @@
 
 <div id="cont1">
 
-     <div class="row">
-        <nav class="col s12">
+    <div class="row noMargBot">
+      <div class="col s12 m12 l12">
+          <img src="img/template/logo_media_moob.jpg" class="img_logo_head responsive-img" />
+      </div>
+    </div>
 
-            <ul id="slide-out" class="side-nav">
-              <li><a href="#!">First Sidebar Link</a></li>
-              <li><a href="#!">Second Sidebar Link</a></li>
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 
+     <div class="row noMargBot">
+        <nav class="col s12 m12 l12">
+          <div class="nav-wrapper">
+
+                <!--a href="#!" class="brand-logo">Logo</a-->
+
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="fa fa-bars" aria-hidden="true"></i></a>
+
+                <ul class="hide-on-med-and-down brand-logo center">
+                  <li><a class="dropdown-button" href="#!" data-activates="nav_humor1">Humor</a></li>
+                  <li><a class="dropdown-button" href="#!" data-activates="nav_belleza1">Belleza</a></li>
+                  <li><a class="dropdown-button" href="#!" data-activates="nav_musica1">Música</a></li>
+                  <li><a class="dropdown-button" href="#!" data-activates="nav_gamers1">Gamers</a></li>
+                  <li><a class="dropdown-button" href="#!" data-activates="nav_lifestyle1">Lifestyle</a></li>
+                </ul>
+
+                <div id="nav_humor1" class="dropdown-content">
+                    <!--div class="iconNavUP"><i class="fa fa-caret-up" aria-hidden="true"></i></div-->
+                    <ul>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">three</a></li>
+                    </ul>
+                </div>
+
+                <ul id="nav_belleza1" class="dropdown-content">
+                  <li><a href="#!">one</a></li>
+                </ul>
+
+                <ul id="nav_musica1" class="dropdown-content">
+                  <li><a href="#!">one</a></li>
+                </ul>
+
+                <ul id="nav_gamers1" class="dropdown-content">
+                  <li><a href="#!">one</a></li>
+                </ul>
+
+                <ul id="nav_lifestyle1" class="dropdown-content">
+                  <li><a href="#!">one</a></li>
+                </ul>
+
+                <!-- ..............................nav mobile............................... -->
+
+                <ul class="side-nav" id="mobile-demo">
+                  <li><a href="#">Humor</a></li>
+                  <li><a href="#">Belleza</a></li>
+                  <li><a href="#">Música</a></li>
+                  <li><a href="#">Gamers</a></li>
+                  <li><a href="#">Lifestyle</a></li>
+                </ul>
+
+
+
+          </div>
         </nav>
     </div>
 
+
+
+
+
+
+
+
+
     <!-- .................................... -->
 
-    <header>
 
 
 
+
+
+
+
+
+
+
+
+    <header class="row">
+        <div class="col s12 m12 l12">
+            <div id="slider_header_car" class="valign-wrapper carousel carousel-slider center" data-indicators="true">
+                 <!--div class="carousel-fixed-item center"><a class="btn waves-effect white grey-text darken-text-2">button</a></div-->
+                 <div id="prev_header_car" class="valign-wrapper left" onClick="$('.carousel').carousel('prev');"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                 <div id="next_header_car" class="valign-wrapper rigth" onClick="$('.carousel').carousel('next');"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+                 <div class="carousel-item img_banner1 white-text" href="#one!">
+                   <h2>First Panel</h2>
+                   <p class="white-text">This is your first panel</p>
+                 </div>
+                 <div class="carousel-item img_banner2 white-text" href="#two!">
+                   <h2>Second Panel</h2>
+                   <p class="white-text">This is your second panel</p>
+                 </div>
+                 <div class="carousel-item img_banner3 white-text" href="#three!">
+                   <h2>Third Panel</h2>
+                   <p class="white-text">This is your third panel</p>
+                 </div>
+                 <div class="carousel-item img_banner4 white-text" href="#four!">
+                   <h2>Fourth Panel</h2>
+                   <p class="white-text">This is your fourth panel</p>
+                 </div>
+
+           </div>
+
+        </div>
     </header>
 
+
+
+
+
     <!-- .................................... -->
 
-    <main class="row">
+
+
+
+
+
+
+
+    <main class="row noMargBot">
       <div class="col s12" style="min-height:1000px;">
 
 
+        <div class="modal_video_cont col s12 m4 l2">
+           <img src="img/.jpg">
+           <div>
+
+           </div>
+        </div>
+
+
+
+
+        <div class="col s12">
+        <!-- .................................................-->
         <script id="objetoBD1" type="text/x-handlebars-template">
+              <form id="formBuscar" class="col s12">
+                  <select name="youtubers" id="youtubersId"  onchange="AF.verResult();" style="display:block; max-width:150px; background:#333; color:#fff;">
+                    {{#each val1}}
+                        <option value ="{{this}}">  {{this}} </option>
+                    {{/each}}
+                  </select>
+              </form>
+              <button type="button" id="selecId">Click Me!</button>
+
+              <div id="resultado1">
+
+              </div>
 
               <ul>
-                  {{#each val1}}<li>  {{this}} </li>{{/each}}
-                  <li> ----------------------------------------------------- </li>
+                  <!-- each para una lista por metodo del objetoBD-->
+                  {{#each val1}}
+                      <li>  {{this}} </li>
+                  {{/each}}
+
+                  <li> -.-.-.-.-.-.-. </li>
                   <li> {{val1}} </li>
                   <li> {{val2}} </li>
                   <li> {{val3}} </li>
-                  <li> -----------------------------------------------------  </li>
+                  <li> -.-.-.-.-.-.-.  </li>
               </ul>
-
         </script>
-
+        <!-- .................................................-->
         <div class="listaBD1"></div>
+        <!-- .................................................-->
+
+
 
             <!-- ......................... -->
 
@@ -75,38 +213,47 @@
 
               <!-- ......................... -->
 
+          </div>
+
+
+
+
+
+
       </div>
     </main>
+
+
+
+
+
+
+
+
+
 
 
     <!-- .................................... -->
 
 
     <footer class="page-footer">
-     <div class="container">
-       <div class="row">
-         <div class="col l6 s12">
-           <h5 class="white-text">Footer Content</h5>
-           <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-         </div>
-         <div class="col l4 offset-l2 s12">
-           <h5 class="white-text">Links</h5>
-           <ul>
-             <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-             <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-             <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-             <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-           </ul>
-         </div>
-       </div>
-     </div>
+
      <div class="footer-copyright">
-       <div class="container">
-       © 2014 Copyright Text
-       <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+       <div class="center">
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Términos y Condiciones</a>
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Baja</a>
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Políticas de privacidad</a>
        </div>
      </div>
+
    </footer>
+
+
+
+
+
+   <!-- .................................... -->
+
 
 
 </div><!-- fin cont1 -->
@@ -116,7 +263,7 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
     <script src="js/handlebars-v4.0.5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="js/function5.js"></script>
 
 </body>
