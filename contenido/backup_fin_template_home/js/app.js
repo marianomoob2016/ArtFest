@@ -263,21 +263,10 @@ var todosArt = (function(){
      return todosArt;  //return objeto function
 
 
-}(this));
-//-----------------------
+}(this));//------------------------------
 
-
-
-
-
-
-
-//---------------------defino objeto-----------------------------------
 var AF = new todosArt(bd_final);
 
-
-
-//---------------------funciones externas------------------------------
 $(function () {
 
     window.addEventListener('resize', function(event){
@@ -285,7 +274,6 @@ $(function () {
     });
 
     //------------------
-
     AF.modulo_listarArtistas_();
     //console.log(AF.colorCategoria_('humor'));
 

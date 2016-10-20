@@ -176,7 +176,7 @@ body {
 
   /*-----------------------------------------*/
 
-#contModalSubHead{ display:block; margin-top:0px; margin-bottom: 0px;}
+#contModalSubHead{ display:block; background:#333; margin-top:0px; margin-bottom: 0px;}
     /*--------*/
     #contModalCategoria{  background:#ddd; margin:0;padding:0;}
 
@@ -271,22 +271,6 @@ body {
 
 
 
-              .contChicoResult .contChicoResult_moduloPopUp_Conectate{ width:100%; height:100%;  margin:0px; padding:0; text-align:center; background:#333; float: left;}
-              .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{ font-size:65px; margin:135px 0px 20px 0px;}
-              .contChicoResult_moduloPopUp_Conectate .iconCont{width:100%!important;}
-              .contChicoResult_moduloPopUp_Conectate .iconCont i{font-size: 30px;}
-
-                      @media (min-width:1280px) {  .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size:65px; margin:135px 0px 20px 0px;}  }
-                      @media (min-width:1024px) AND (max-width:1280px) {.contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size:50px; margin:100px 0px 20px 0px;} }
-                      @media (min-width:768px) AND (max-width:1023px) { .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size: 50px; margin: 35px 0px 25px 0px;} }
-                      @media (min-width:600px) AND (max-width:799px) {  .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size:65px; margin:25px 0px 20px 0px;} }
-                      @media (min-width:480px) AND (max-width:599px) {  .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size:65px; margin:135px 0px 20px 0px;} }
-                      @media (min-width:320px) AND (max-width:479px) {  .contChicoResult .contChicoResult_moduloPopUp_Conectate h1{font-size:50px; margin:95px 0px 20px 0px;} }
-
-
-
-
-
 /*-----------------------------------------*/
 
 
@@ -300,9 +284,9 @@ body {
 
 
 
-#contModalAside{ margin:0;padding:0; }
+#contModalAside{ background:#999; margin:0;padding:0; }
     /*--------*/
-    #contAsideUp{width:100%; }
+    #contAsideUp{width:100%; background:#999; }
 
 
         @media (min-width:1280px) {  #contAsideUp{ height:160px;}  }
@@ -361,7 +345,7 @@ body {
 
 
 
-#contModalResult{ margin:0;padding:0; }
+#contModalResult{ background:#666; margin:0;padding:0; }
 
           .contChicoResult{ width:100%; margin:0!important ;padding:0!important; float:left;}
           .contChicoResult .contChicoResult_moduloCont{  position:relative;  overflow: hidden; width: 100%; height: 100%;}
@@ -460,37 +444,6 @@ body {
 
 /*------------------------footer-------------------------------------*/
 
-footer.page-footer{padding-top:0px; background-color: #15181c;}
-.navFooterIcon .row{ width:186px; margin-top:10px;}
-.navFooterIcon .row .col{ float:left; display: block; width:30px; height:30px; margin-left:1px;}
-.navFooterIcon .row .col i{position: relative; top: -5px; font-size:20px; }
-.navFooterLink{ height:30px; margin:10px 0px; line-height:30px; border-left:1px #000 solid; color:#000; box-sizing: border-box;}
-.img_logo_footer{width:150px; margin-top:5px;}
-.navFooterLink a{color:#000;}
-footer.page-footer .footer-copyright{ height:50px;}
+footer.page-footer{padding-top:0px; background-color: #333333;}
+.navFooterLink{margin-right:10px; padding-left:10px; border-left:1px #fff solid;}
 .navFooterLink:nth-child(1){ border:none;}
-.navFooterLink:nth-child(2){ border:none;}
-
-
-        @media (min-width:1280px) { footer.page-footer .footer-copyright{ height:50px;}  }
-        @media (min-width:1024px) AND (max-width:1280px) {footer.page-footer .footer-copyright{ height:50px;} }
-        @media (min-width:768px) AND (max-width:1023px) {
-          footer.page-footer .footer-copyright{ height:125px;}
-          .navFooterLink{margin:0;}
-          .navFooterIcon{height:45px;}
-         }
-        @media (min-width:600px) AND (max-width:799px) {
-          footer.page-footer .footer-copyright{ height:125px;}
-          .navFooterLink{margin:0;}
-          .navFooterIcon{height:45px;}
-        }
-        @media (min-width:480px) AND (max-width:599px) {
-          footer.page-footer .footer-copyright{ height:185px;}
-          .navFooterLink{margin:0;}
-          .navFooterIcon{height:45px;}
-        }
-        @media (min-width:320px) AND (max-width:479px) {
-          footer.page-footer .footer-copyright{ height:185px;}
-          .navFooterLink{margin:0;}
-          .navFooterIcon{height:45px;}
-        }

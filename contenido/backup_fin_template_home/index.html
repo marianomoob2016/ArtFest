@@ -297,8 +297,6 @@
          <!-- .........................modulo resultados cont.................................... -->
          <div class="col s12 m12 l12">
            <div id="contModalResult" class="row">
-
-             <!-- ...................................modulo de resultado A....................................................-->
              <div class="fila1">
                    <!-- ................3 videos chicos................. -->
                    <div class="contChicoResult col s12 m12 l4">
@@ -328,18 +326,7 @@
                            </div>
                    </div>
                    <div class="contChicoResult col s12 m12 l4">
-                           <div class="contChicoResult_moduloPopUp_Conectate">
-                               <h1>Conectate</h1>
-                               <div class="col s12 m12 l2 center iconCont">
-                                   <div class="row ">
-                                     <div class="col s3"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-pinterest" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                   </div>
-                               </div>
-                           </div>
-                           <!--div class="contChicoResult_moduloCont">
+                           <div class="contChicoResult_moduloCont">
                                <a href="#!" target="_self" title="">
                                    <img src="img/template/video03.jpg"/>
                                    <div class="contChicoResult_moduloContfondo_opacity"></div>
@@ -349,7 +336,7 @@
                                      <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
                                    </div>
                                </a>
-                           </div-->
+                           </div>
                    </div>
                    <!-- ..........................contenedor grande.......................... -->
                    <div class="contGrandeResult col s12 m12 l8">
@@ -392,12 +379,9 @@
                            </div>
                    </div>
             </div>
-
-
-            <!-- ...................................modulo de resultado B....................................................-->
             <div class="fila2">
                   <!-- ................3 videos chicos................. -->
-                  <div class="contChicoResult col s12 m12 l4">
+                  <div class="contChicoResult col s12 m4 l4">
                         <div class="contChicoResult_moduloCont">
                             <a href="#!" target="_self" title="">
                                 <img src="img/template/video01.jpg"/>
@@ -410,7 +394,7 @@
                             </a>
                         </div>
                   </div>
-                  <div class="contChicoResult col s12 m12 l4">
+                  <div class="contChicoResult col s12 m4 l4">
                         <div class="contChicoResult_moduloCont">
                             <a href="#!" target="_self" title="">
                                 <img src="img/template/video02.jpg"/>
@@ -423,7 +407,7 @@
                             </a>
                         </div>
                   </div>
-                  <div class="contChicoResult col s12 m12 l4">
+                  <div class="contChicoResult col s12 m4 l4">
                       <div class="contChicoResult_moduloCont">
                           <a href="#!" target="_self" title="">
                               <img src="img/template/video03.jpg"/>
@@ -437,12 +421,8 @@
                       </div>
                   </div>
                   <!-- ............................. -->
-                  <div class="contChicoResult col s12 m12 l4">
-                      <div class="contChicoResult_moduloPopUp_Aviso">
-                        <div></div>
-
-                      </div>
-                      <!--div class="contChicoResult_moduloCont">
+                  <div class="contChicoResult col s12 m4 l4">
+                      <div class="contChicoResult_moduloCont">
                           <a href="#!" target="_self" title="">
                               <img src="img/template/video04.jpg"/>
                               <div class="contChicoResult_moduloContfondo_opacity"></div>
@@ -452,10 +432,10 @@
                                 <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
                               </div>
                           </a>
-                      </div-->
+                      </div>
 
                   </div>
-                  <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
+                  <div class="contGrandeResult contGrandeResult_2b col s12 m8 l8">
                         <div class="contGrandeResult_moduloCont">
                             <a href="#!" target="_self" title="">
                                 <img src="img/template/video05.jpg"/>
@@ -468,7 +448,7 @@
                             </a>
                         </div>
                   </div>
-                  <div class="contChicoResult  col s12 m12 l4">
+                  <div class="contChicoResult  col s12 m4 l4">
                       <div class="contChicoResult_moduloCont">
                           <a href="#!" target="_self" title="">
                               <img src="img/template/video04.jpg"/>
@@ -497,6 +477,43 @@
 
 
 
+        <div class="col s12">
+              <script id="objetoLista" type="text/x-handlebars-template">
+                    <form id="formBuscar" class="col s12">
+                        <select name="youtubers" id="youtubersId"  onchange="AF.seleccionarResult(this);" style="display:block; max-width:150px; background:#333; color:#fff;">
+                          {{#each val1}}
+                              <option value ="{{this}}">  {{this}} </option>
+                          {{/each}}
+                        </select>
+                    </form>
+                    <button type="button" onclick="AF.seleccionarResult();">Try it</button>
+              </script>
+
+              <div class="contenedorLista">...</div>
+       </div>
+
+
+
+
+
+        <!-- ........................ -->
+        <script id="objetoModuloResult" type="text/x-handlebars-template">
+               <ul id="cont_modulos_result" class="col s12">
+                    {{#each val1}}
+                        <li class="modal_video_cont col s12 m4 l2">
+                           <img src="img/banner_header/banner_01.jpg">
+                           <div>
+                                {{this}}
+                           </div>
+                        </li>
+                   {{/each}}
+               </ul>
+         </script>
+         <div class="listaModulosResult"></div>
+         <!-- ...........dojo............-->
+         <button type="button" id="setContent">Set Content</button>
+         <div id="content">I haven't been replaced.</div>
+
 
 
 
@@ -521,24 +538,11 @@
 
     <footer class="page-footer">
      <div class="footer-copyright">
-       <div class="row">
        <div class="center">
-         <div class="navFooterIcon col s12 m12 l3"><img src="img/template/logo_media_moob.jpg" class="img_logo_footer" /></div>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Términos y Condiciones</a>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Baja</a>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Políticas de privacidad</a>
-         <div class="navFooterIcon col s12 m12 l3 center">
-             <div class="row">
-               <div class="col s2"><i class="fa fa-search" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-pinterest" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-               <div class="col s2"></div>
-             </div>
-         </div>
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Términos y Condiciones</a>
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Baja</a>
+         <a class="navFooterLink grey-text text-lighten-4" href="#!">Políticas de privacidad</a>
        </div>
-     </div>
      </div>
    </footer>
 
