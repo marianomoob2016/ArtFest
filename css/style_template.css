@@ -85,19 +85,28 @@ body {
 /*----------------nav fixed----------------*/
 .nav_fixed_top{position:fixed; top:0px; display:block!important;}
 .nav_off_top{position:relative; top:0px; display:none!important;}
+
 /*-----------------------------------------*/
 
-#nav_header_1{ background:#fff; box-shadow: none; height:90px; line-height:90px; z-index: 999;}
-#nav_header_1 .nav-wrapper{ background:#fff;}
-#nav_header_1 .nav-wrapper .brand-logo{ width:750px; height:90px; color: #333; min-width:750px; z-index:99;}
-#nav_header_1 .button-collapse{ color: #333; }
-#nav_desktop_cont a{ color: #333; }
+#nav_header_1{ background:#15181d; box-shadow: none; height:90px; line-height:90px; z-index: 999;}
+#nav_header_1 .nav-wrapper{ }
+#nav_header_1 .nav-wrapper .brand-logo{ width:750px; height:90px; color: #fff; min-width:750px; z-index:99;}
+#nav_header_1 .button-collapse{ color: #fff; }
+#nav_desktop_cont a{ color: #ffdf1f; }
 #nav_desktop_cont li{ width:150px; height:90px; }
 #nav_desktop_cont li a:hover{background:none;}
 #logo_nav{width:300px!important;}
 
 .mobile-demo li{height:40px!important;}
 .mobile-demo li a{height:40px;}
+
+#nav_header_1 .side-nav { width:250px; background:#15181d; }
+#nav_header_1 .side-nav a{ color:#ffdf1f; width:100%; }
+
+.img_logo_head_mobile_sidenav{ width:150px; float: none; margin: 10px auto; display: block;}
+
+
+
 
 
 /*----------------------------------------------------------------------*/
@@ -335,27 +344,82 @@ body {
   /*-----------------------------------------*/
 
 
+
 #contModalResult{ background:#666; margin:0;padding:0; }
 
-          .contChicoResult{ border:1px #000 solid; box-sizing:border-box;}
+          .contChicoResult{ width:100%; margin:0!important ;padding:0!important; float:left;}
+          .contChicoResult .contChicoResult_moduloCont{  position:relative;  overflow: hidden; width: 100%; height: 100%;}
+          .contChicoResult .contChicoResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
+          .contChicoResult .contChicoResult_moduloCont img{  position:relative; width:120%!important; }
+          .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
+          .contChicoResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px;}
+          .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info{ position: absolute; top: 0;  left: 0; margin: 20px 30px; height: calc(100% - 40px);  width: calc(100% - 60px); }
+          .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{width:100%; font-size:20px; line-height:25px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
+          .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; }
+
                 @media (min-width:1280px) {  .contChicoResult{ height:425px;}  }
-                @media (min-width:1024px) AND (max-width:1280px) {.contChicoResult{ height:340px;} }
-                @media (min-width:768px) AND (max-width:1023px) { .contChicoResult{ height:266px;} }
-                @media (min-width:600px) AND (max-width:799px) {  .contChicoResult{ height:190px;} }
-                @media (min-width:480px) AND (max-width:599px) {  .contChicoResult{ height:440px;} }
-                @media (min-width:320px) AND (max-width:479px) {  .contChicoResult{ height:300px;} }
+                @media (min-width:1024px) AND (max-width:1280px) { .contChicoResult{ height:340px;} }
+                @media (min-width:768px) AND (max-width:1023px) {
+                  .contChicoResult{ height:200px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{ width:100%; font-size:22px; line-height:22px; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; font-size:16px; line-height: 20px; }
+                }
+                @media (min-width:600px) AND (max-width:799px) {
+                  .contChicoResult{ height:190px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{ width:100%; font-size:22px; line-height:22px; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; font-size:16px; line-height: 20px; }
+                }
+                @media (min-width:480px) AND (max-width:599px) {
+                  .contChicoResult{ height:440px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{ width:100%; font-size:25px; line-height:30px; letter-spacing: 1px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; font-size:18px; line-height: 22px; }
+                }
+                @media (min-width:320px) AND (max-width:479px) {
+                  .contChicoResult{ height:300px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{ width:100%; font-size:20px; line-height:25px; letter-spacing: 1px;}
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; font-size:16px; line-height: 20px; }
+                }
 
 
 
 
 
-          .contGrandeResult{ border:1px #000 solid; box-sizing:border-box;}
+
+
+          .contGrandeResult{ width:100%; margin:0!important ;padding:0!important; float:left;}
+          .contGrandeResult .contGrandeResult_moduloCont{  position:relative;  overflow: hidden; width: 100%; height: 100%;}
+          .contGrandeResult .contGrandeResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
+          .contGrandeResult .contGrandeResult_moduloCont img{  position:relative; width:120%!important; }
+          .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
+          .contGrandeResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px;}
+          .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info{ position: absolute; bottom: 0;  left: 0; margin: 20px 30px; width: calc(100% - 60px); }
+          .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{width:100%; font-size:35px; line-height:40px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
+          .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; font-size:20px; line-height:22px; margin:10px 0px;}
+
+
                 @media (min-width:1280px) {  .contGrandeResult{ height:850px;}  }
-                @media (min-width:1024px) AND (max-width:1280px) {.contGrandeResult{ height:680px;} }
-                @media (min-width:768px) AND (max-width:1023px) { .contGrandeResult{ height:532px;} }
-                @media (min-width:600px) AND (max-width:799px) {  .contGrandeResult{ height:380px;} }
-                @media (min-width:480px) AND (max-width:599px) {  .contGrandeResult{ height:440px;} }
-                @media (min-width:320px) AND (max-width:479px) {  .contGrandeResult{ height:300px;} }
+                @media (min-width:1024px) AND (max-width:1280px) {
+                  .contGrandeResult{ height:680px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{font-size:30px; line-height:35px;}
+                }
+                @media (min-width:768px) AND (max-width:1023px) { .contGrandeResult{ height:400px;} }
+                @media (min-width:600px) AND (max-width:799px) {
+                  .contGrandeResult{ height:300px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{font-size:25px; line-height:30px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{font-size:16px; line-height:20px;}
+
+                }
+                @media (min-width:480px) AND (max-width:599px) {
+                  .contGrandeResult{ height:500px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{font-size:25px; line-height:30px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{font-size:16px; line-height:20px;}
+                }
+                @media (min-width:320px) AND (max-width:479px) {
+                  .contGrandeResult{ height:350px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info{ position: absolute; top: 0;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{font-size:22px; line-height:28px;}
+                  .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{font-size:16px; line-height:20px;}
+               }
 
         .contGrandeResult_2b{ float:right!important;}
 

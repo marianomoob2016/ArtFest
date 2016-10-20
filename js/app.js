@@ -8,6 +8,8 @@ var bd = {"categoria":[
   ]
 ]};
 
+
+//--------------------BD lista de artistas y su info--------------------
 var bd_artistas = {"autor":[
      {
        "nombre":"youtuber1",
@@ -21,8 +23,7 @@ var bd_artistas = {"autor":[
 ]};
 
 
-//---------------------------------
-
+//------------------BD lista de videos y su info--------------
 var bd_final = {"videos":[
      {
      "id":"20161019",
@@ -118,9 +119,34 @@ var todosArt = (function(){
 
         var baseTotal = base_.videos;
         var cantidadTotal = baseTotal.length;
+
+        //--------------------BD lista de artistas y su info--------------------
+        var bd_categorias = {"categorias":[
+             {"categoria":"humor","colorFondo":"ffff01"},
+             {"categoria":"belleza","colorFondo":"f4206a"},
+             {"categoria":"musica","colorFondo":"168ce6"},
+             {"categoria":"gamers","colorFondo":"fe4300"},
+             {"categoria":"lifestyle","colorFondo":"35df89"},
+             {"categoria":"clubMedia","colorFondo":"35df89"}
+        ]};
         //console.log(cantidadTotal +"------"+baseTotal);
 
-//------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
+
+
+        //-------------------color para cada cateogria------------------
+        this.colorCategoria_=function(cat_){
+          var catSel=cat_;
+          var color_='fff';
+          var categ_=bd_categorias.categorias;
+
+              for(var i=0 ; i< categ_.length ; i++){
+                if(categ_[i].categoria==catSel){
+                  color_=categ_[i].colorFondo;
+                }
+              }
+            return color_;
+        }
 
 
         //---------------------scroll para nav fixed-----------------------
@@ -134,7 +160,7 @@ var todosArt = (function(){
                 var cImgw_=cImg_.width();
                 var cImgh_=cImg_.height();
 
-                console.log(cImgw_,cImgh_);
+                //console.log(cImgw_,cImgh_);
 
 
         }
@@ -153,7 +179,6 @@ var todosArt = (function(){
                 $("#nav_header_1").addClass("nav_off_top");
               }
         }
-
 
 
 
@@ -250,9 +275,15 @@ $(function () {
 
     //------------------
     AF.modulo_listarArtistas_();
-    //------------------
-    var body_ = document.getElementById("body_");
-    body_ .onscroll=function(){  AF.scrollBody_(body_);  }
+    //console.log(AF.colorCategoria_('humor'));
+
     //------------------
 
-})
+    $(document).on('scroll',function(){
+        var body_ = document.getElementById("body_");
+        body_.onscroll=function(){  AF.scrollBody_(body_);  }
+    });
+    //------------------
+
+
+});
