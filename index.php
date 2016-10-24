@@ -1,190 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Artist Fest</title>
-
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-<link rel="stylesheet" href="css/normalize.css" /></link>
-<link rel="stylesheet" href="css/materialize.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/style_template.css" /></link>
-<link rel="stylesheet" href="css/style.css" /></link>
 
 
-</head>
-<body id="body_">
-<div id="cont1">
-
-
-
-    <!-- ................................................................................. -->
-
-
-
-     <div class="row noMargBot">
-        <nav id="nav_header_1" class="col s12 m12 l12 nav_off_top">
-          <div class="nav-wrapper">
-                <!-- .............logo y nav mobile........... -->
-                <a href="#!" class="col s6"><img src="img/template/logo_media_moob.jpg" class="img_logo_head_mobile" /></a>
-                <a href="#" data-activates="mobile-nav" class="col s6 button-collapse"><i class="fa fa-bars right" aria-hidden="true"></i></a>
-
-                <!-- .............menu desktop........... -->
-                <ul id="nav_desktop_cont" class="hide-on-med-and-down brand-logo center">
-                  <li><a href="#!">Humor</a></li>
-                  <li><a href="#!">Belleza</a></li>
-                  <!--li id="logo_nav">  <img src="img/template/logo_media_moob.jpg" class="img_logo_head" />  </li-->
-                  <li><a href="#!">Música</a></li>
-                  <li><a href="#!">Gamers</a></li>
-                  <li><a href="#!">ClubMediaFest</a></li>
-                </ul>
-
-
-                <!-- ..............nav mobile............. -->
-                <ul class="side-nav" id="mobile-nav">
-                  <li><a href="#!"><img src="img/template/logo_media_moob.jpg" class="img_logo_head_mobile_sidenav" /></a></li>
-                  <li><a href="#!">Humor</a></li>
-                  <li><a href="#!">Belleza</a></li>
-                  <li><a href="#!">Música</a></li>
-                  <li><a href="#!">Gamers</a></li>
-                  <li><a href="#!">ClubMediaFest</a></li>
-                </ul>
-
-          </div>
-        </nav>
-    </div>
+<!-- .....................header del document y nav.................................... -->
+    <?php
+        require_once('include/head.php');
+    ?>
 
 
 
 
 
-
-
-   <!-- ................................................................................. -->
-
-
-
-
+<!-- ........................header slider................................. -->
+    <?php
+        require_once('include/header_slider.php');
+    ?>
 
 
 
 
-
-    <header class="">
-        <div class="col s12 m12 l12">
-            <div id="slider_header_car" class="valign-wrapper carousel carousel-slider center" data-indicators="true">
-                 <!--div class="carousel-fixed-item center"><a class="btn waves-effect white grey-text darken-text-2">button</a></div-->
-                 <div id="prev_header_car" class="valign-wrapper left" onClick="$('.carousel').carousel('prev');"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                 <div id="next_header_car" class="valign-wrapper rigth" onClick="$('.carousel').carousel('next');"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-
-                 <div class="carousel-item  white-text" href="#one!">
-                   <div class="cont_img_slider img_banner1">
-                       <h2>First Panel</h2>
-                       <p class="white-text">This is your first panel</p>
-                   </div>
-                 </div>
-                 <div class="carousel-item white-text" href="#two!">
-                   <div class="cont_img_slider img_banner2">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
-                   </div>
-                 </div>
-                 <div class="carousel-item white-text" href="#three!">
-                   <div class="cont_img_slider img_banner3">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
-                   </div>
-                 </div>
-                 <div class="carousel-item white-text" href="#four!">
-                   <div class="cont_img_slider img_banner4">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
-                   </div>
-                 </div>
-
-           </div>
-        </div>
-
-
-
-
-        <!-- ...............................modulo dinamico de destacados.............................................-->
-        <div id="cont_destacado_header" class="col s12 m12 l12">
-          <ul class="row">
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado01.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity1"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#f4206a; color:#fff;">Belleza</div>
-                          <p>Probó los productos de belleza y ella misma te muestra los resultados.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado02.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity2"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>Dai Hernández trollea a los artistas con la broma de Fernet Branca.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado03.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity3"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado04.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity4"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>ElRubius se busca en Google y no puede creer lo que dicen de él.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-          </ul>
-        </div>
-
-  </header>
-
-
-
-
-
-    <!-- ................................................................................. -->
-
-
-
-
-
+<!-- ...........................cont section index...................................................... -->
     <div id="contSection">
      <div class="col s12 m12 l12">
+
 
 
 
           <div class="col s12 m12 l12">
             <div id="contModalSubHead" class="row">
 
-                  <div id="contModalCategoria" class="col s12 m8 l8">
+
+
+
+
+
+
+                  <!-- .......................categorias - index...................................-->
+
+                  <div id="contModalCategoria" class="col s12 m12 l8">
 
                           <div id="contCategoria1" class="col s12 m12 l8">
                                     <!-- ..........categoria 1 grande........ -->
@@ -253,39 +104,36 @@
                   </div>
 
 
-                  <div id="contModalAside" class="col s12 m4 l4">
-
-                        <div id="contAsideUp" class="col s12 m4 l12">
-
-                        </div>
-
-                        <div id="contAsideBotton" class="col s12 m8 l12">
-                          <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
-                          <div class="contAsideBotton_fondo_opacity"></div>
-                          <div class="contAsideBotton_info">
-                                <h1>Dai <br> Hernández</h1>
-                                <h4>Humor argentino</h4>
-                                <p>Entrevistamos a Dani para que nos cuente cómo es su vida desde que es estrella en las redes. ¿Qué pensarán su familia y sus amigos?</p>
-                            <a href="#!" title="" class="waves-effect waves-light btn">Leer más</a>
 
 
-                          </div>
 
-                        </div>
+                  <!-- .......................sidebar index...................................-->
 
+                  <div id="contModalAside" class="col s12 m12 l4">
+
+                            <div id="contAsideUp" class="col s12 m12 l12">
+
+                            </div>
+
+                            <div id="contAsideBotton" class="col s12 m12 l12">
+                                <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
+                                <div class="contAsideBotton_fondo_opacity"></div>
+                                <div class="contAsideBotton_info">
+                                      <h1>Dai <br> Hernández</h1>
+                                      <h4>Humor argentino</h4>
+                                      <p>Entrevistamos a Dani para que nos cuente cómo es su vida desde que es estrella en las redes. ¿Qué pensarán su familia y sus amigos?</p>
+                                  <a href="#!" title="" class="waves-effect waves-light btn">Leer más</a>
+                                </div>
+                            </div>
                   </div>
+
+
             </div>
          </div>
 
+         <!-- ................................................................................. -->
 
 
-
-
-
-
-
-
-<!-- ................................................................................. -->
 
 
 
@@ -332,10 +180,10 @@
                                <h1>Conectate</h1>
                                <div class="col s12 m12 l2 center iconCont">
                                    <div class="row ">
-                                     <div class="col s3"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-pinterest" aria-hidden="true"></i></div>
-                                     <div class="col s3"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                     <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                                     <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                                     <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
+                                     <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
                                    </div>
                                </div>
                            </div>
@@ -438,10 +286,12 @@
                   </div>
                   <!-- ............................. -->
                   <div class="contChicoResult col s12 m12 l4">
-                      <div class="contChicoResult_moduloPopUp_Aviso">
-                        <div></div>
-
-                      </div>
+                          <div class="contChicoResult_moduloPopUp_Aviso">
+                              <a href="#!" alt="">
+                                  <img src="img/template/bot_aviso.jpg"/>
+                                  <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
+                              </a>
+                          </div>
                       <!--div class="contChicoResult_moduloCont">
                           <a href="#!" target="_self" title="">
                               <img src="img/template/video04.jpg"/>
@@ -485,24 +335,12 @@
            </div>
           </div>
          </div>
-
-
-
-
-
-
-       <!-- ................................................................................. -->
-
-
-
-
-
-
-
+         <!-- .......................................................... -->
 
 
      </div>
    </div>
+   <!-- .............................fin cont section index............................. -->
 
 
 
@@ -510,61 +348,7 @@
 
 
 
-
-   <!-- ................................................................................. -->
-
-
-
-
-
-
-
-    <footer class="page-footer">
-     <div class="footer-copyright">
-       <div class="row">
-       <div class="center">
-         <div class="navFooterIcon col s12 m12 l3"><img src="img/template/logo_media_moob.jpg" class="img_logo_footer" /></div>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Términos y Condiciones</a>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Baja</a>
-         <a class="navFooterLink col s12 m4 l2" href="#!">Políticas de privacidad</a>
-         <div class="navFooterIcon col s12 m12 l3 center">
-             <div class="row">
-               <div class="col s2"><i class="fa fa-search" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-pinterest" aria-hidden="true"></i></div>
-               <div class="col s2"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-               <div class="col s2"></div>
-             </div>
-         </div>
-       </div>
-     </div>
-     </div>
-   </footer>
-
-
-
-
-   <!-- .................................... -->
-
-
-
-</div><!-- fin cont1 -->
-
-
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
-    <script src="js/handlebars-v4.0.5.js"></script>
-    <script src="js/materialize.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js"></script>
-
-    <script src="js/app.js"></script>
-    <script src="js/function5.js"></script>
-
-    <script>
-
-    </script>
-
-</body>
-</html>
+     <!-- ..................footer del document y footer de index......................... -->
+     <?php
+        require_once('include/footer.php');
+     ?>
