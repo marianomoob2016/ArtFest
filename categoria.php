@@ -326,48 +326,6 @@
 
 
 
-    <!--div class="col s12">
-          <script id="objetoLista" type="text/x-handlebars-template">
-                    <div  id="youtubersId"  onclick="AF.seleccionarResult(this);" style="display:block; max-width:150px; background:#333; color:#fff;">
-                      {{#each val1}}
-                          <a href="{{this}}">  {{this}} </a>
-                      {{/each}}
-                    </div>
-          </script>
-          <div class="contenedorLista">...</div>
-   </div-->
-
-
-
-<!--
-
-
-    <script id="objetoModuloResult" type="text/x-handlebars-template">
-           <ul id="cont_modulos_result" class="col s12">
-                {{#each val1}}
-                    <li class="modal_video_cont col s12 m4 l2">
-                       <img src="img/banner_header/banner_01.jpg">
-                       <div>
-                            {{this}}
-                       </div>
-                    </li>
-               {{/each}}
-           </ul>
-     </script>
-     <div class="listaModulosResult"></div>
-
-
-
-     <button type="button" id="setContent">Set Content</button>
-     <div id="content">I haven't been replaced.</div>
-
--->
-
-
-
-
-
-
 
 
 

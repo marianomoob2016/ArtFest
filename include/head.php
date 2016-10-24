@@ -6,6 +6,10 @@
 
 <title>Artist Fest</title>
 
+<script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 <link rel="stylesheet" href="css/normalize.css" /></link>
 <link rel="stylesheet" href="css/materialize.min.css">

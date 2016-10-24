@@ -38,12 +38,11 @@
 
 </div><!-- fin cont1 -->
 
-     <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>
-     <!--script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-     <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
+     <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script-->
+        <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
      <script src="js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
-     <!--script src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js"></script-->
+        <!--script src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js"></script-->
      <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
      <script src="js/function5.js" type="text/javascript" charset="utf-8"></script>
 

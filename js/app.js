@@ -9,6 +9,7 @@ var bd = {"categoria":[
 ]};
 
 
+
 //--------------------BD lista de artistas y su info--------------------
 var bd_artistas = {"autor":[
      {
@@ -19,7 +20,7 @@ var bd_artistas = {"autor":[
        "linkTwitter":"....url",
        "linkInstagram":"....url",
        "linkYoutube":"....url"
-     },
+     }
 ]};
 
 
@@ -59,42 +60,7 @@ var bd_final = {"videos":[
                                     {"subCat" : ["trucos","juego_en_vivo","reviews"]}
                                  ]}
                     ]
-    },
-    {
-    "id":"20161019",
-    "hora":"1600",
-    "autores" : ["youtuber2","youtuber3"],
-    "titulo" : "Tit1",
-    "subTit" : "subTit1",
-    "info" : "...",
-    "masInfo" : "....",
-    "urlVideo" : ".....url1.mp4",
-    "urlImgVid" : ".....urlImg1.jpg",
-    "srcImg" : ".....img1.jpg",
-    "destacado" : [{"activo" : true},{"position" : 10}],
-    "categorias" : [
-                       {"humor":[
-                                   {"activo" : true},
-                                   {"subCat" : ["bloopers","fails","bizarro"]}
-                                ]},
-                       {"belleza":[
-                                   {"activo" : true},
-                                   {"subCat" : ["Uñas","Peinados","makeUp"]}
-                                ]},
-                       {"música":[
-                                   {"activo" : true},
-                                   {"subCat" : ["playList","bandas","recitales"]}
-                               ]},
-                       {"gamers":[
-                                   {"activo" : true},
-                                   {"subCat" : ["trucos","juego_en_vivo","reviews"]}
-                               ]},
-                       {"lifestyle":[
-                                   {"activo" : true},
-                                   {"subCat" : ["trucos","juego_en_vivo","reviews"]}
-                                ]}
-                   ]
-   }
+    }
 ]};
 
 //---------------------------------
@@ -151,20 +117,14 @@ var todosArt = (function(){
 
         //---------------------scroll para nav fixed-----------------------
         this.defineContHead_ = function(event){
-
                 var bod_=document.getElementById("body_");
                 var wb_=bod_.style.width;
                 var hb_=bod_.style.height;
-
                 var cImg_=$(".cont_img_slider");
                 var cImgw_=cImg_.width();
                 var cImgh_=cImg_.height();
-
                 //console.log(cImgw_,cImgh_);
-
-
         }
-
 
         //---------------------scroll para nav fixed-----------------------
         this.scrollBody_ = function(cont_){
@@ -183,7 +143,6 @@ var todosArt = (function(){
 
 
 //------------------------------------
-
 
 
         //--------------------get para cantidad total de la BD en array por artistas------------------------
@@ -209,14 +168,31 @@ var todosArt = (function(){
             var vid_=[];
             for(var i=0 ; i< cantidadTotal ; i++){
                 var cantidadTotalporCategoria_= baseTotal[i].length;  //cantidad de videos por artista
+                console.log(baseTotal[i]);
               for(var j=0 ; j<cantidadTotalporCategoria_ ; j++){
-                 if(baseTotal[i][j].autores == cate_){
+                 if(baseTotal[i][j].categoria[cate_].activo){
                     vid_.push(baseTotal[i][j].urlVideo);
-                  }
+                }
               }
             }
             return vid_;
         }
+
+
+
+       //-----------------------------
+        this.modulo_1=function(){
+          $(function () {
+                var template_ = document.getElementById("templateScript").innerHTML;
+                var contTemplate = Handlebars.compile(template_);
+                var context={
+                  "v1": get_videosPorCategoria_("belleza")
+                };
+                var templateCompile = contTemplate(context);
+                $('.cont_template_1').html(templateCompile);
+          });
+        }
+
 
 
 
@@ -279,32 +255,32 @@ var todosArt = (function(){
 
 
 
-//---------------------defino objeto-----------------------------------
-var AF = new todosArt(bd_final);
-
 
 
 
 //---------------------funciones externas------------------------------
 $(document).ready(function(){
 
-    window.addEventListener('resize', function(event){
-         AF.defineContHead_(event);
-    });
+        //---------------------defino objeto-----------------------------------
+        var AF = new todosArt(bd_final);
 
-    //------------------
+        //---------------------
+        //window.addEventListener('resize', function(event){
+             //AF.defineContHead_(event);
+        //});
 
-    //AF.modulo_listarArtistas_();
-    //console.log(AF.colorCategoria_('humor'));
+        //------------------
+        //AF.modulo_listarArtistas_();
+        //console.log(AF.colorCategoria_('humor'));
 
-    //------------------
+        //--------------active nav scroll------------
+        $(document).on('scroll',function(){
+            var body_ = document.getElementById("body_");
+            body_.onscroll=function(){  AF.scrollBody_(body_);  }
+        });
 
-    $(document).on('scroll',function(){
-        var body_ = document.getElementById("body_");
-        body_.onscroll=function(){  AF.scrollBody_(body_);  }
-    });
-
-    //------------------
+        //------------------
+        //AF.modulo_1();
 
 
 });
