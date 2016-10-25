@@ -4,6 +4,7 @@ $(document).ready(function(){
         var AF_index = new todosArt(bd_final);
         //---------lista los resultados en el index------
         AF_index.listarPost_index();
+        AF_index.listarDest_index();
 
         //---------------------
         //window.addEventListener('resize', function(event){

@@ -97,100 +97,100 @@ var bd_result_index = {"videos":[
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1700",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video02.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1600",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video03.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1500",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video04.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1400",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video05.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1300",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]},
-                          {cat:[{nombre : "gamers"},{colorFondo:'fe4300'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]},
+                          {cat:[{nombre : "gamers"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1200",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video02.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1100",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video03.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]},
-                          {cat:[{nombre : "gamers"},{colorFondo:'fe4300'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]},
+                          {cat:[{nombre : "gamers"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"1000",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video04.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                         {cat:[{nombre : "humor"}]},
+                         {cat:[{nombre : "lifestyle"}]}
                      ]
   },{
        id:"20161019",
-       hora:"1800",
+       hora:"0900",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video05.jpg",
        categorias :  [
-                          {cat:[{nombre : "humor"},{colorFondo:'ffff01'},{colorText:'333333'}]},
-                          {cat:[{nombre : "lifestyle"},{colorFondo:'35df89'},{colorText:'ffffff'}]}
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
                      ]
   }
 ]};
@@ -198,6 +198,57 @@ var bd_result_index = {"videos":[
 //---------------------------------
 
 
+
+
+
+//------------------BD lista de videos y su info para index------------10 resultado por paginado--------------
+var bd_result_destacado_index = {"videos":[
+  {
+       id:"20161019",
+       hora:"1800",
+       titulo : "1 Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
+       subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       srcImg : "img/template/video01.jpg",
+       destacadoPos:10,
+       categorias :  [
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
+                     ]
+  },{
+       id:"20161019",
+       hora:"1700",
+       titulo : "2 Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
+       subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       srcImg : "img/template/video02.jpg",
+       destacadoPos:8,
+       categorias :  [
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
+                     ]
+  },{
+       id:"20161019",
+       hora:"1700",
+       titulo : "3 Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
+       subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       srcImg : "img/template/video03.jpg",
+       destacadoPos:4,
+       categorias :  [
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
+                     ]
+  },{
+       id:"20161019",
+       hora:"1500",
+       titulo : "4 Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
+       subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       srcImg : "img/template/video04.jpg",
+       destacadoPos:2,
+       categorias :  [
+                          {cat:[{nombre : "humor"}]},
+                          {cat:[{nombre : "lifestyle"}]}
+                     ]
+  }
+]};
 
 
 
@@ -209,17 +260,32 @@ var bd_result_index = {"videos":[
 //--------------------BD lista de artistas y su info--------------------
 var bd_artistas = {"autores":[
      {
-       "nombre":"youtuber1",
-       "info":"...1.",
-       "imgPerfil":"....1.jpg",
-       "linkFace":"....url1",
-       "linkTwitter":"....url",
-       "linkInstagram":"....url",
-       "linkYoutube":"....url"
-     },
-     {"nombre":"youtuber2","info":"...2.","imgPerfil":"....2.jpg","linkFace":"....url2","linkTwitter":"....url","linkInstagram":"....url","linkYoutube":"....url"},
-     {"nombre":"youtuber3","info":"...3.","imgPerfil":"....3.jpg","linkFace":"....url3","linkTwitter":"....url","linkInstagram":"....url","linkYoutube":"....url"}
+       nombre:"youtuber1",
+       info:"...1.",
+       imgPerfil:"....1.jpg",
+       linkFace:"....url1",
+       linkTwitter:"....url",
+       linkInstagram:"....url",
+       linkYoutube:"....url"
+     },{
+       nombre:"youtuber2",
+       info:"...2.",
+       imgPerfil:"....2.jpg",
+       linkFace:"....url2",
+       linkTwitter:"....url",
+       linkInstagram:"....url",
+       linkYoutube:"....url"
+     },{
+       nombre:"youtuber3",
+       info:"...3.",
+       imgPerfil:"....3.jpg",
+       linkFace:"....url3",
+       linkTwitter:"....url",
+       linkInstagram:"....url",
+       linkYoutube:"....url"
+     }
 ]};
+
 
 
 
@@ -228,21 +294,45 @@ var bd_artistas = {"autores":[
 
 
 //--------------------BD lista de artistas y su info--------------------
-var bd_categorias = {'categorias':[
+var bd_categorias = {"categorias":[
      {
-     'categoria':'humor',
-     'infoCat':'Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.',
-     'colorFondo':'ffff01',
-     'subCat':['bloopers','fails','bizarro','sketch','vines','parodias','chistes','standUp','desafíos']
-     },
-     {'categoria':'belleza','infoCat':'Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.','colorFondo':'f4206a','subCat':['uñas','peinados','makeUp','look','moda','fitness','gym','accesorios','coleciones']},
-     {'categoria':'musica','infoCat':'Son las nuevas estrellas de todos los tiempos. Mirá videos exclusivos en Club.Media.','colorFondo':'168ce6','subCat':['playList','bandas','recitales','instrumentos','lanzamientos','reviews','backstage','cds']},
-     {'categoria':'gamers','infoCat':'Viví desde adentro cada momento de los shows de tus artistas favoritos y participá por Meet&Greet y entradas VIP','colorFondo':'fe4300','subCat':['trucos','juego en vivo','reviews','tecnología','lanzamientos','testeo','tutoriales']},
-     {'categoria':'lifestyle','infoCat':'Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.','colorFondo':'35df89','subCat':['viajes','cocina','salidas','DIY','cine','madres','deco','jardín','bares','cerveza']},
-     {'categoria':'clubMedia','infoCat':'Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.','colorFondo':'35df89','subCat':[]}
+       categoria:"humor",
+       infoCat:"Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.",
+       colorFondo:"ffff01",
+       colorTexto:"333333",
+       subCat:["bloopers","fails","bizarro","sketch","vines","parodias","chistes","standUp","desafíos"]
+     },{
+       categoria:"belleza",
+       infoCat:"Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       colorFondo:"f4206a",
+       colorText:"ffffff",
+       "subCat":["uñas","peinados","makeUp","look","moda","fitness","gym","accesorios","coleciones"]
+     },{
+       categoria:"musica",
+       infoCat:"Son las nuevas estrellas de todos los tiempos. Mirá videos exclusivos en Club.Media.",
+       colorFondo:"168ce6",
+       colorTexto:"ffffff",
+       subCat:["playList","bandas","recitales","instrumentos","lanzamientos","reviews","backstage","cds"]
+     },{
+       categoria:"gamers",
+       infoCat:"Viví desde adentro cada momento de los shows de tus artistas favoritos y participá por Meet&Greet y entradas VIP",
+       colorFondo:"fe4300",
+       colorTexto:"ffffff",
+       subCat:["trucos","juego en vivo","reviews","tecnología","lanzamientos","testeo","tutoriales"]
+     },{
+       categoria:"lifestyle",
+       infoCat:"Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       colorFondo:"35df89",
+       colorTexto:"ffffff",
+       subCat:["viajes","cocina","salidas","DIY","cine","madres","deco","jardín","bares","cerveza"]
+     },{
+       categoria:"clubMedia",
+       infoCat:"Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.",
+       colorFondo:"35df89",
+       colorTexto:"ffffff",
+       subCat:[]
+     }
 ]};
-
-
 
 
 
@@ -251,39 +341,108 @@ var todosArt = (function(){
 
   function todosArt(base_){
 
-        'use strict';
+        "use strict";
 
         var baseTotal = base_.videos;
         var cantidadTotal = baseTotal.length;
-
-
         //console.log(cantidadTotal +"------"+baseTotal);
 
 //--------------------------------------------------------------------------------------------------------------------
 
 
+        //-------------------if comparativo para Handlebars--------------------------
+        Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
+             switch (operator){
+                 case '==':  return (v1 == v2) ? options.fn(this) : options.inverse(this);
+                 case '===': return (v1 === v2) ? options.fn(this) : options.inverse(this);
+                 case '<':   return (v1 < v2) ? options.fn(this) : options.inverse(this);
+                 case '<=':  return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+                 case '>':   return (v1 > v2) ? options.fn(this) : options.inverse(this);
+                 case '>=':  return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+                 case '&&':  return (v1 && v2) ? options.fn(this) : options.inverse(this);
+                 case '||':  return (v1 || v2) ? options.fn(this) : options.inverse(this);
+                    default:    return options.inverse(this);
+             }
+        });
+
+        //-------------------color para cada cateogria------------------
+        var colorFondoPorCategoria_=function(cat_){
+            var catSel=cat_;
+            var color_="fff";
+            var categ_=bd_categorias.categorias;
+            for(var i=0 ; i< categ_.length ; i++){  if(categ_[i].categoria==catSel){  color_=categ_[i].colorFondo;  }  }
+            return color_;
+        }
+
+        //-------------------color para cada cateogria------------------
+        var colorTextoPorCategoria_=function(cat_){
+            var catSel=cat_;
+            var color_="333";
+            var categ_=bd_categorias.categorias;
+            for(var i=0 ; i< categ_.length ; i++){  if(categ_[i].categoria==catSel){  color_=categ_[i].colorTexto;  }  }
+            return color_;
+        }
+
+
+
+
+
+        //-----------------------------------------------------------------
+        this.listarDest_index=function(){
+          (function() {
+                 Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
+                     return new Handlebars.SafeString("<a href='post.php?id="+this.id+'&hora='+this.hora+"' target='_self' title=''>");
+                 });
+
+                 Handlebars.registerHelper("moduloDestacado_index", function(value){
+                            return new Handlebars.SafeString(
+                            "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
+                              colorFondoPorCategoria_(value[0].nombre)+
+                            "; color:#"+
+                              colorTextoPorCategoria_(value[0].nombre)+
+                            ";'>"+
+                              value[0].nombre +
+                              "</div>"
+                            );
+                 });
+
+                 var template_ = document.getElementById("template_destacado_index").innerHTML;
+                 var contTemplate = Handlebars.compile(template_);
+                 //---------------json para los resultados destacados del index------------------------------------
+                 var context=bd_result_destacado_index;
+                 var templateCompile = contTemplate(context);
+                 $("#cont_destacado_header ul").html(templateCompile);
+           })();
+        }
+
+
+
+
        //------------------------------------------------------
        this.listarPost_index=function(){
         (function() {
-              Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
-                  switch (operator) {
-                    case '==': return (v1 == v2) ? options.fn(this) : options.inverse(this);
-                    case '<':  return (v1 < v2) ?  options.fn(this) : options.inverse(this);
-                    case '>':  return (v1 > v2) ?  options.fn(this) : options.inverse(this);
-                    default: return options.inverse(this);
-                  }
+              Handlebars.registerHelper("moduloResult_index_linkPost", function(value){
+                  return new Handlebars.SafeString("<a href='post.php?id="+this.id+'&hora='+this.hora+"' target='_self' title=''>");
               });
 
-              Handlebars.registerHelper('moduloResult_chico', function(value) {
+              Handlebars.registerHelper("moduloResult_chico", function(value) {
                 return new Handlebars.SafeString(
-                  "<div class='contChicoResult_moduloContfondo_cont_info_item1' style='background:#"+value[1].colorFondo+"; color:#"+value[2].colorText+";'>"+
+                  "<div class='contChicoResult_moduloContfondo_cont_info_item1' style='background:#"+
+                    colorFondoPorCategoria_(value[0].nombre)+
+                  "; color:#"+
+                    colorTextoPorCategoria_(value[0].nombre)+
+                  ";'>"+
                     value[0].nombre +
                   "</div>");
               });
 
-              Handlebars.registerHelper('moduloResult_grande', function(value) {
+              Handlebars.registerHelper("moduloResult_grande", function(value) {
                 return new Handlebars.SafeString(
-                  "<div class='contGrandeResult_moduloContfondo_cont_info_item1' style='background:#"+value[1].colorFondo+"; color:#"+value[2].colorText+";'>"+
+                  "<div class='contGrandeResult_moduloContfondo_cont_info_item1' style='background:#"+
+                     colorFondoPorCategoria_(value[0].nombre)+
+                  "; color:#"+
+                     colorTextoPorCategoria_(value[0].nombre)+
+                  ";'>"+
                     value[0].nombre +
                   "</div>");
               });
@@ -293,9 +452,17 @@ var todosArt = (function(){
                //---------------json para los resultados del index------------------------------------
                var context=bd_result_index;
                var templateCompile = contTemplate(context);
-               $('.fila1').html(templateCompile);
+               $(".fila1").html(templateCompile);
          })();
        }
+
+
+
+
+
+
+
+
 
 
 
@@ -311,24 +478,8 @@ var todosArt = (function(){
          return result_;
        }
 
-
-        //-------------------color para cada cateogria------------------
-        this.colorCategoria_=function(cat_){
-          var catSel=cat_;
-          var color_='fff';
-          var categ_=bd_categorias.categorias;
-
-              for(var i=0 ; i< categ_.length ; i++){
-                if(categ_[i].categoria==catSel){
-                  color_=categ_[i].colorFondo;
-                }
-              }
-            return color_;
-        }
-
-
-        //---------------------scroll para nav fixed-----------------------
-        this.defineContHead_ = function(event){
+      //---------------------scroll para nav fixed-----------------------
+      this.defineContHead_ = function(event){
                 var bod_=document.getElementById("body_");
                 var wb_=bod_.style.width;
                 var hb_=bod_.style.height;
@@ -338,8 +489,8 @@ var todosArt = (function(){
                 //console.log(cImgw_,cImgh_);
         }
 
-        //---------------------scroll para nav fixed-----------------------
-        this.scrollBody_ = function(cont_){
+      //---------------------scroll para nav fixed-----------------------
+      this.scrollBody_ = function(cont_){
               var bod_cont=cont_;
               var y =  bod_cont.scrollTop;
               if(y>100){
@@ -374,7 +525,6 @@ var todosArt = (function(){
           }
         }
 
-
         //-----------------get de total de videos-por categoria o nombre----------------
         var get_videosPorCategoria_ = function(cate_){
             var vid_=[];
@@ -390,8 +540,6 @@ var todosArt = (function(){
             return vid_;
         }
 
-
-
        //-----------------------------
         this.modulo_1=function(){
           $(function () {
@@ -402,12 +550,9 @@ var todosArt = (function(){
                 };
 
                 var templateCompile = contTemplate(context);
-                $('.cont_template_1').html(templateCompile);
+                $(".cont_template_1").html(templateCompile);
           });
         }
-
-
-
 
         //----------------------------------------------
          this.modulo_listarArtistas_=function(){
@@ -416,11 +561,9 @@ var todosArt = (function(){
              var templateObjArtista = Handlebars.compile(templateObjetoLista);
              var context={"val1": get_Artistas_()};  //get de total de artistas
              var compileHTML1 = templateObjArtista(context);
-             $('.contenedorLista').html(compileHTML1);
+             $(".contenedorLista").html(compileHTML1);
            });
          }
-
-
 
          //------------------------ver resultado por opcion seleccionada de artistas--------------
         this.seleccionarResult=function(this_){
@@ -433,8 +576,6 @@ var todosArt = (function(){
               }
           }
 
-
-
         //----------------------------------------------
         this.modulo_listarModulos_=function(result_){
            $(document).ready(function(){
@@ -443,7 +584,7 @@ var todosArt = (function(){
               var context={"val1": result_};
               var theCompiledHtml = theTemplate(context);
               //var theCompiledHtml = theTemplate(bd.categoria[0]);
-              $('.listaModulosResult').html(theCompiledHtml);
+              $(".listaModulosResult").html(theCompiledHtml);
 
 
            });
@@ -457,9 +598,7 @@ var todosArt = (function(){
 
      }//------------fin de objeto:todosArt-----------
 
-
      return todosArt;  //return objeto function
-
 
 }());
 //-----------------------
@@ -469,12 +608,11 @@ var todosArt = (function(){
 
 
 $(document).ready(function(){
-
         //---------------------defino objeto-----------------------------------
         var AF = new todosArt(bd_final);
 
         //--------------active nav scroll------------
-        $(document).on('scroll',function(){
+        $(document).on("scroll",function(){
             var body_ = document.getElementById("body_");
             body_.onscroll=function(){  AF.scrollBody_(body_);  }
         });

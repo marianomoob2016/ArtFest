@@ -101,8 +101,6 @@
 
 
 
-
-
                   <!-- .......................sidebar index...................................-->
 
                   <div id="contModalAside" class="col s12 m12 l4">
@@ -165,7 +163,7 @@
                                         <!--.................... modulo de resultado grande...................-->
                                         <div class="contGrandeResult col s12 m12 l8">
                                                 <div class="contGrandeResult_moduloCont">
-                                                    <a href="#!" target="_self" title="">
+                                                    {{moduloResult_index_linkPost this.categorias}}
                                                         <img src="{{srcImg}}"/>
                                                         <div class="contGrandeResult_moduloContfondo_opacity"></div>
                                                         <div class="contGrandeResult_moduloContfondo_cont_info">
@@ -182,7 +180,7 @@
                                       <!--.................... modulo de resultado chico................-->
                                         <div class="contChicoResult col s12 m12 l4">
                                           <div class="contChicoResult_moduloCont">
-                                              <a href="#!" target="_self" title="">
+                                             {{moduloResult_index_linkPost this.categorias}}
                                                   <img src="{{srcImg}}"/>
                                                   <div class="contChicoResult_moduloContfondo_opacity"></div>
                                                   <div class="contChicoResult_moduloContfondo_cont_info">
@@ -209,7 +207,7 @@
                                 </div>
                                 <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
                                       <div class="contGrandeResult_moduloCont">
-                                          <a href="#!" target="_self" title="">
+                                          {{moduloResult_index_linkPost this.categorias}}
                                               <img src="{{srcImg}}"/>
                                               <div class="contGrandeResult_moduloContfondo_opacity"></div>
                                               <div class="contGrandeResult_moduloContfondo_cont_info">
@@ -226,7 +224,7 @@
                                   <!--.................... modulo de resultado chico................-->
                                     <div class="contChicoResult col s12 m12 l4">
                                       <div class="contChicoResult_moduloCont">
-                                          <a href="#!" target="_self" title="">
+                                           {{moduloResult_index_linkPost this.categorias}}
                                               <img src="{{srcImg}}"/>
                                               <div class="contChicoResult_moduloContfondo_opacity"></div>
                                               <div class="contChicoResult_moduloContfondo_cont_info">

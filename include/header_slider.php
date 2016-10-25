@@ -36,59 +36,32 @@
 
 
 
-
         <!-- ...............................modulo dinamico de destacados.............................................-->
+        <script id="template_destacado_index" type="text/x-handlebars-template">
+              {{#each videos}}
+              {{#ifCond @index '<' 4}}
+                 <li class="col s12 m6 l3">
+                     <div class="cont_destacado_header_moduloCont">
+                             {{ moduloDestacado_index_linkPost this.categorias }}
+                             <img src="{{srcImg}}" alt=""/>
+                             <div class="cont_destacado_header_moduloCont_fondo_opacity{{@key}}"></div>
+                             <div class="cont_info_destacado_header">
+                               {{#each this.categorias}}
+                                    {{moduloDestacado_index this.cat}}
+                               {{/each}}
+                               <p>{{titulo}}</p>
+                             </div>
+                         </a>
+                     </div>
+                 </li>
+                 {{/ifCond}}
+              {{/each}}
+        </script>
+
+
+        <!-- ..........contenido de resultado de destacados index...................... -->
         <div id="cont_destacado_header" class="col s12 m12 l12">
-          <ul class="row">
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado01.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity1"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#f4206a; color:#fff;">Belleza</div>
-                          <p>Probó los productos de belleza y ella misma te muestra los resultados.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado02.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity2"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>Dai Hernández trollea a los artistas con la broma de Fernet Branca.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado03.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity3"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="col s12 m6 l3">
-                <div class="cont_destacado_header_moduloCont">
-                    <a href="#!" target="_self" title="">
-                        <img src="img/template/destacado04.jpg"/>
-                        <div class="cont_destacado_header_moduloCont_fondo_opacity4"></div>
-                        <div class="cont_info_destacado_header">
-                          <div class="cont_destacado_header_moduloCont_item1" style="background:#ffff01; color:#333;">Humor</div>
-                          <p>ElRubius se busca en Google y no puede creer lo que dicen de él.</p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-          </ul>
+            <ul class="row"></ul>
         </div>
 
   </header>
