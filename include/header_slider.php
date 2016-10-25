@@ -47,7 +47,7 @@
                              <div class="cont_destacado_header_moduloCont_fondo_opacity{{@key}}"></div>
                              <div class="cont_info_destacado_header">
                                {{#each this.categorias}}
-                                    {{moduloDestacado_index this.cat}}
+                                    {{moduloDestacado_index this.categorias}}
                                {{/each}}
                                <p>{{titulo}}</p>
                              </div>

@@ -108,7 +108,7 @@
                             <div id="contAsideUp" class="col s12 m12 l12">
 
                             </div>
-
+                            
                             <div id="contAsideBotton" class="col s12 m12 l12">
                                 <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
                                 <div class="contAsideBotton_fondo_opacity"></div>
@@ -168,7 +168,7 @@
                                                         <div class="contGrandeResult_moduloContfondo_opacity"></div>
                                                         <div class="contGrandeResult_moduloContfondo_cont_info">
                                                           {{#each categorias}}
-                                                               {{moduloResult_grande this.cat}}
+                                                               {{moduloResult_grande this.categorias}}
                                                           {{/each}}
                                                           <h1>{{titulo}}</h1>
                                                           <p>{{subTit}}</p>
@@ -185,7 +185,7 @@
                                                   <div class="contChicoResult_moduloContfondo_opacity"></div>
                                                   <div class="contChicoResult_moduloContfondo_cont_info">
                                                     {{#each categorias}}
-                                                         {{moduloResult_chico this.cat}}
+                                                         {{moduloResult_chico this.categorias}}
                                                     {{/each}}
                                                     <h1>{{titulo}}</h1>
                                                     <p>{{subTit}}</p>
@@ -212,7 +212,7 @@
                                               <div class="contGrandeResult_moduloContfondo_opacity"></div>
                                               <div class="contGrandeResult_moduloContfondo_cont_info">
                                                 {{#each categorias}}
-                                                     {{moduloResult_grande this.cat}}
+                                                     {{moduloResult_grande this.categorias}}
                                                 {{/each}}
                                                 <h1>{{titulo}}</h1>
                                                 <p>{{subTit}}</p>
@@ -229,7 +229,7 @@
                                               <div class="contChicoResult_moduloContfondo_opacity"></div>
                                               <div class="contChicoResult_moduloContfondo_cont_info">
                                                 {{#each categorias}}
-                                                     {{moduloResult_chico this.cat}}
+                                                     {{moduloResult_chico this.categorias}}
                                                 {{/each}}
                                                 <h1>{{titulo}}</h1>
                                                 <p>{{subTit}}</p>

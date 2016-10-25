@@ -96,102 +96,70 @@ var bd_result_index = {"videos":[
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1700",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video02.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","gamers"]
   },{
        id:"20161019",
        hora:"1600",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video03.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","belleza"]
   },{
        id:"20161019",
        hora:"1500",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video04.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1400",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video05.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1300",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]},
-                          {cat:[{nombre : "gamers"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1200",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video02.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1100",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video03.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]},
-                          {cat:[{nombre : "gamers"}]}
-                     ]
+       categorias :  ["humor","lifestyle","gamers","belleza"]
   },{
        id:"20161019",
        hora:"1000",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video04.jpg",
-       categorias :  [
-                         {cat:[{nombre : "humor"}]},
-                         {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"0900",
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video05.jpg",
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   }
 ]};
 
@@ -210,10 +178,7 @@ var bd_result_destacado_index = {"videos":[
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
        destacadoPos:10,
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","gamers"]
   },{
        id:"20161019",
        hora:"1700",
@@ -221,10 +186,7 @@ var bd_result_destacado_index = {"videos":[
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video02.jpg",
        destacadoPos:8,
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle","gamers","belleza"]
   },{
        id:"20161019",
        hora:"1700",
@@ -232,10 +194,7 @@ var bd_result_destacado_index = {"videos":[
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video03.jpg",
        destacadoPos:4,
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle"]
   },{
        id:"20161019",
        hora:"1500",
@@ -243,10 +202,7 @@ var bd_result_destacado_index = {"videos":[
        subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video04.jpg",
        destacadoPos:2,
-       categorias :  [
-                          {cat:[{nombre : "humor"}]},
-                          {cat:[{nombre : "lifestyle"}]}
-                     ]
+       categorias :  ["humor","lifestyle","belleza"]
   }
 ]};
 
@@ -390,20 +346,20 @@ var todosArt = (function(){
         //-----------------------------------------------------------------
         this.listarDest_index=function(){
           (function() {
-                 Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
+                Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
                      return new Handlebars.SafeString("<a href='post.php?id="+this.id+'&hora='+this.hora+"' target='_self' title=''>");
-                 });
+                });
 
-                 Handlebars.registerHelper("moduloDestacado_index", function(value){
-                            return new Handlebars.SafeString(
-                            "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
-                              colorFondoPorCategoria_(value[0].nombre)+
-                            "; color:#"+
-                              colorTextoPorCategoria_(value[0].nombre)+
-                            ";'>"+
-                              value[0].nombre +
-                              "</div>"
-                            );
+                Handlebars.registerHelper("moduloDestacado_index", function(value){
+                              return new Handlebars.SafeString(
+                              "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
+                                colorFondoPorCategoria_(this)+
+                              "; color:#"+
+                                colorTextoPorCategoria_(this)+
+                              ";'>"+
+                                this +
+                                "</div>"
+                              );
                  });
 
                  var template_ = document.getElementById("template_destacado_index").innerHTML;
@@ -428,22 +384,22 @@ var todosArt = (function(){
               Handlebars.registerHelper("moduloResult_chico", function(value) {
                 return new Handlebars.SafeString(
                   "<div class='contChicoResult_moduloContfondo_cont_info_item1' style='background:#"+
-                    colorFondoPorCategoria_(value[0].nombre)+
+                    colorFondoPorCategoria_(this)+
                   "; color:#"+
-                    colorTextoPorCategoria_(value[0].nombre)+
+                    colorTextoPorCategoria_(this)+
                   ";'>"+
-                    value[0].nombre +
+                    this+
                   "</div>");
               });
 
               Handlebars.registerHelper("moduloResult_grande", function(value) {
                 return new Handlebars.SafeString(
                   "<div class='contGrandeResult_moduloContfondo_cont_info_item1' style='background:#"+
-                     colorFondoPorCategoria_(value[0].nombre)+
+                     colorFondoPorCategoria_(this)+
                   "; color:#"+
-                     colorTextoPorCategoria_(value[0].nombre)+
+                     colorTextoPorCategoria_(this)+
                   ";'>"+
-                    value[0].nombre +
+                     this+
                   "</div>");
               });
 
