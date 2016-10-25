@@ -333,14 +333,10 @@
 
 
 
+     <!-- ......................................................... -->
 
-<!-- ..................footer del document y footer de categoria......................... -->
-<?php
-    require_once('include/footer.php');
-?>
+     <?php
+        require_once('include/footer.php');
+     ?>
 
-
-
-<?php
-    require_once('include/footer_body.php');
-?>
+     <!-- ......................................................... -->

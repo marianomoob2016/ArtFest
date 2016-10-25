@@ -1,16 +1,18 @@
 
 
 <!-- .....................header del document y nav.................................... -->
-<?php
-    require_once('include/head.php');
-?>
+    <?php
+        require_once('include/head.php');
+    ?>
+
+
 
 
 
 <!-- ........................header slider................................. -->
-<?php
-    require_once('include/header_slider.php');
-?>
+    <?php
+        require_once('include/header_slider.php');
+    ?>
 
 
 
@@ -21,8 +23,10 @@
 
 
 
+
           <div class="col s12 m12 l12">
             <div id="contModalSubHead" class="row">
+
 
 
 
@@ -145,7 +149,8 @@
              <!-- ...................................modulo de resultado A....................................................-->
              <script id="template_ContChicoResult" type="text/x-handlebars-template">
               {{#each videos}}
-              {{#ifCond @index '<' 5}}
+                {{#ifCond @index '<' 5}}
+
                                 {{#ifCond @index '==' 2}}
                                         <!-- .........modulo conectate en posicion 3 antes de seguir con el each.....................-->
                                         <div class="contChicoResult col s12 m12 l4">
@@ -196,58 +201,94 @@
                                           </div>
                                         </div>
                               {{/ifCond}}
-            {{else}}
-            <!-- mayor a 5 resultados-->
-                          {{#ifCond @index '==' 8}}
-                                <div class="contChicoResult col s12 m12 l4">
-                                        <div class="contChicoResult_moduloPopUp_Aviso">
-                                            <a href="#!" alt="">
-                                                <img src="img/template/bot_aviso.jpg"/>
-                                                <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
-                                            </a>
-                                        </div>
-                                </div>
-                                <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
-                                      <div class="contGrandeResult_moduloCont">
-                                          <a href="#!" target="_self" title="">
-                                              <img src="{{srcImg}}"/>
-                                              <div class="contGrandeResult_moduloContfondo_opacity"></div>
-                                              <div class="contGrandeResult_moduloContfondo_cont_info">
-                                                {{#each categorias}}
-                                                     {{moduloResult_grande this.cat}}
-                                                {{/each}}
-                                                <h1>{{titulo}}</h1>
-                                                <p>{{subTit}}</p>
-                                              </div>
-                                          </a>
-                                      </div>
-                                </div>
-                          {{else}}
-                                  <!--.................... modulo de resultado chico................-->
-                                    <div class="contChicoResult col s12 m12 l4">
-                                      <div class="contChicoResult_moduloCont">
-                                          <a href="#!" target="_self" title="">
-                                              <img src="{{srcImg}}"/>
-                                              <div class="contChicoResult_moduloContfondo_opacity"></div>
-                                              <div class="contChicoResult_moduloContfondo_cont_info">
-                                                {{#each categorias}}
-                                                     {{moduloResult_chico this.cat}}
-                                                {{/each}}
-                                                <h1>{{titulo}}</h1>
-                                                <p>{{subTit}}</p>
-                                              </div>
-                                          </a>
-                                      </div>
-                                    </div>
-                          {{/ifCond}}
-              {{/ifCond}}
+                    {{/ifCond}}
               {{/each}}
              </script>
-             <!-- contenedor para modulos de resultado index-->
-             <div class="fila1"></div>
+             <div class="fila1">
+                                       
+            </div>
 
 
+            <!-- ...................................modulo de resultado B....................................................-->
+            <div class="fila2">
+                  <!-- ................3 videos chicos................. -->
+                  <div class="contChicoResult col s12 m12 l4">
+                        <div class="contChicoResult_moduloCont">
+                            <a href="#!" target="_self" title="">
+                                <img src="img/template/video01.jpg"/>
+                                <div class="contChicoResult_moduloContfondo_opacity"></div>
+                                <div class="contChicoResult_moduloContfondo_cont_info">
+                                  <div class="contChicoResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
+                                  <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
+                                  <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
+                                </div>
+                            </a>
+                        </div>
+                  </div>
+                  <div class="contChicoResult col s12 m12 l4">
+                        <div class="contChicoResult_moduloCont">
+                            <a href="#!" target="_self" title="">
+                                <img src="img/template/video02.jpg"/>
+                                <div class="contChicoResult_moduloContfondo_opacity"></div>
+                                <div class="contChicoResult_moduloContfondo_cont_info">
+                                  <div class="contChicoResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
+                                  <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
+                                  <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
+                                </div>
+                            </a>
+                        </div>
+                  </div>
+                  <div class="contChicoResult col s12 m12 l4">
+                      <div class="contChicoResult_moduloCont">
+                          <a href="#!" target="_self" title="">
+                              <img src="img/template/video03.jpg"/>
+                              <div class="contChicoResult_moduloContfondo_opacity"></div>
+                              <div class="contChicoResult_moduloContfondo_cont_info">
+                                <div class="contChicoResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
+                                <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
+                                <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- ............................. -->
+                  <div class="contChicoResult col s12 m12 l4">
+                          <div class="contChicoResult_moduloPopUp_Aviso">
+                              <a href="#!" alt="">
+                                  <img src="img/template/bot_aviso.jpg"/>
+                                  <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
+                              </a>
+                          </div>
+                  </div>
 
+                  <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
+                        <div class="contGrandeResult_moduloCont">
+                            <a href="#!" target="_self" title="">
+                                <img src="img/template/video05.jpg"/>
+                                <div class="contGrandeResult_moduloContfondo_opacity"></div>
+                                <div class="contGrandeResult_moduloContfondo_cont_info">
+                                  <div class="contGrandeResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
+                                  <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
+                                  <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
+                                </div>
+                            </a>
+                        </div>
+                  </div>
+                  <div class="contChicoResult  col s12 m12 l4">
+                      <div class="contChicoResult_moduloCont">
+                          <a href="#!" target="_self" title="">
+                              <img src="img/template/video04.jpg"/>
+                              <div class="contChicoResult_moduloContfondo_opacity"></div>
+                              <div class="contChicoResult_moduloContfondo_cont_info">
+                                <div class="contChicoResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
+                                <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
+                                <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+
+           </div>
           </div>
          </div>
          <!-- .......................................................... -->
@@ -263,13 +304,7 @@
 
 
 
-<!-- ..................footer del document y footer de index......................... -->
-<?php
-    require_once('include/footer.php');
-?>
-
-<script src="js/function_index.js" type="text/javascript" charset="utf-8"></script>
-
-<?php
-    require_once('include/footer_body.php');
-?>
+     <!-- ..................footer del document y footer de index......................... -->
+     <?php
+        require_once('include/footer.php');
+     ?>
