@@ -103,13 +103,42 @@
 
                   <!-- .......................sidebar index...................................-->
 
+                  <!-- ...............................modulo dinamico de destacados.............................................-->
+                  <script id="template_destacado_index_sideBar" type="text/x-handlebars-template">
+                        {{#each videos}}
+                          {{#ifCond @index '==' 4}}
+                             <img src="{{srcImgDestacado}}" title="Destacado"/>
+                             <div class="contAsideBotton_fondo_opacity"></div>
+                             <div class="contAsideBotton_info">
+                                   <h1>
+                                     {{#each this.autores}}
+                                          {{moduloDestacado_index_autores this.autores}}
+                                     {{/each}}
+                                   </h1>
+                                   <h4>
+                                   {{#each this.categorias}}
+                                        {{moduloDestacado_index this.categorias}}
+                                   {{/each}}
+                                   </h4>
+                                   <p>{{titulo}}</p>
+                               <a href="{{ moduloDestacado_index_linkPost_sideBar this.categorias }}" title="" class="waves-effect waves-light btn">Leer más</a>
+                             </div>
+                          {{/ifCond}}
+                        {{/each}}
+                  </script>
+
+
                   <div id="contModalAside" class="col s12 m12 l4">
 
                             <div id="contAsideUp" class="col s12 m12 l12">
 
                             </div>
-                            
+
                             <div id="contAsideBotton" class="col s12 m12 l12">
+
+                            </div>
+
+                            <!--div id="contAsideBotton" class="col s12 m12 l12">
                                 <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
                                 <div class="contAsideBotton_fondo_opacity"></div>
                                 <div class="contAsideBotton_info">
@@ -118,7 +147,11 @@
                                       <p>Entrevistamos a Dani para que nos cuente cómo es su vida desde que es estrella en las redes. ¿Qué pensarán su familia y sus amigos?</p>
                                   <a href="#!" title="" class="waves-effect waves-light btn">Leer más</a>
                                 </div>
-                            </div>
+                            </div-->
+
+
+
+
                   </div>
 
 
@@ -143,44 +176,89 @@
              <!-- ...................................modulo de resultado A....................................................-->
              <script id="template_ContChicoResult" type="text/x-handlebars-template">
               {{#each videos}}
-              {{#ifCond @index '<' 5}}
-                                {{#ifCond @index '==' 2}}
-                                        <!-- .........modulo conectate en posicion 3 antes de seguir con el each.....................-->
-                                        <div class="contChicoResult col s12 m12 l4">
-                                                <div class="contChicoResult_moduloPopUp_Conectate">
-                                                    <h1>Conectate</h1>
-                                                    <div class="col s12 m12 l2 center iconCont">
-                                                        <div class="row ">
-                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
-                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
-                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+              {{#ifCond @index '<' 10}}
+                  {{#ifCond @index '<' 5}}
+                                    {{#ifCond @index '==' 2}}
+                                            <!-- .........modulo conectate en posicion 3 antes de seguir con el each.....................-->
+                                            <div class="contChicoResult col s12 m12 l4">
+                                                    <div class="contChicoResult_moduloPopUp_Conectate">
+                                                        <h1>Conectate</h1>
+                                                        <div class="col s12 m12 l2 center iconCont">
+                                                            <div class="row ">
+                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
+                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                        </div>
+                                            </div>
 
-                                        <!--.................... modulo de resultado grande...................-->
-                                        <div class="contGrandeResult col s12 m12 l8">
-                                                <div class="contGrandeResult_moduloCont">
-                                                    {{moduloResult_index_linkPost this.categorias}}
-                                                        <img src="{{srcImg}}"/>
-                                                        <div class="contGrandeResult_moduloContfondo_opacity"></div>
-                                                        <div class="contGrandeResult_moduloContfondo_cont_info">
-                                                          {{#each categorias}}
-                                                               {{moduloResult_grande this.categorias}}
-                                                          {{/each}}
-                                                          <h1>{{titulo}}</h1>
-                                                          <p>{{subTit}}</p>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                        </div>
-                                {{else}}
+                                            <!--.................... modulo de resultado grande...................-->
+                                            <div class="contGrandeResult col s12 m12 l8">
+                                                    <div class="contGrandeResult_moduloCont">
+                                                        <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
+                                                            <img src="{{srcImg}}"/>
+                                                            <div class="contGrandeResult_moduloContfondo_opacity"></div>
+                                                            <div class="contGrandeResult_moduloContfondo_cont_info">
+                                                              {{#each categorias}}
+                                                                   {{moduloResult_grande this.categorias}}
+                                                              {{/each}}
+                                                              <h1>{{titulo}}</h1>
+                                                              <p>{{subTit}}</p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                    {{else}}
+                                          <!--.................... modulo de resultado chico................-->
+                                            <div class="contChicoResult col s12 m12 l4">
+                                              <div class="contChicoResult_moduloCont">
+                                                 <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
+                                                      <img src="{{srcImg}}"/>
+                                                      <div class="contChicoResult_moduloContfondo_opacity"></div>
+                                                      <div class="contChicoResult_moduloContfondo_cont_info">
+                                                        {{#each categorias}}
+                                                             {{moduloResult_chico this.categorias}}
+                                                        {{/each}}
+                                                        <h1>{{titulo}}</h1>
+                                                        <p>{{subTit}}</p>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                  {{/ifCond}}
+                {{else}}
+                <!-- mayor a 5 resultados-->
+                              {{#ifCond @index '==' 8}}
+                                    <div class="contChicoResult col s12 m12 l4">
+                                            <div class="contChicoResult_moduloPopUp_Aviso">
+                                                <a href="#!" alt="">
+                                                    <img src="img/template/bot_aviso.jpg"/>
+                                                    <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
+                                                </a>
+                                            </div>
+                                    </div>
+                                    <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
+                                          <div class="contGrandeResult_moduloCont">
+                                              <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
+                                                  <img src="{{srcImg}}"/>
+                                                  <div class="contGrandeResult_moduloContfondo_opacity"></div>
+                                                  <div class="contGrandeResult_moduloContfondo_cont_info">
+                                                    {{#each categorias}}
+                                                         {{moduloResult_grande this.categorias}}
+                                                    {{/each}}
+                                                    <h1>{{titulo}}</h1>
+                                                    <p>{{subTit}}</p>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                    </div>
+                              {{else}}
                                       <!--.................... modulo de resultado chico................-->
                                         <div class="contChicoResult col s12 m12 l4">
                                           <div class="contChicoResult_moduloCont">
-                                             {{moduloResult_index_linkPost this.categorias}}
+                                               <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
                                                   <img src="{{srcImg}}"/>
                                                   <div class="contChicoResult_moduloContfondo_opacity"></div>
                                                   <div class="contChicoResult_moduloContfondo_cont_info">
@@ -194,50 +272,7 @@
                                           </div>
                                         </div>
                               {{/ifCond}}
-            {{else}}
-            <!-- mayor a 5 resultados-->
-                          {{#ifCond @index '==' 8}}
-                                <div class="contChicoResult col s12 m12 l4">
-                                        <div class="contChicoResult_moduloPopUp_Aviso">
-                                            <a href="#!" alt="">
-                                                <img src="img/template/bot_aviso.jpg"/>
-                                                <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
-                                            </a>
-                                        </div>
-                                </div>
-                                <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
-                                      <div class="contGrandeResult_moduloCont">
-                                          {{moduloResult_index_linkPost this.categorias}}
-                                              <img src="{{srcImg}}"/>
-                                              <div class="contGrandeResult_moduloContfondo_opacity"></div>
-                                              <div class="contGrandeResult_moduloContfondo_cont_info">
-                                                {{#each categorias}}
-                                                     {{moduloResult_grande this.categorias}}
-                                                {{/each}}
-                                                <h1>{{titulo}}</h1>
-                                                <p>{{subTit}}</p>
-                                              </div>
-                                          </a>
-                                      </div>
-                                </div>
-                          {{else}}
-                                  <!--.................... modulo de resultado chico................-->
-                                    <div class="contChicoResult col s12 m12 l4">
-                                      <div class="contChicoResult_moduloCont">
-                                           {{moduloResult_index_linkPost this.categorias}}
-                                              <img src="{{srcImg}}"/>
-                                              <div class="contChicoResult_moduloContfondo_opacity"></div>
-                                              <div class="contChicoResult_moduloContfondo_cont_info">
-                                                {{#each categorias}}
-                                                     {{moduloResult_chico this.categorias}}
-                                                {{/each}}
-                                                <h1>{{titulo}}</h1>
-                                                <p>{{subTit}}</p>
-                                              </div>
-                                          </a>
-                                      </div>
-                                    </div>
-                          {{/ifCond}}
+                  {{/ifCond}}
               {{/ifCond}}
               {{/each}}
              </script>

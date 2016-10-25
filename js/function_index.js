@@ -5,6 +5,7 @@ $(document).ready(function(){
         //---------lista los resultados en el index------
         AF_index.listarPost_index();
         AF_index.listarDest_index();
+        AF_index.listarDest_index_sideBar();
 
         //---------------------
         //window.addEventListener('resize', function(event){
