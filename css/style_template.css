@@ -423,7 +423,7 @@ body {
           .contChicoResult .contChicoResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
           .contChicoResult .contChicoResult_moduloCont img{  position:relative; width:120%!important; }
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
-          .contChicoResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px;}
+          .contChicoResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px; margin-left:5px;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info{ position: absolute; top: 0;  left: 0; margin: 20px 30px; height: calc(100% - 40px);  width: calc(100% - 60px); }
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{width:100%; font-size:20px; line-height:25px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; }
@@ -462,7 +462,7 @@ body {
           .contGrandeResult .contGrandeResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
           .contGrandeResult .contGrandeResult_moduloCont img{  position:relative; width:120%!important; }
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
-          .contGrandeResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px;}
+          .contGrandeResult_moduloContfondo_cont_info_item1{display: block;   float: left; padding: 1px 10px; margin-left:5px;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info{ position: absolute; bottom: 0;  left: 0; margin: 20px 30px; width: calc(100% - 60px); }
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{width:100%; font-size:35px; line-height:40px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; font-size:20px; line-height:22px; margin:10px 0px;}

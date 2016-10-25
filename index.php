@@ -147,9 +147,67 @@
            <div id="contModalResult" class="row">
 
              <!-- ...................................modulo de resultado A....................................................-->
+             <script id="template_ContChicoResult" type="text/x-handlebars-template">
+              {{#each videos}}
+                {{#ifCond @index '<' 5}}
+
+                                {{#ifCond @index '==' 2}}
+                                        <!-- .........modulo conectate en posicion 3 antes de seguir con el each.....................-->
+                                        <div class="contChicoResult col s12 m12 l4">
+                                                <div class="contChicoResult_moduloPopUp_Conectate">
+                                                    <h1>Conectate</h1>
+                                                    <div class="col s12 m12 l2 center iconCont">
+                                                        <div class="row ">
+                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
+                                                          <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                        <!--.................... modulo de resultado grande...................-->
+                                        <div class="contGrandeResult col s12 m12 l8">
+                                                <div class="contGrandeResult_moduloCont">
+                                                    <a href="#!" target="_self" title="">
+                                                        <img src="{{srcImg}}"/>
+                                                        <div class="contGrandeResult_moduloContfondo_opacity"></div>
+                                                        <div class="contGrandeResult_moduloContfondo_cont_info">
+                                                          {{#each categorias}}
+                                                               {{moduloResult_grande this.cat}}
+                                                          {{/each}}
+                                                          <h1>{{titulo}}</h1>
+                                                          <p>{{subTit}}</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                        </div>
+                                {{else}}
+                                      <!--.................... modulo de resultado chico................-->
+                                        <div class="contChicoResult col s12 m12 l4">
+                                          <div class="contChicoResult_moduloCont">
+                                              <a href="#!" target="_self" title="">
+                                                  <img src="{{srcImg}}"/>
+                                                  <div class="contChicoResult_moduloContfondo_opacity"></div>
+                                                  <div class="contChicoResult_moduloContfondo_cont_info">
+                                                    {{#each categorias}}
+                                                         {{moduloResult_chico this.cat}}
+                                                    {{/each}}
+                                                    <h1>{{titulo}}</h1>
+                                                    <p>{{subTit}}</p>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                        </div>
+                              {{/ifCond}}
+                    {{/ifCond}}
+              {{/each}}
+             </script>
              <div class="fila1">
+
                    <!-- ................3 videos chicos................. -->
-                   <div class="contChicoResult col s12 m12 l4">
+                   <!--div class="contChicoResult col s12 m12 l4">
                            <div class="contChicoResult_moduloCont">
                                <a href="#!" target="_self" title="">
                                    <img src="img/template/video01.jpg"/>
@@ -174,8 +232,8 @@
                                    </div>
                                </a>
                            </div>
-                   </div>
-                   <div class="contChicoResult col s12 m12 l4">
+                   </div-->
+                   <!--div class="contChicoResult col s12 m12 l4">
                            <div class="contChicoResult_moduloPopUp_Conectate">
                                <h1>Conectate</h1>
                                <div class="col s12 m12 l2 center iconCont">
@@ -187,6 +245,7 @@
                                    </div>
                                </div>
                            </div>
+                   </div-->
                            <!--div class="contChicoResult_moduloCont">
                                <a href="#!" target="_self" title="">
                                    <img src="img/template/video03.jpg"/>
@@ -198,9 +257,8 @@
                                    </div>
                                </a>
                            </div-->
-                   </div>
                    <!-- ..........................contenedor grande.......................... -->
-                   <div class="contGrandeResult col s12 m12 l8">
+                   <!--div class="contGrandeResult col s12 m12 l8">
                            <div class="contGrandeResult_moduloCont">
                                <a href="#!" target="_self" title="">
                                    <img src="img/template/video05.jpg"/>
@@ -238,7 +296,7 @@
                                    </div>
                                </a>
                            </div>
-                   </div>
+                   </div-->
             </div>
 
 
@@ -292,19 +350,8 @@
                                   <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
                               </a>
                           </div>
-                      <!--div class="contChicoResult_moduloCont">
-                          <a href="#!" target="_self" title="">
-                              <img src="img/template/video04.jpg"/>
-                              <div class="contChicoResult_moduloContfondo_opacity"></div>
-                              <div class="contChicoResult_moduloContfondo_cont_info">
-                                <div class="contChicoResult_moduloContfondo_cont_info_item1" style="background:#f4206a; color:#fff;">Belleza</div>
-                                <h1>Ellos la rompen en las redes y en la TV. Mirá el backstage acá.</h1>
-                                <p>Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.</p>
-                              </div>
-                          </a>
-                      </div-->
-
                   </div>
+
                   <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
                         <div class="contGrandeResult_moduloCont">
                             <a href="#!" target="_self" title="">

@@ -67,9 +67,9 @@
                 </div>
 
 
-                <div id="cont_post_section_video_info_youtuber_redSocial" class="col s12 m8 l8">
-                    <div  id="cont_post_section_video_info_youtuber_redSocial_tit" class="col s12 m6 l6" style="margin-bottom:10px;">Compartime:</div>
-                    <div id="cont_post_section_video_info_youtuber_redSocial_icon" class="col s12 m6 l6">
+                <div id="cont_post_section_video_info_youtuber_redSocial" class="col s12 m10 l8">
+                    <div  id="cont_post_section_video_info_youtuber_redSocial_tit" class="col s12 m4 l6" style="margin-bottom:10px;">Compartime:</div>
+                    <div id="cont_post_section_video_info_youtuber_redSocial_icon" class="col s12 m8 l6">
                        <div class="col s1 m1 l1"><a href="#!" alt="">   </a></div>
                        <div class="col s2 m2 l2"><a href="#!" alt=""> <i class="fa fa-facebook" aria-hidden="true"></i>  </a></div>
                        <div class="col s2 m2 l2"><a href="#!" alt=""> <i class="fa fa-twitter" aria-hidden="true"></i>   </a></div>
@@ -80,7 +80,7 @@
 
                      </div>
                </div>
-               <div class="col s12 m4 l4">
+               <div class="col s12 m10 l4">
 
                </div>
 
