@@ -13,12 +13,12 @@
 
                 <!-- .............menu desktop........... -->
                 <ul id="nav_desktop_cont" class="hide-on-med-and-down brand-logo center">
-                  <li><a href="categoria.php">Humor</a></li>
-                  <li><a href="#!">Belleza</a></li>
+                  <li><a href="categoria.php?cat=humor">Humor</a></li>
+                  <li><a href="categoria.php?cat=belleza">Belleza</a></li>
                   <!--li id="logo_nav">  <img src="img/template/logo_media_moob.jpg" class="img_logo_head" />  </li-->
-                  <li><a href="#!">Música</a></li>
-                  <li><a href="#!">Gamers</a></li>
-                  <li><a href="#!">ClubMediaFest</a></li>
+                  <li><a href="categoria.php?cat=musica">Música</a></li>
+                  <li><a href="categoria.php?cat=gamers">Gamers</a></li>
+                  <li><a href="categoria.php?cat=clubmediafest">ClubMediaFest</a></li>
                   <li>
                           <div id="icon_social_nav" class="">
                             <div class=""><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
@@ -38,11 +38,11 @@
                 <!-- ..............nav mobile............. -->
                 <ul class="side-nav" id="mobile-nav">
                   <li><a class="side-nav-link" href="index.php"><img src="img/template/logo_media_moob.jpg" class="img_logo_head_mobile_sidenav" /></a></li>
-                  <li><a class="side-nav-link" href="categoria.php">Humor</a></li>
-                  <li><a class="side-nav-link" href="#!">Belleza</a></li>
-                  <li><a class="side-nav-link" href="#!">Música</a></li>
-                  <li><a class="side-nav-link" href="#!">Gamers</a></li>
-                  <li><a class="side-nav-link" href="#!">ClubMediaFest</a></li>
+                  <li><a class="side-nav-link" href="categoria.php?cat=humor">Humor</a></li>
+                  <li><a class="side-nav-link" href="categoria.php?cat=belleza">Belleza</a></li>
+                  <li><a class="side-nav-link" href="categoria.php?cat=musica">Música</a></li>
+                  <li><a class="side-nav-link" href="categoria.php?cat=gamers">Gamers</a></li>
+                  <li><a class="side-nav-link" href="categoria.php?cat=clubmediafest">ClubMediaFest</a></li>
                   <li>
                           <div id="icon_social_nav_mobile" class="center">
                             <div class=""><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>

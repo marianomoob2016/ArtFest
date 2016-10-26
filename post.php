@@ -4,6 +4,19 @@
     require_once('include/head.php');
 ?>
 
+
+
+    <?php
+        if (isset($_GET['id'])) {
+          $fechaID = $_GET['id'];
+          echo $fechaID;
+        }
+        if (isset($_GET['hora'])) {
+          $horaID = $_GET['hora'];
+          echo $horaID;
+        }
+    ?>
+
 <!-- ......................................................... -->
 
 
@@ -200,6 +213,7 @@
     require_once('include/footer.php');
 ?>
 
+<script src="js/function_post.js" type="text/javascript" charset="utf-8"></script>
 
 
 <?php

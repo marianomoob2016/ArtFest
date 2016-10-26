@@ -9,6 +9,13 @@ $(document).ready(function(){
         AF_index.listarDest_index();
         AF_index.listarDest_index_sideBar();
 
+
+        //--------------active nav scroll------------
+        $(document).on("scroll",function(){
+            var body_ = document.getElementById("body_");
+            body_.onscroll=function(){  AF_index.scrollBody_(body_);  }
+        });
+
         //---------------------
         //window.addEventListener('resize', function(event){
              //AF.defineContHead_(event);

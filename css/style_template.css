@@ -540,7 +540,7 @@ body {
 
 /*---------------------------------------template categorias-------------------------------------------------------------*/
 
-#cont_categoria{ width:100%; float:none; margin:50px auto;}
+#cont_categoria{ width:100%; float:none; margin:100px auto 50px auto;}
 
       @media (min-width:1280px) {  #cont_categoria{ width:1280px; transition: width 1s;} }
       @media (min-width:1024px) AND (max-width:1280px) { #cont_categoria{ width:1024px; transition: width 1s;} }
@@ -550,7 +550,7 @@ body {
       @media (min-width:320px) AND (max-width:479px) {   #cont_categoria{ width:300px;  transition: width 1s;} }
 
 
-#cont_categoria_head h1{ font-weight: bold; color: #f4206a; font-size: 70px; }
+#cont_categoria_head h1{ font-weight: bold; color: #f4206a; font-size: 70px; text-transform: capitalize; }
 #cont_categoria_head .cont_categoria_head_navBar_subCategorias ul{}
 #cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li{ float: left; margin-left: 5px; margin-bottom: 5px;}
 #cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li a{    background: #f4206a;}
@@ -577,7 +577,7 @@ body {
 .result_post_01_contCat{ width:100%; height:30px;}
 .result_post_01_contCat_subCont{float: left; width: 100%; display: block;}
 .result_post_01_contCat_bot{ font-size:14px; line-height:16px; float:left; display: block; padding:4px 10px; background:#000; margin:0px 5px 5px 0px;}
-.result_post_01_contCat_subcat{font-size: 14px; line-height:22px; padding:4px 5px; float:left; }
+.result_post_01_contCat_subcat{font-size: 12px; line-height:12px; padding:4px 5px; float:left; display:block;}
 .result_post_01_contCat_subcat a{ color:#fff; }
 .result_post_01_contenido h1{ font-size: 25px; float:left;}
 .result_post_01_contenido p{ font-size: 16px; float:left; }
@@ -793,7 +793,7 @@ body {
 
 
 /*--------------------------cont_post----------------------*/
-#cont_post{ width:100%; float:none; margin:50px auto; min-height: 1200px;}
+#cont_post{ width:100%; float:none;  margin: 100px auto 50px auto;  min-height: 1200px;}
 
           @media (min-width:1280px) {  #cont_post{ width:1280px; transition: width 1s;} }
           @media (min-width:1024px) AND (max-width:1280px) { #cont_post{ width:1024px; transition: width 1s;} }

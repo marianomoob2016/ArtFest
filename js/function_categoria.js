@@ -5,6 +5,13 @@ $(document).ready(function(){
         //---------lista los resultados en el index------
 
         AF_cat.listarResult_Categoria();
+        AF_cat.listarResult_totalSubcat();
+        AF_cat.listarCategoria_navLik();
+
+
+        AF_cat.verNav();
+
+
 
 
 });
