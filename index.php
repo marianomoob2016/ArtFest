@@ -33,9 +33,57 @@
 
                   <div id="contModalCategoria" class="col s12 m12 l8">
 
+
+                            <script id="template_categoria_index" type="text/x-handlebars-template">
+                                {{#each categorias}}
+                                  {{#ifCond @index '<' 3}}
+                                     {{#ifCond @index '==' 0}}
+                                            <div class="contGrandeCat col s12 m12 l12">
+                                                  <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
+                                                      <img src="{{imgCategoria}}"/>
+                                                      <div class="contCat_fondo_opacity"></div>
+                                                      <div class="contInfoGrandeCat">
+                                                            <h1>{{categoria}}</h1>
+                                                            <p>{{infoCat}}</p>
+                                                            <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon"></div></div>
+                                                      </div>
+                                                  </a>
+                                            </div>
+                                       {{else}}
+                                            <div class="contChicoCat col s12 m12 l6" style="background:#{{colorFondo}}; ">
+                                                <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
+                                                    <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
+                                                          <h1>{{categoria}}</h1>
+                                                          <p>{{infoCat}}</p>
+                                                          <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div></div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                      {{/ifCond}}
+                                  {{/ifCond}}
+                              {{/each}}
+                          </script>
+
+                          <script id="template_categoria_index2" type="text/x-handlebars-template">
+                              {{#each categorias}}
+                                {{#ifCond @index '>' 2}}
+                                          <div class="contChicoCat col s12 m12 l12" style="background:#{{colorFondo}};">
+                                              <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
+                                                  <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
+                                                        <h1>{{categoria}}</h1>
+                                                        <p>{{infoCat}}</p>
+                                                        <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div></div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                {{/ifCond}}
+                            {{/each}}
+                        </script>
+
+
                           <div id="contCategoria1" class="col s12 m12 l8">
                                     <!-- ..........categoria 1 grande........ -->
-                                    <div class="contGrandeCat col s12 m12 l12">
+                                    <!--div class="contGrandeCat col s12 m12 l12">
                                           <a href="#!" target="_self" title="">
                                               <img src="img/template/categoria_club_media.jpg"/>
                                               <div class="contCat_fondo_opacity"></div>
@@ -45,9 +93,9 @@
                                                     <div class="contVidInfo"><p>70 Videos</p><div class="contVidInfo_icon"></div></div>
                                               </div>
                                           </a>
-                                    </div>
+                                    </div-->
                                     <!-- ..........categoria 2 chicos........ -->
-                                    <div class="contChicoCat col s12 m12 l6" style="background:#ffff01;">
+                                    <!--div class="contChicoCat col s12 m12 l6" style="background:#ffff01;">
                                         <a href="#!" target="_self" title="">
                                             <div class="contInfoChicoCat"  style="color:#000;">
                                                   <h1>Humor</h1>
@@ -64,12 +112,12 @@
                                                   <div class="contVidInfo"><p>70 Videos</p><div class="contVidInfo_icon"></div></div>
                                               </div>
                                           </a>
-                                    </div>
+                                    </div-->
                           </div>
 
                           <div  id="contCategoria2" class="col s12 m12 l4">
                                   <!-- ..........categoria 3 chicos....... -->
-                                  <div class="contChicoCat col s12 m12 l12" style="background:#f4206a;">
+                                  <!--div class="contChicoCat col s12 m12 l12" style="background:#f4206a;">
                                           <a href="#!" target="_self" title="">
                                               <div class="contInfoChicoCat">
                                                     <h1>Belleza</h1>
@@ -95,7 +143,7 @@
                                                       <div class="contVidInfo"><p>70 Videos</p><div class="contVidInfo_icon"></div></div>
                                                 </div>
                                           </a>
-                                  </div>
+                                  </div-->
                           </div>
                   </div>
 
@@ -137,20 +185,6 @@
                             <div id="contAsideBotton" class="col s12 m12 l12">
 
                             </div>
-
-                            <!--div id="contAsideBotton" class="col s12 m12 l12">
-                                <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
-                                <div class="contAsideBotton_fondo_opacity"></div>
-                                <div class="contAsideBotton_info">
-                                      <h1>Dai <br> Hernández</h1>
-                                      <h4>Humor argentino</h4>
-                                      <p>Entrevistamos a Dani para que nos cuente cómo es su vida desde que es estrella en las redes. ¿Qué pensarán su familia y sus amigos?</p>
-                                  <a href="#!" title="" class="waves-effect waves-light btn">Leer más</a>
-                                </div>
-                            </div-->
-
-
-
 
                   </div>
 

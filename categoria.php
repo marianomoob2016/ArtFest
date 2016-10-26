@@ -39,12 +39,88 @@
 
   <div id="cont_categoria_section"  class="col s12 m12 l12">
 
+
+    <script id="template_resultCategoria" type="text/x-handlebars-template">
+     {{#each videos}}
+     {{#ifCond @index '<' 7}}
+           {{#ifCond @index '%' 2}}
+               <div class="cont_categoria_section_result_post">
+                       <a href="" alt="" target="_self">
+                             <div class="result_post_01 col s12 m6 s6">
+                                 <div class="result_post_01_contenido">
+                                       <div class="result_post_01_contCat">
+                                         <div class="result_post_01_contCat_subCont">
+                                               {{#each categorias}}
+                                                     {{modulo_Categoria_resultado_cat this.categorias}}
+                                                {{/each}}
+                                          </div>
+                                          <div class="result_post_01_contCat_subCont">
+                                               {{#each subcat}}
+                                                    {{modulo_Categoria_resultado_subCat this.subcat}}
+                                               {{/each}}
+                                         </div>
+                                       </div>
+
+                                       <h1>{{titulo}}</h1>
+                                       <p>{{subTit}}</p>
+                                       <div class="result_post_01_contenido_icon"></div>
+                                 </div>
+                             </div>
+
+                             <div class="result_post_02 col s12 m6 s6">
+                                 <img src="{{srcImg}}" alt=""/>
+                                 <div class="result_post_02_contOpacity"></div>
+                             </div>
+                       </a>
+               </div>
+
+           {{else}}
+
+               <div class="cont_categoria_section_result_post">
+                       <a href="#!" alt="" target="_self">
+                             <div class="result_post_02 col s12 m6 s6">
+                                 <img src="{{srcImg}}" alt=""/>
+                                 <div class="result_post_02_contOpacity"></div>
+                             </div>
+
+                             <div class="result_post_01 col s12 m6 s6">
+                               <div class="result_post_01_contenido">
+                                     <div class="result_post_01_contCat">
+                                           <div class="result_post_01_contCat_subCont">
+                                                 {{#each categorias}}
+                                                       {{modulo_Categoria_resultado_cat this.categorias}}
+                                                  {{/each}}
+                                            </div>
+                                            <div class="result_post_01_contCat_subCont">
+                                                 {{#each subcat}}
+                                                      {{modulo_Categoria_resultado_subCat this.subcat}}
+                                                 {{/each}}
+                                           </div>
+                                     </div>
+
+                                     <h1>{{titulo}}</h1>
+                                     <p>{{subTit}}</p>
+                                     <div class="result_post_01_contenido_icon"></div>
+                               </div>
+                             </div>
+                       </a>
+               </div>
+
+         {{/ifCond}}
+      {{/ifCond}}
+
+     {{/each}}
+   </script>
+
+
+
+
     <!-- ...........resultados.............. -->
 
     <div class="cont_categoria_section_result col s12 m12 l8">
 
-          <div class="cont_categoria_section_result_post">
 
+          <!--div class="cont_categoria_section_result_post">
                   <a href="" alt="" target="_self">
                         <div class="result_post_01 col s12 m6 s6">
                             <div class="result_post_01_contenido">
@@ -63,11 +139,10 @@
                             <div class="result_post_02_contOpacity"></div>
                         </div>
                   </a>
-
-          </div>
+          </div-->
 
           <!-- fila2 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                   <a href="#!" alt="" target="_self">
                         <div class="result_post_02 col s12 m6 s6">
@@ -88,10 +163,11 @@
                         </div>
                   </a>
 
-          </div>
+          </div-->
+
 
           <!-- fila3 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                   <a href="#!" alt="" target="_self">
                         <div class="result_post_01 col s12 m6 s6">
@@ -112,10 +188,10 @@
                         </div>
                   </a>
 
-          </div>
+          </div-->
 
           <!-- fila4 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                   <a href="#!" alt="" target="_self">
                         <div class="result_post_02 col s12 m6 s6">
@@ -136,10 +212,10 @@
                         </div>
                   </a>
 
-          </div>
+          </div-->
 
           <!-- fila5 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                 <a href="#!" alt="" target="_self">
                       <div class="result_post_01 col s12 m6 s6">
@@ -160,10 +236,10 @@
                       </div>
                 </a>
 
-          </div>
+          </div-->
 
           <!-- fila6 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                 <a href="#!" alt="" target="_self">
                         <div class="result_post_02 col s12 m6 s6">
@@ -184,10 +260,10 @@
                         </div>
                   </a>
 
-          </div>
+          </div-->
 
           <!-- fila7 -->
-          <div class="cont_categoria_section_result_post">
+          <!--div class="cont_categoria_section_result_post">
 
                 <a href="#!" alt="" target="_self">
                       <div class="result_post_01 col s12 m6 s6">
@@ -208,7 +284,7 @@
                       </div>
                 </a>
 
-          </div>
+          </div-->
 
     </div>
 
@@ -339,7 +415,7 @@
     require_once('include/footer.php');
 ?>
 
-
+<script src="js/function_categoria.js" type="text/javascript" charset="utf-8"></script>
 
 <?php
     require_once('include/footer_body.php');
