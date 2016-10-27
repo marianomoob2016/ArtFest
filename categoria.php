@@ -1,3 +1,7 @@
+
+
+
+
 <!-- ......................................................... -->
 
 
@@ -6,19 +10,6 @@
     ?>
 
 
-
-    <!-- .............................. -->
-
-        <?php
-            if (isset($_GET['cat'])) {
-              $categoria = $_GET['cat'];
-              echo $categoria;
-            }
-            if (isset($_GET['subcat'])) {
-              $subCategoria = $_GET['subcat'];
-              echo $subCategoria;
-            }
-        ?>
 
 
 
@@ -35,9 +26,9 @@
            <h1 class="center" style="color:#{{colorFondo}};">{{categoria}}</h1>
            <div class="cont_categoria_head_navBar_subCategorias">
               <ul class="col s12 m12 l12">
-                 {{#each this.subCat}}
-                      {{modulo_categoria_subcat this.subCat }}
-                 {{/each}}
+                      {{#each this.subCat}}
+                          {{modulo_categoria_subcat this.subCat }}
+                      {{/each}}
               </ul>
            </div>
    </script>
@@ -47,29 +38,6 @@
 
 
 
-   <?php
-               try {
-                 	//Creamos la conexión PDO por medio de una instancia de su clase
-                 	$cnn = new PDO("mysql:host=localhost;dbname=bd_artfest","root","");
-                 	//Preparamos la consulta sql
-                 	$respuesta = $cnn->prepare("select * from lista_videos");
-                 	//Ejecutamos la consulta
-                 	$respuesta->execute();
-                 	$usuarios = [];
-
-                 	foreach($respuesta as $res){
-                      $usuarios[] = $res;
-                 	}
-                 	   //Hacemos una impresion del array en formato JSON.
-                 	   //$result_json= json_encode($usuarios);
-                     echo " - ".$res[0]." - ".$res[1]." - ".$res[2]." - ".$res[3]." - ".$res[4]." - ".$res[5]." - ".$res[6]." - ".$res[7]." - ".$res[8]." - ".$res[9];
-                     echo $res[10]." - ".$res[11]." - ".$res[12]." - ".$res[13]." - ".$res[14]." - ".$res[15]." - ".$res[16]." - ".$res[17]." - ".$res[18]." - ".$res[19];
-                     echo $res[20]." - ".$res[21]." - ".$res[22]." - ".$res[23]." - ".$res[24]." - ".$res[25]." - ".$res[26]." - ".$res[27];
-
-                   }catch(Exception $e){
-                   	// echo $e->getMessage();
-                   }
-           ?>
 
 
 
@@ -219,58 +187,8 @@
               {{/each}}
         </script>
 
+       <div class="cont_sideBar_Categorias col s12 m12 l12"> </div>
 
-      <div class="cont_sideBar_Categorias col s12 m12 l12">
-
-           <!--div class="cont_sideBar_Categorias_individual" style="background:#ffff01;">
-                 <a href="#!" target="_self" title="" style="color:#333;">
-                     <div class="cont_sideBar_Categorias_individual_info">
-                           <h1>Humor</h1>
-                           <p>Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.</p>
-                           <div class="cont_sideBar_Categorias_individual_info_vid">
-                               <p>70 Videos</p>
-                               <div class="cont_sideBar_Categorias_individual_info_vid_icon" style="background:#333;"></div>
-                           </div>
-                     </div>
-                 </a>
-           </div>
-           <div class="cont_sideBar_Categorias_individual"  style="background:#168ce6;">
-                 <a href="#!" target="_self" title="">
-                     <div class="cont_sideBar_Categorias_individual_info">
-                           <h1>Música</h1>
-                           <p>Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.</p>
-                           <div class="cont_sideBar_Categorias_individual_info_vid"><p>70 Videos</p><div class="cont_sideBar_Categorias_individual_info_vid_icon"></div></div>
-                     </div>
-                 </a>
-           </div>
-           <div class="cont_sideBar_Categorias_individual" style="background:#f4206a;">
-                 <a href="#!" target="_self" title="">
-                     <div class="cont_sideBar_Categorias_individual_info">
-                           <h1>Belleza</h1>
-                           <p>Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.</p>
-                           <div class="cont_sideBar_Categorias_individual_info_vid"><p>70 Videos</p><div class="cont_sideBar_Categorias_individual_info_vid_icon"></div></div>
-                     </div>
-                 </a>
-           </div>
-           <div class="cont_sideBar_Categorias_individual" style="background:#35df89;">
-               <a href="#!" target="_self" title="">
-                   <div class="cont_sideBar_Categorias_individual_info">
-                         <h1>Lifestyle</h1>
-                         <p>Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.</p>
-                         <div class="cont_sideBar_Categorias_individual_info_vid"><p>70 Videos</p><div class="cont_sideBar_Categorias_individual_info_vid_icon"></div></div>
-                   </div>
-               </a>
-           </div>
-           <div class="cont_sideBar_Categorias_individual" style="background:#fe4300;">
-               <a href="#!" target="_self" title="">
-                   <div class="cont_sideBar_Categorias_individual_info">
-                         <h1>Gamers</h1>
-                         <p>Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.</p>
-                         <div class="cont_sideBar_Categorias_individual_info_vid"><p>70 Videos</p><div class="cont_sideBar_Categorias_individual_info_vid_icon"></div></div>
-                   </div>
-               </a>
-           </div-->
-      </div>
 
     </div>
   </div>
@@ -302,8 +220,13 @@
 <?php
     require_once('include/footer.php');
 ?>
+<script>
+        var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>'
+        var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>'
+</script>
 
 <script src="js/function_categoria.js" type="text/javascript" charset="utf-8"></script>
+
 
 <?php
     require_once('include/footer_body.php');

@@ -95,7 +95,7 @@ var todosArt = (function(){
 
 
 
-        //------------------------------INDEX-------------------------------------
+//-------INDEX--------------INDEX-----------INDEX--------------INDEX------------INDEX-------------INDEX------------INDEX--------------INDEX---------INDEX-----------INDEX----
 
 
 
@@ -238,7 +238,12 @@ var todosArt = (function(){
 
 
 
-       //------------------------------CATEGORIA-------------------------------------
+
+
+ //-----------CATEGORIA-------------CATEGORIA-------------CATEGORIA------------CATEGORIA----------------CATEGORIA--------------CATEGORIA------------------CATEGORIA---------------
+
+
+
 
 
 
@@ -255,52 +260,52 @@ var todosArt = (function(){
 
 
        //------------------------------resultados para la seccion-----------------------------------
-       this.listarResult_Categoria=function(){
-         (function() {
-                Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                    return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                });
+       this.listarResult_Categoria=function(cat_,sub_){
+             $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (data){
+                if(data){
+                  //var dat=JSON.parse(data);
+                  console.log(data);
 
-                Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
-                              return new Handlebars.SafeString(
-                              "<div class='result_post_01_contCat_bot' style='background:#"+
-                                colorFondoPorCategoria_(this)+
-                              "; color:#"+
-                                colorTextoPorCategoria_(this)+
-                              ";'>"+
-                                this+
-                              "</div>"
-                            );
-                 });
-
-                 Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
-                             var res_="";
-
-                               for(var i=0;i<this.subcat.length;i++){
-                                     res_+=("&nbsp;&nbsp;#"+this.subcat[i]);
-                               }
-
-                               return new Handlebars.SafeString(
-                              "<div class='result_post_01_contCat_subcat'>"+
-                                 res_+
-                               "</div>"
-                             );
+                  Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
+                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
                   });
 
+                  Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
+                                return new Handlebars.SafeString(
+                                "<div class='result_post_01_contCat_bot' style='background:#"+
+                                  colorFondoPorCategoria_(this)+
+                                "; color:#"+
+                                  colorTextoPorCategoria_(this)+
+                                ";'>"+
+                                  this+
+                                "</div>"
+                              );
+                   });
+
+                   Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
+                               var res_="";
+
+                                 for(var i=0;i<this.subcat.length;i++){
+                                       res_+=("&nbsp;&nbsp;#"+this.subcat[i]);
+                                 }
+
+                                 return new Handlebars.SafeString(
+                                "<div class='result_post_01_contCat_subcat'>"+
+                                   res_+
+                                 "</div>"
+                               );
+                    });
 
 
-                var template_ = document.getElementById("template_resultCategoria").innerHTML;
-                var contTemplate = Handlebars.compile(template_);    ;
-                //---------------json para los resultados destacados del index-------------------
-                var context=bd_result_index;
-                var templateCompile = contTemplate(context);
-                $(".cont_categoria_section_result").html(templateCompile);
-
-          })();
+                  var template_ = document.getElementById("template_resultCategoria").innerHTML;
+                  var contTemplate = Handlebars.compile(template_);
+                  //---------------json para los resultados destacados del index-------------------
+                  var context=data;
+                  var templateCompile = contTemplate(context);
+                  $(".cont_categoria_section_result").html(templateCompile);
+          }
+        });
        }
-
-
-
 
 
 
@@ -308,32 +313,40 @@ var todosArt = (function(){
 
        //---------------------------lista de subcategorias en la categoria selccionada--------------------------------------
 
-           this.listarResult_totalSubcat=function(cat_){
-               (function() {
-                      console.log(cat_);
-                      Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
-                          return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+           this.listarResult_totalSubcat=function(cat_,sub_){
+                   $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
+                             if(data){
+                                  var dat=JSON.parse(data);
+                                  //console.log(dat);
+
+                                  Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
+                                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                                  });
+
+                                  Handlebars.registerHelper("modulo_categoria_subcat", function(value){
+                                      if(dat.subCat.length>0 && dat.subCat[0].length>1){
+                                            return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
+                                            "'>"+
+                                              this+
+                                            "</a></li>");
+                                      }else{
+                                           return new Handlebars.SafeString("");
+                                      }
+                                  });
+
+                                  var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
+                                  var contTemplate = Handlebars.compile(template_);
+                                  //---------------json para los resultados destacados del index-------------------
+                                  var context=dat;
+                                  var templateCompile = contTemplate(context);
+                                  $("#cont_categoria_head").html(templateCompile);
+
+                              }else{
+                                console.log(null);
+                              }
                       });
 
-                      Handlebars.registerHelper("modulo_categoria_subcat", function(value){
-                        return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?subcat="+this+"' class='waves-effect btn' style='background:#"+
-                        "'>"+
-                            this+
-                        "</a></li>");
-                      });
-
-                      var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
-                      var contTemplate = Handlebars.compile(template_);    ;
-                      //---------------json para los resultados destacados del index-------------------
-                      var context=bd_categoria_select;
-                      var templateCompile = contTemplate(context);
-                      $("#cont_categoria_head").html(templateCompile);
-                })();
              }
-
-
-
-
 
 
            //--------------------------------lista de categorias para nav sidebar---------------------------------
@@ -362,7 +375,17 @@ var todosArt = (function(){
 
 
 
-      //---------------------scroll para nav fixed-----------------------
+
+
+
+
+
+
+
+
+//---------------------scroll para nav fixed-----------------------
+
+
       this.defineContHead_ = function(event){
                 var bod_=document.getElementById("body_");
                 var wb_=bod_.style.width;
@@ -372,6 +395,134 @@ var todosArt = (function(){
                 var cImgh_=cImg_.height();
                 //console.log(cImgw_,cImgh_);
         }
+
+
+//-----------------------------apiRest------------------------
+
+
+
+
+
+            // Add Record
+            this.addRecord = function() {
+                // get values
+                var first_name = $("#first_name").val();
+                first_name = first_name.trim();
+                var last_name = $("#last_name").val();
+                last_name = last_name.trim();
+                var email = $("#email").val();
+                email = email.trim();
+
+                if (first_name == "") {
+                    alert("First name field is required!");
+                }
+                else if (last_name == "") {
+                    alert("Last name field is required!");
+                }
+                else if (email == "") {
+                    alert("Email field is required!");
+                }
+                else {
+                    // Add record
+                    $.post("ajax/create.php", {
+                        first_name: first_name,
+                        last_name: last_name,
+                        email: email
+                    }, function (data, status) {
+                        // close the popup
+                        $("#add_new_record_modal").modal("hide");
+
+                        // read records again
+                        readRecords();
+
+                        // clear fields from the popup
+                        $("#first_name").val("");
+                        $("#last_name").val("");
+                        $("#email").val("");
+                    });
+                }
+            }
+
+           this.GetUserDetails = function(id) {
+              // Add User ID to the hidden field
+              $("#hidden_user_id").val(id);
+              $.post("ajax/details.php", {
+                      id: id
+                  },
+                  function (data, status) {
+                      // PARSE json data
+                      var user = JSON.parse(data);
+                      // Assign existing values to the modal popup fields
+                      $("#update_first_name").val(user.first_name);
+                      $("#update_last_name").val(user.last_name);
+                      $("#update_email").val(user.email);
+                  }
+              );
+              // Open modal popup
+              $("#update_user_modal").modal("show");
+          }
+
+
+          //---------------------------------------
+
+
+          this.UpdateUserDetails = function() {
+                // get values
+                var first_name = $("#update_first_name").val();
+                first_name = first_name.trim();
+                var last_name = $("#update_last_name").val();
+                last_name = last_name.trim();
+                var email = $("#update_email").val();
+                email = email.trim();
+
+                if (first_name == "") {
+                    alert("First name field is required!");
+                }
+                else if (last_name == "") {
+                    alert("Last name field is required!");
+                }
+                else if (email == "") {
+                    alert("Email field is required!");
+                }
+                else {
+                    // get hidden field value
+                    var id = $("#hidden_user_id").val();
+
+                    // Update the details by requesting to the server using ajax
+                    $.post("ajax/update.php", {
+                            id: id,
+                            first_name: first_name,
+                            last_name: last_name,
+                            email: email
+                        },
+                        function (data, status) {
+                            // hide modal popup
+                            $("#update_user_modal").modal("hide");
+                            // reload Users by using readRecords();
+                            readRecords();
+                        }
+                    );
+                }
+            }
+
+
+            //---------------------------
+
+
+
+            this.DeleteUser = function(id) {
+                var conf = confirm("Are you sure, do you really want to delete User?");
+                if(conf == true){
+                    $.post("ajax/delete.php", {id: id}, function (data, status) {
+                            // reload Users by using readRecords();
+                            readRecords();
+                        }
+                    );
+                }
+            }
+
+
+
 
 
 
@@ -387,14 +538,14 @@ var todosArt = (function(){
 
      return todosArt;  //return objeto function
 
-}());
+}(this));
 //-----------------------
 
 
 
 $(document).ready(function(){
 
-        var AF = new todosArt();
+      //  var AF = new todosArt();
 
 
 

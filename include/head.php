@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>Artist Fest</title>
 
 <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>

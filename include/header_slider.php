@@ -42,6 +42,7 @@
               {{#ifCond @index '<' 4}}
                  <li class="col s12 m6 l3">
                      <div class="cont_destacado_header_moduloCont">
+
                          <a href="{{ moduloDestacado_index_linkPost this.categorias }}"target='_self' title=''>
                              <img src="{{srcImg}}" alt=""/>
                              <div class="cont_destacado_header_moduloCont_fondo_opacity{{@key}}"></div>

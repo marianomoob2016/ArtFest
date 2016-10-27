@@ -42,7 +42,7 @@
                   <li><a class="side-nav-link" href="categoria.php?cat=belleza">Belleza</a></li>
                   <li><a class="side-nav-link" href="categoria.php?cat=musica">Música</a></li>
                   <li><a class="side-nav-link" href="categoria.php?cat=gamers">Gamers</a></li>
-                  <li><a class="side-nav-link" href="categoria.php?cat=clubmediafest">ClubMediaFest</a></li>
+                  <li><a class="side-nav-link" href="#!">ClubMediaFest</a></li>
                   <li>
                           <div id="icon_social_nav_mobile" class="center">
                             <div class=""><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>

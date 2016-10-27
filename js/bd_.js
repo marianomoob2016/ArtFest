@@ -365,7 +365,7 @@ var bd_artistas = {"autores":[
 
 
 
-//--------------------BD lista de categorias y su info--------------------
+//--------------------BD lista de artistas y su info--------------------
 var bd_categorias = {"categorias":[
       {
         categoria:"clubmediafest",

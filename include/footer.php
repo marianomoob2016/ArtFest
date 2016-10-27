@@ -5,10 +5,10 @@
     <div class="row">
     <div class="center">
       <div class="navFooterIcon col s12 m12 l3">
-        <a href="index.php" class="col s2 m2 l2">
+        <a href="index.php" class="col s2 m2 l2">          
             <img src="img/template/logo_media_moob.jpg" class="img_logo_footer" />
         </a>
-      </div>
+     </div>
       <a class="navFooterLink col s12 m4 l2" href="#!">Términos y Condiciones</a>
       <a class="navFooterLink col s12 m4 l2" href="#!">Baja</a>
       <a class="navFooterLink col s12 m4 l2" href="#!">Políticas de privacidad</a>
