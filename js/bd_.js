@@ -361,10 +361,6 @@ var bd_artistas = {"autores":[
 
 
 
-
-
-
-
 //--------------------BD lista de artistas y su info--------------------
 var bd_categorias = {"categorias":[
       {

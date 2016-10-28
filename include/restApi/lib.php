@@ -20,18 +20,35 @@ class CRUD{
         return $data;
     }
 
+
+
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria($catSel_){
         $query = $this->db->prepare("SELECT * FROM lista_videos WHERE categorias LIKE '%{$catSel_}%' ");
         $query->execute();
         $data = array();
         while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
-            $data[] = $row;          
+            $data[] = $row;
         }
 
         $dat_= json_encode($data, true);
         return $dat_;
     }
+
+    //-----------------busca categoria seleccionada----------------
+    public function resultados_por_categoria_y_subcategoria($catSel_,$subSel_){
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE subCat LIKE '%{$subSel_}%' ");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
+        $dat_= json_encode($data, true);
+        return $dat_;
+    }
+
+
 
 
 

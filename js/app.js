@@ -320,42 +320,39 @@ var todosArt = (function(){
        //---------------------------lista de subcategorias en la categoria selccionada--------------------------------------
 
            this.listarResult_totalSubcat=function(cat_,sub_){
-                   $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
-                             if(data){
-                                  var dat=JSON.parse(data);
-                                  //console.log(dat);
-
-                                  Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
-                                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                                  });
-
-                                  Handlebars.registerHelper("modulo_categoria_subcat", function(value){
-                                      if(dat.subCat.length>0 && dat.subCat[0].length>1){
-                                            return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
-                                              dat.colorFondo+
-                                            "; color:#"+
-                                            dat.colorTexto+
-                                            "'>"+
-                                              this+
-                                            "</a></li>");
-                                      }else{
-                                           return new Handlebars.SafeString("");
-                                      }
-                                  });
-
-                                  var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
-                                  var contTemplate = Handlebars.compile(template_);
-                                  //---------------json para los resultados destacados del index-------------------
-                                  var context=dat;
-                                  var templateCompile = contTemplate(context);
-                                  $("#cont_categoria_head").html(templateCompile);
-
-                              }else{
-                                console.log(null);
-                              }
-                      });
-
-             }
+              (function() {
+           $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
+                      //----------------
+                             Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
+                                 return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                             });
+                      //----------------
+                             Handlebars.registerHelper("modulo_categoria_subcat", function(value){
+                                 if(dat.subCat.length>0 && dat.subCat[0].length>1){
+                                       return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
+                                         dat.colorFondo+
+                                       "; color:#"+
+                                       dat.colorTexto+
+                                       "'>"+
+                                         this+
+                                       "</a></li>");
+                                 }else{
+                                      return new Handlebars.SafeString("");
+                                 }
+                             });
+                     //----------------
+                            if(data.length>0){
+                                var dat=JSON.parse(data);
+                                    var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
+                                    var contTemplate = Handlebars.compile(template_);
+                                    //---------------json para los resultados destacados del index-------------------
+                                    var context=dat;
+                                    var templateCompile = contTemplate(context);
+                                    $("#cont_categoria_head").html(templateCompile);
+                            }
+            });
+            })();
+            }
 
 
            //--------------------------------lista de categorias para nav sidebar---------------------------------

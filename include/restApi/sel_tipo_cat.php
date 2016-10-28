@@ -17,9 +17,7 @@ $users = $object->categoria_seleccionada($catSel_);
 
 if(count($users) > 0){
     foreach ($users as $user) {
-
         $subCat_ = explode(",", $user['subCat']);
-
         $miArray= array(
             "id"=>$user['id'],
             "categoria"=>$user['categoria'],
@@ -29,15 +27,14 @@ if(count($users) > 0){
             "imgCategoria"=>$user['imgCategoria'],
             "subCat"=>$subCat_
         );
-
     }
-    $data= json_encode($miArray, JSON_UNESCAPED_UNICODE);
 
+    $data= json_encode($miArray, JSON_UNESCAPED_UNICODE);
     echo $data;
 
 }else{
 
-  echo "¡No se encontraron dategorias!";
+echo "";
 
 }
 

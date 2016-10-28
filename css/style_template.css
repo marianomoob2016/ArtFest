@@ -719,26 +719,30 @@ body {
 
 
  .cont_sideBar_Conectate{ width:100%; margin:0px!important; padding:0px!important; text-align:center; background:#232323; float: left;}
- .cont_sideBar_Conectate h1{ font-size:65px; margin:135px 0px 20px 0px;}
+ .cont_sideBar_Conectate h1{  font-size: 55px; margin:30px 0px 20px 0px; }
  .cont_sideBar_Conectate .iconCont{width:100%!important;}
  .cont_sideBar_Conectate .iconCont i{font-size: 30px;}
 
-        @media (min-width:1280px) {  .cont_sideBar_Conectate{ height:419px; }   }
+        @media (min-width:1280px) {  .cont_sideBar_Conectate{  height: 178px;  } }
         @media (min-width:1024px) AND (max-width:1280px) {
-           .cont_sideBar_Conectate{height:333px;}
-           .cont_sideBar_Conectate h1{ font-size: 55px; margin: 120px 0px 20px 0px; }
+           .cont_sideBar_Conectate{height:138px;}
+           .cont_sideBar_Conectate h1{ font-size: 50px; margin: 17px 0px 10px 0px; }
         }
-        @media (min-width:768px) AND (max-width:1023px) { .cont_sideBar_Conectate{ height:389px; }    }
+        @media (min-width:768px) AND (max-width:1023px) {
+          .cont_sideBar_Conectate{ height:389px; }
+          .cont_sideBar_Conectate h1{  font-size: 55px; margin:135px 0px 20px 0px; }
+        }
         @media (min-width:600px) AND (max-width:799px) {
            .cont_sideBar_Conectate{ height:274px; }
            .cont_sideBar_Conectate h1{ font-size: 45px;  margin: 90px 0px 20px 0px;}
         }
         @media (min-width:480px) AND (max-width:599px) {
            .cont_sideBar_Conectate{ height:419px; }
+           .cont_sideBar_Conectate h1{  font-size: 55px; margin:135px 0px 20px 0px; }
         }
         @media (min-width:320px) AND (max-width:479px) {
            .cont_sideBar_Conectate{ height:274px; }
-           .cont_sideBar_Conectate h1{ font-size: 45px;  margin: 90px 0px 20px 0px;}
+           .cont_sideBar_Conectate h1{ font-size: 45px;  margin:85px 0px 20px 0px;}
         }
 
 
