@@ -21,4 +21,9 @@ $users = $object->resultados_por_categoria($catSel_);
 
 echo $users;
 
+//----------------
+
+
+
+
 ?>

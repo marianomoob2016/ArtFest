@@ -27,7 +27,7 @@
            <div class="cont_categoria_head_navBar_subCategorias">
               <ul class="col s12 m12 l12">
                       {{#each this.subCat}}
-                          {{modulo_categoria_subcat this.subCat }}
+                          {{modulo_categoria_subcat this.subCat this.colorFondo }}
                       {{/each}}
               </ul>
            </div>
@@ -49,7 +49,7 @@
   <div id="cont_categoria_section"  class="col s12 m12 l12">
 
         <script id="template_resultCategoria" type="text/x-handlebars-template">
-         {{#each videos}}
+         {{#each this}}
          {{#ifCond @index '<' 7}}
                {{#ifCond @index '%' 2}}
                    <div class="cont_categoria_section_result_post">
@@ -58,9 +58,9 @@
                                      <div class="result_post_01_contenido">
                                            <div class="result_post_01_contCat">
                                              <div class="result_post_01_contCat_subCont">
-                                                   {{#each categorias}}
-                                                         {{modulo_Categoria_resultado_cat this.categorias}}
-                                                    {{/each}}
+                                                      {{#each this.categorias}}
+                                                          {{modulo_Categoria_resultado_cat categorias}}
+                                                      {{/each}}
                                               </div>
                                               <!--div class="result_post_01_contCat_subCont">
                                                    {{#each subcat}}
@@ -68,7 +68,6 @@
                                                    {{/each}}
                                              </div-->
                                            </div>
-
                                            <h1>{{titulo}}</h1>
                                            <p>{{subTit}}</p>
                                            <div class="result_post_01_contenido_icon"></div>
@@ -76,7 +75,7 @@
                                  </div>
 
                                  <div class="result_post_02 col s12 m6 s6">
-                                     <img src="{{srcImg}}" alt=""/>
+                                     <img src="{{urlImgVid}}" alt=""/>
                                      <div class="result_post_02_contOpacity"></div>
                                  </div>
                            </a>
@@ -86,8 +85,9 @@
 
                    <div class="cont_categoria_section_result_post">
                            <a href="{{moduloCategoria_index_linkPost this.categorias}}" target="_self" title="link post">
+
                                  <div class="result_post_02 col s12 m6 s6">
-                                     <img src="{{srcImg}}" alt=""/>
+                                     <img src="{{urlImgVid}}" alt=""/>
                                      <div class="result_post_02_contOpacity"></div>
                                  </div>
 
@@ -95,9 +95,9 @@
                                    <div class="result_post_01_contenido">
                                          <div class="result_post_01_contCat">
                                                <div class="result_post_01_contCat_subCont">
-                                                     {{#each categorias}}
-                                                           {{modulo_Categoria_resultado_cat this.categorias}}
-                                                      {{/each}}
+                                                 {{#each this.categorias}}
+                                                     {{modulo_Categoria_resultado_cat categorias}}
+                                                 {{/each}}
                                                 </div>
                                                 <!--div class="result_post_01_contCat_subCont">
                                                      {{#each subcat}}
@@ -133,6 +133,14 @@
     <div class="cont_categoria_section_sidebar col s12 m12 l4">
 
       <div class="cont_sideBar_Buscador col s12 m6 l12">
+
+                       <form id="cont_sideBar_Buscador_search">
+                         <div class="input-field">
+                           <input id="search" type="search" required>
+                           <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
+                           <i class="material-icons">X</i>
+                         </div>
+                       </form>
 
       </div>
 

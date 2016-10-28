@@ -262,24 +262,29 @@ var todosArt = (function(){
        //------------------------------resultados para la seccion-----------------------------------
        this.listarResult_Categoria=function(cat_,sub_){
              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (data){
-                if(data){
-                  //var dat=JSON.parse(data);
-                  console.log(data);
+                if(data.length>2){
+                   var dat=JSON.parse(data);
+                   if(dat[0].length>0){
+
+                  //------pre compres a array el string ','-----------
+                  for(var i=0;i < dat[0].length;i++){     dat[0][i].categorias=dat[0][i].categorias.split(',');    }
+
 
                   Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
                   });
 
                   Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
-                                return new Handlebars.SafeString(
-                                "<div class='result_post_01_contCat_bot' style='background:#"+
-                                  colorFondoPorCategoria_(this)+
-                                "; color:#"+
-                                  colorTextoPorCategoria_(this)+
-                                ";'>"+
-                                  this+
-                                "</div>"
-                              );
+
+                                      return new Handlebars.SafeString(
+                                            "<div class='result_post_01_contCat_bot' style='background:#"+
+                                              colorFondoPorCategoria_(this)+
+                                            "; color:#"+
+                                              colorTextoPorCategoria_(this)+
+                                            ";'>"+
+                                              this+
+                                            "</div>"
+                                      );
                    });
 
                    Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
@@ -300,11 +305,12 @@ var todosArt = (function(){
                   var template_ = document.getElementById("template_resultCategoria").innerHTML;
                   var contTemplate = Handlebars.compile(template_);
                   //---------------json para los resultados destacados del index-------------------
-                  var context=data;
+                  var context=dat[0];
                   var templateCompile = contTemplate(context);
                   $(".cont_categoria_section_result").html(templateCompile);
           }
-        });
+        }
+       });
        }
 
 
@@ -326,6 +332,9 @@ var todosArt = (function(){
                                   Handlebars.registerHelper("modulo_categoria_subcat", function(value){
                                       if(dat.subCat.length>0 && dat.subCat[0].length>1){
                                             return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
+                                              dat.colorFondo+
+                                            "; color:#"+
+                                            dat.colorTexto+
                                             "'>"+
                                               this+
                                             "</a></li>");

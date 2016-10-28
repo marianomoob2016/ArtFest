@@ -1,3 +1,29 @@
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v1/gG8m82oGcrBJF727xHU04fY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v1/F4YWuALHubF63LLQPw0rMfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins'), local('Poppins-Regular'), url(../fonts/HLBysyo0MQBO_7E-DWLwzg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
 
 body {
    width: 100%;
@@ -96,7 +122,7 @@ body {
 
 #nav_header_1{ background:#15181d; box-shadow: none; height:90px; line-height:90px; z-index: 999;}
 #nav_header_1 .nav-wrapper{ }
-#nav_header_1 .nav-wrapper .brand-logo{ width:900px; height:90px; color: #fff; min-width:750px; z-index:99;}
+#nav_header_1 .nav-wrapper .brand-logo{ width:1050px; height:90px; color: #fff; min-width:750px; z-index:99;}
 #nav_header_1 .button-collapse{ color: #fff; }
 #nav_desktop_cont a{ color: #ffdf1f; }
 #nav_desktop_cont li{ width:150px; height:90px; }
@@ -360,14 +386,27 @@ body {
 #contModalAside{ margin:0;padding:0; }
     /*--------*/
     #contAsideUp{ }
+    #contAsideUp_search{  margin: 50px 20px;  width: calc(100% - 40px); border:2px #fff solid;}
+    #contAsideUp_search .input-field{margin: 0px;}
+    #contAsideUp_search .input-field input[type=search]+label{ }
+    #contAsideUp_search .input-field label.active{ top: -0px!important; transform: translateY(-115%)!important; color:#fff!important; font-size: 16px; }
+    #contAsideUp_search .input-field label{ color:#fff!important; font-size: 20px; top: 10px;}
+    #contAsideUp_search .input-field input[type=search]:focus{ background:#333; color:#fff;}
+    #contAsideUp_search input:-webkit-autofill{background: #333; color: #fff;}
+    #contAsideUp_search #search{margin:0;}
+}
+
+
+
+}
 
 
         @media (min-width:1280px) {  #contAsideUp{ height:160px;}  }
         @media (min-width:1024px) AND (max-width:1280px) {#contAsideUp{ height:140px;} }
         @media (min-width:768px) AND (max-width:1023px) { #contAsideUp{ height:120px;} }
-        @media (min-width:600px) AND (max-width:799px) {  #contAsideUp{ height:100px;} }
-        @media (min-width:480px) AND (max-width:599px) {  #contAsideUp{ height:100px;} }
-        @media (min-width:320px) AND (max-width:479px) {  #contAsideUp{ height:100px;} }
+        @media (min-width:600px) AND (max-width:799px) {  #contAsideUp{ height:140px;} }
+        @media (min-width:480px) AND (max-width:599px) {  #contAsideUp{ height:140px;} }
+        @media (min-width:320px) AND (max-width:479px) {  #contAsideUp{ height:140px;} }
     /*----------*/
 
 
@@ -562,10 +601,10 @@ body {
 
 
 
-.cont_categoria_section_result{background:#ddd; min-height: 1000px; margin:0px!important; padding: 0px!important;}
+.cont_categoria_section_result{ min-height: 1000px; margin:0px!important; padding: 0px!important;}
 .cont_categoria_section_result_post{width: 100%; height:100%; margin:0px!important; padding: 0px!important;  display:block; float:left; position:relative; overflow: hidden; }
 .cont_categoria_section_result_post a{color:#fff;}
-.cont_categoria_section_result_post .result_post_01{ width:100%; margin:0px!important; padding: 0px!important; background: #232323; float:left; position:relative; z-index:5;}
+.cont_categoria_section_result_post .result_post_01{ width:100%; margin:0px!important; padding: 0px!important; float:left; position:relative; z-index:5;}
 .cont_categoria_section_result_post .result_post_02{ width:100%; margin:0px!important; padding: 0px!important; background: #666; float:left; overflow:hidden; position:relative; z-index:1;}
 
 
@@ -611,15 +650,28 @@ body {
 
 /*----------------------------------------------------------*/
 
+
 .cont_categoria_section_sidebar{margin:0px!important; padding:0px!important; }
 
-/*----------------------------------aviso consegui tus entradas en sidebar------------------------*/
 
-.cont_sideBar_Buscador{width: 100%; background: #232323;}
+
+
+/*----------------------------------aviso consegui tus entradas en sidebar------------------------*/
+#cont_sideBar_Buscador {height:160px;}
+#cont_sideBar_Buscador_search{  margin: 50px 20px;  width: calc(100% - 40px); border:2px #fff solid;}
+#cont_sideBar_Buscador_search .input-field{margin: 0px;}
+#cont_sideBar_Buscador_search .input-field input[type=search]+label{ }
+#cont_sideBar_Buscador_search .input-field label.active{ top: -0px!important; transform: translateY(-115%)!important; color:#fff!important; font-size: 16px; }
+#cont_sideBar_Buscador_search .input-field label{ color:#fff!important; font-size: 20px; top: 10px;}
+#cont_sideBar_Buscador_search .input-field input[type=search]:focus{ background:#333; color:#fff;}
+#cont_sideBar_Buscador_search input:-webkit-autofill{background: #333; color: #fff;}
+#cont_sideBar_Buscador_search #search{margin:0;}
+}
+
         @media (min-width:1280px) { .cont_sideBar_Buscador{ height:160px;}    }
         @media (min-width:1024px) AND (max-width:1280px) { .cont_sideBar_Buscador{ height:162px;}  }
-        @media (min-width:768px) AND (max-width:1023px) {  .cont_sideBar_Buscador{ height:389px;}  }
-        @media (min-width:600px) AND (max-width:799px) {   .cont_sideBar_Buscador{ height:274px;}  }
+        @media (min-width:768px) AND (max-width:1023px) {  .cont_sideBar_Buscador{ height:389px;} #cont_sideBar_Buscador_search{margin: 170px 20px;}  }
+        @media (min-width:600px) AND (max-width:799px) {   .cont_sideBar_Buscador{ height:274px;} #cont_sideBar_Buscador_search{margin: 114px 20px;}  }
         @media (min-width:480px) AND (max-width:599px) {   }
         @media (min-width:320px) AND (max-width:479px) {   }
 
