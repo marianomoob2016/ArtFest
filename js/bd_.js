@@ -91,7 +91,7 @@ var bd_result_index = {"videos":[
        hora:"1800",
        autores : ["youtuber1","youtuber2","youtuber3"],
        titulo : "Ellos la rompen en las redes y en la TV. Mirá el backstage acá.",
-       subTit : "Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
+       subTit : "Aprendé sobre moda, look, uñas, tendencias makeup con las mejores de toda habla hispana.",
        srcImg : "img/template/video01.jpg",
        categorias : ["humor","lifestyle"],
        subcat:[

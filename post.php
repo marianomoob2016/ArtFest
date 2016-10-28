@@ -53,7 +53,7 @@
      <div id="cont_post_section_video" class="col s12 m12 l12">
 
           <div id="cont_post_section_video_cont" class="col s12 m12 l12">
-
+            <iframe src="https://player.vimeo.com/video/189364382" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
 
           <div id="cont_post_section_video_info" class="col s12 m12 l12">

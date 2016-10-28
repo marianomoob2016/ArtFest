@@ -20,7 +20,7 @@
 
 <div id="cont_categoria"  class="col s12 m12 l12">
   <div class="row">
-    
+
     <script id="template_categoria_subCatList" type="text/x-handlebars-template">
            <h1 class="center" style="color:#{{colorFondo}};">{{categoria}}</h1>
            <div class="cont_categoria_head_navBar_subCategorias">

@@ -34,6 +34,10 @@ body {
  }
 
 
+ .progress{ width: 50%;  margin: 20px auto;  height: 5px;  background: #333;}
+ .progress .indeterminate{ background-color: #fde213; }
+
+
 
 #body_{ background:#000; color:#fff;}
 #cont1{ min-height: 1200px;}
@@ -413,14 +417,14 @@ body {
 
     #contAsideBotton{ height:auto; margin: 0; padding: 0; overflow: hidden; position:relative;}
     #contAsideBotton .contAsideBotton_fondo_opacity{ width: 100%;  height: 100%;  background:#200944; display: block; float: left; position: absolute;  top: 0;  left: 0; opacity: 0.5;}
-    #contAsideBotton img{ position:absolute; top:0; left:0; width:100%; }
+    #contAsideBotton img{ position:absolute; top:0; left:0; width:102%; }
     #contAsideBotton .contAsideBotton_info{text-transform: capitalize; width: 100%; height:100%; text-align:center; position:absolute; top:0; left:0;}
     #contAsideBotton .contAsideBotton_info h1{  margin: 160px 0px 20px 0px;  font-size: 60px; font-weight: bold;  letter-spacing: 4px;}
     #contAsideBotton .contAsideBotton_info h4{ font-size:20px; }
     #contAsideBotton .contAsideBotton_info p{  font-size: 16px;  margin: 20px 25px; }
     #contAsideBotton .contAsideBotton_info a{  background: #6f39c3;  width: 160px;  height: 40px; line-height: 40px; font-size: 18px; margin-top:10px;}
 
-        @media (min-width:1280px) {  #contAsideBotton{ height:680px;}  }
+        @media (min-width:1280px) {  #contAsideBotton{ height:690px;}  }
         @media (min-width:1024px) AND (max-width:1280px) {
           #contAsideBotton{ height:543px;}
           #contAsideBotton .contAsideBotton_info h1{  margin:90px 0px 20px 0px;  font-size:45px;}
@@ -464,7 +468,6 @@ body {
           .contChicoResult .contChicoResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
           .contChicoResult .contChicoResult_moduloCont img{  position:relative; width:120%!important; }
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
-          .contChicoResult_moduloContfondo_cont_info_item1{text-transform: capitalize; font-size: 14px; line-height: 20px; display: block; float: left; padding: 1px 10px; margin-left:5px; margin-bottom: 5px;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info{ position: absolute; top: 0;  left: 0; margin: 20px 30px; height: calc(100% - 40px);  width: calc(100% - 60px); }
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{width:100%; font-size:20px; line-height:25px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; }
@@ -503,7 +506,6 @@ body {
           .contGrandeResult .contGrandeResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
           .contGrandeResult .contGrandeResult_moduloCont img{  position:relative; width:120%!important; }
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #333;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
-          .contGrandeResult_moduloContfondo_cont_info_item1{text-transform: capitalize; display: block; float: left; padding: 1px 10px; margin-left:5px; margin-bottom: 5px;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info{ position: absolute; bottom: 0;  left: 0; margin: 20px 30px; width: calc(100% - 60px); }
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{width:100%; font-size:35px; line-height:40px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info p{width:100%; display: block; float: left; font-size:20px; line-height:22px; margin:10px 0px;}
@@ -534,6 +536,15 @@ body {
                }
 
         .contGrandeResult_2b{ float:right!important;}
+
+        .contResultIndex_moduloContfondo_cont_info_item1{ height: 22px; text-transform: capitalize; font-size: 14px; line-height: 22px; display: block; float: left; padding: 1px 10px; margin-left:5px; margin-bottom: 5px;}
+
+/*
+        .contGrandeResult_moduloContfondo_cont_info_item1{text-transform: capitalize; display: block; float: left; padding: 1px 10px; margin-left:5px; margin-bottom: 5px;}
+        .contChicoResult_moduloContfondo_cont_info_item1{ text-transform: capitalize; font-size: 14px; line-height: 20px; display: block; float: left; padding: 1px 10px; margin-left:5px; margin-bottom: 5px;}
+*/
+
+
 
 /*----------------------------------------------------------------------------------------------------*/
 
@@ -615,7 +626,7 @@ body {
 .result_post_01_contenido{ width:calc(100% - 60px); height:calc(100% - 60px); margin:30px; position:relative; }
 .result_post_01_contCat{ width:100%; height:30px;}
 .result_post_01_contCat_subCont{float: left; width: 100%; display: block;}
-.result_post_01_contCat_bot{ font-size:14px; line-height:16px; float:left; display: block; padding:4px 10px; background:#000; margin:0px 5px 5px 0px;}
+.result_post_01_contCat_bot{ height:25px; font-size:14px; line-height:20px; float:left; display: block; padding:4px 10px; background:#000; margin:0px 5px 5px 0px;}
 .result_post_01_contCat_subcat{font-size: 12px; line-height:12px; padding:4px 5px; float:left; display:block;}
 .result_post_01_contCat_subcat a{ color:#fff; }
 .result_post_01_contenido h1{ font-size: 25px; float:left;}
@@ -874,7 +885,8 @@ body {
 
 
 #cont_post_section_video{ background:#28272d; margin: 0px; padding:0; }
-#cont_post_section_video_cont{height: 500px;  background:#666; margin:0px 0px 20px 0px;}
+#cont_post_section_video_cont{height: 500px; background:#666; margin:0px 0px 20px 0px; margin:0px; padding:0px;}
+
 
           @media (min-width:1280px) { #cont_post_section_video_cont{height: 550px; transition: width 1s;} }
           @media (min-width:1024px) AND (max-width:1280px) {

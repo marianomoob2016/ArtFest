@@ -9,6 +9,27 @@ class CRUD{
     function __construct(){ $this->db = DB(); }
     function __destruct(){ $this->db = null; }
 
+
+    //-----------------resultados index----------------
+    public function resultados_index(){
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE id >0 AND id <=10 ORDER BY id ASC ");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+        $dat_= json_encode($data, true);
+        //WHERE ROWNUM <= 10 order by lista_videos desc
+        //SELECT * FROM lista_videos
+        return $dat_;
+    }
+
+
+
+
+
+
+
     //-----------------busca categoria seleccionada----------------
     public function categoria_seleccionada($catSel_){
         $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria = '$catSel_'");
@@ -19,8 +40,6 @@ class CRUD{
         }
         return $data;
     }
-
-
 
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria($catSel_){
@@ -37,7 +56,7 @@ class CRUD{
 
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria_y_subcategoria($catSel_,$subSel_){
-        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE subCat LIKE '%{$subSel_}%' ");
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE categorias LIKE '%{$catSel_}%' AND subCat LIKE '%{$subSel_}%' ");
         $query->execute();
         $data = array();
         while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
@@ -47,6 +66,24 @@ class CRUD{
         $dat_= json_encode($data, true);
         return $dat_;
     }
+
+
+
+
+
+    //-----------------busca categoria seleccionada----------------
+    public function resultados_post($id_,$hora_){
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE dia_id = '{$id_}' AND hora_id '{$hora_}' ");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
+        $dat_= json_encode($data, true);
+        return $dat_;
+    }
+
 
 
 

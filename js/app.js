@@ -189,43 +189,59 @@ var todosArt = (function(){
 
 
 
+
+
+
+
        //------------------------------------------------------
        this.listarPost_index=function(){
-        (function() {
-              Handlebars.registerHelper("moduloResult_index_linkPost", function(value){
-                  return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-              });
+          (function(){
+             $.post("include/restApi/result_index.php",{}, function (data){
 
-              Handlebars.registerHelper("moduloResult_chico", function(value) {
-                return new Handlebars.SafeString(
-                  "<div class='contChicoResult_moduloContfondo_cont_info_item1' style='background:#"+
-                    colorFondoPorCategoria_(this)+
-                  "; color:#"+
-                    colorTextoPorCategoria_(this)+
-                  ";'>"+
-                    this+
-                  "</div>");
-              });
+                         if(data.length>0){
+                               var dat=JSON.parse(data);
 
-              Handlebars.registerHelper("moduloResult_grande", function(value) {
-                return new Handlebars.SafeString(
-                  "<div class='contGrandeResult_moduloContfondo_cont_info_item1' style='background:#"+
-                     colorFondoPorCategoria_(this)+
-                  "; color:#"+
-                     colorTextoPorCategoria_(this)+
-                  ";'>"+
-                     this+
-                  "</div>");
-              });
+                               if(dat[0].length>0 && typeof  dat === 'object'){
 
-               var template_ = document.getElementById("template_ContChicoResult").innerHTML;
-               var contTemplate = Handlebars.compile(template_);
-               //---------------json para los resultados del index-------------------
-               var context=bd_result_index;
-               var templateCompile = contTemplate(context);
-               $(".fila1").html(templateCompile);
-         })();
-       }
+                                     //-----------convert array el string ','---------------
+                                     for(var i=0;i < dat[0].length;i++){  dat[0][i].categorias=dat[0][i].categorias.split(',');  }
+
+                                     //-------------crea URL para lista de post en el index----------
+                                      Handlebars.registerHelper("moduloResult_index_linkPost", function(value){
+                                          console.log(this.dia_id,this.hora_id);
+                                          return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                                      });
+
+                                      //-----------------crea subcategorias en modulo POST index---------------------
+                                      Handlebars.registerHelper("moduloResult_itemsCategoria", function(value) {
+                                       return new Handlebars.SafeString(
+                                          "<div class='contResultIndex_moduloContfondo_cont_info_item1' style='background:#"+
+                                            colorFondoPorCategoria_(this)+
+                                          "; color:#"+
+                                            colorTextoPorCategoria_(this)+
+                                          ";'>"+
+                                            this+
+                                          "</div>");
+                                      });
+
+
+                                       var template_ = document.getElementById("template_ContChicoResult").innerHTML;
+                                       var contTemplate = Handlebars.compile(template_);
+                                       //---------------json para los resultados del index-------------------
+                                       var context=dat[0];//bd_result_index;
+                                       var templateCompile = contTemplate(context);
+                                       $(".fila1").html(templateCompile);
+                                }
+                        }
+                }).done(function() {
+                    console.log("load: result index");
+                }).fail(function() {
+                    console.log("error");
+                }).always(function() {
+                   console.log("fin: result index");
+                });
+              })();
+          }
 
 
 
@@ -261,56 +277,66 @@ var todosArt = (function(){
 
        //------------------------------resultados para la seccion-----------------------------------
        this.listarResult_Categoria=function(cat_,sub_){
-             $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (data){
-                if(data.length>2){
-                   var dat=JSON.parse(data);
-                   if(dat[0].length>0){
+           if(cat_.length>0){
+              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (){
+                   $(".cont_categoria_section_result").html("<div class='progress'><div class='indeterminate' style='background-color:#"+colorFondoPorCategoria_(cat_)+"'></div></div>");
+              }).done(function(data){
+                setTimeout(function(){
+                          if(data.length>2){
+                              var dat=JSON.parse(data);
+                            if(dat[0].length>0 && typeof  dat === 'object'){
 
-                  //------pre compres a array el string ','-----------
-                  for(var i=0;i < dat[0].length;i++){     dat[0][i].categorias=dat[0][i].categorias.split(',');    }
-
-
-                  Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
-                  });
-
-                  Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
-
-                                      return new Handlebars.SafeString(
-                                            "<div class='result_post_01_contCat_bot' style='background:#"+
-                                              colorFondoPorCategoria_(this)+
-                                            "; color:#"+
-                                              colorTextoPorCategoria_(this)+
-                                            ";'>"+
-                                              this+
-                                            "</div>"
-                                      );
-                   });
-
-                   Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
-                               var res_="";
-
-                                 for(var i=0;i<this.subcat.length;i++){
-                                       res_+=("&nbsp;&nbsp;#"+this.subcat[i]);
-                                 }
-
-                                 return new Handlebars.SafeString(
-                                "<div class='result_post_01_contCat_subcat'>"+
-                                   res_+
-                                 "</div>"
-                               );
-                    });
+                                   //------pre compres a array el string ','-----------
+                                   for(var i=0;i < dat[0].length;i++){  dat[0][i].categorias=dat[0][i].categorias.split(',');  }
 
 
-                  var template_ = document.getElementById("template_resultCategoria").innerHTML;
-                  var contTemplate = Handlebars.compile(template_);
-                  //---------------json para los resultados destacados del index-------------------
-                  var context=dat[0];
-                  var templateCompile = contTemplate(context);
-                  $(".cont_categoria_section_result").html(templateCompile);
-          }
-        }
-       });
+                                   Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
+                                       return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                                   });
+
+                                   Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
+
+                                                       return new Handlebars.SafeString(
+                                                             "<div class='result_post_01_contCat_bot' style='background:#"+
+                                                               colorFondoPorCategoria_(this)+
+                                                             "; color:#"+
+                                                               colorTextoPorCategoria_(this)+
+                                                             ";'>"+
+                                                               this+
+                                                             "</div>"
+                                                       );
+                                    });
+
+                                    Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
+                                                var res_="";
+
+                                                  for(var i=0;i<this.subcat.length;i++){
+                                                        res_+=("&nbsp;&nbsp;#"+this.subcat[i]);
+                                                  }
+
+                                                  return new Handlebars.SafeString(
+                                                 "<div class='result_post_01_contCat_subcat'>"+
+                                                    res_+
+                                                  "</div>"
+                                                );
+                                   });
+
+
+                                   var template_ = document.getElementById("template_resultCategoria").innerHTML;
+                                   var contTemplate = Handlebars.compile(template_);
+                                   //---------------json para los resultados destacados del index-------------------
+                                   var context=dat[0];
+                                   var templateCompile = contTemplate(context);
+                                   $(".cont_categoria_section_result").html(templateCompile);
+                             }
+                           }
+                }, 500);
+             }).fail(function() {
+                 console.log("error");
+             }).always(function() {
+                 console.log("fin: result sel cat");
+             });
+           }
        }
 
 
@@ -320,38 +346,45 @@ var todosArt = (function(){
        //---------------------------lista de subcategorias en la categoria selccionada--------------------------------------
 
            this.listarResult_totalSubcat=function(cat_,sub_){
-              (function() {
-           $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
-                      //----------------
-                             Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
-                                 return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                             });
-                      //----------------
-                             Handlebars.registerHelper("modulo_categoria_subcat", function(value){
-                                 if(dat.subCat.length>0 && dat.subCat[0].length>1){
-                                       return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
-                                         dat.colorFondo+
-                                       "; color:#"+
-                                       dat.colorTexto+
-                                       "'>"+
-                                         this+
-                                       "</a></li>");
-                                 }else{
-                                      return new Handlebars.SafeString("");
-                                 }
-                             });
-                     //----------------
-                            if(data.length>0){
-                                var dat=JSON.parse(data);
-                                    var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
-                                    var contTemplate = Handlebars.compile(template_);
-                                    //---------------json para los resultados destacados del index-------------------
-                                    var context=dat;
-                                    var templateCompile = contTemplate(context);
-                                    $("#cont_categoria_head").html(templateCompile);
-                            }
-            });
-            })();
+                (function() {
+                  if(cat_.length>0){
+                     $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
+
+                                //----------------
+                                       Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
+                                           return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                                       });
+                                //----------------
+                                       Handlebars.registerHelper("modulo_categoria_subcat", function(value){
+                                           if(dat.subCat.length>0 && dat.subCat[0].length>1){
+                                                 return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
+                                                   dat.colorFondo+
+                                                 "; color:#"+
+                                                   dat.colorTexto+
+                                                 "'>"+
+                                                   this+
+                                                 "</a></li>");
+                                           }else{
+                                                return new Handlebars.SafeString("");
+                                           }
+                                       });
+                               //----------------
+                                      if(data.length>0){
+                                          var dat=JSON.parse(data);
+                                          if(typeof  dat === 'object'){
+                                              var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
+                                              var contTemplate = Handlebars.compile(template_);
+                                              //---------------json para los resultados destacados del index-------------------
+                                              var context=dat;
+                                              var templateCompile = contTemplate(context);
+                                              $("#cont_categoria_head").html(templateCompile);
+                                            }
+                                      }
+
+                      });
+
+                    }
+              })();
             }
 
 
