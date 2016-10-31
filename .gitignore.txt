@@ -1,3 +1,2 @@
-#ignorar los directorios siguientes
-
+# Ignorar el contenido de las carpetas log y cache
 contenido/

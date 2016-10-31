@@ -434,7 +434,8 @@ this.verPOST=function(id_dia,id_hora){
   (function() {
        $.post("include/restApi/result_post_template.php",{id:id_dia,hora:id_hora}, function (data){
         if(data.length>0){
-           var dat=JSON.parse(data);  
+           var dat=JSON.parse(data);
+          console.log(dat);
            if(typeof  dat === 'object'){
                var template_ = document.getElementById("template_Post_Script").innerHTML;
                var contTemplate = Handlebars.compile(template_);
