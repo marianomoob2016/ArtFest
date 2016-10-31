@@ -879,6 +879,7 @@ body {
           @media (min-width:320px) AND (max-width:479px) {   #cont_post{ width:300px;  transition: width 1s;} }
 
 
+   
 #cont_post_head{ width:100%; }
 
 #cont_post_head_catSubcat{ position:relative; float:none; margin:0 auto; text-transform: capitalize; }
