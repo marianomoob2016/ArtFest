@@ -1,3 +1,0 @@
-#ignorar los directorios siguientes
-
-contenido/
