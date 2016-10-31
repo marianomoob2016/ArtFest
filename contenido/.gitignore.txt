@@ -1,2 +1,2 @@
 # Ignorar el contenido de las carpetas log y cache
-contenido/**
+/contenido/*
