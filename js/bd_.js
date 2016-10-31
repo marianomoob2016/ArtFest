@@ -81,6 +81,30 @@ var bd_final = {"videos":[
 
 
 
+var bd_post = {
+    id:"20161019",
+    hora:"1800",
+    autores : ["youtuber1","youtuber2","youtuber3"],
+    titulo : "Ellos 3",
+    subTit : "Aprendé 3",
+    info : ".........",
+    masInfo : "....",
+    urlVideo : "189364382",
+    urlImgVid : "img/template/video03.jpg",
+    srcImg : "img/template/video03.jpg",
+    destacado : [{activo : false},{position : 10}],
+    srcImgDestacado : "img/template/asideBottomImg.jpg",
+    categorias : ["humor","lifestyle"],
+    subcat:[
+             {nombre:"humor", sub_cat:["bloopers","fails","bizarro"]},
+             {nombre:"lifestyle", sub_cat:["trucos","juego_en_vivo","reviews"]}
+           ]
+};
+
+
+
+
+
 
 
 

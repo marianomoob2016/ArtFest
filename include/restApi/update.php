@@ -11,3 +11,5 @@ if (isset($_POST)) {
 
     $object->Update($first_name, $last_name, $email, $id);
 }
+
+?>

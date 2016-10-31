@@ -71,18 +71,35 @@ class CRUD{
 
 
 
-    //-----------------busca categoria seleccionada----------------
+    //---------------------------------
     public function resultados_post($id_,$hora_){
-        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE dia_id = '{$id_}' AND hora_id '{$hora_}' ");
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE dia_id = '{$id_}' AND hora_id ='{$hora_}' ");
         $query->execute();
         $data = array();
-        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $data[] = $row;
         }
 
-        $dat_= json_encode($data, true);
-        return $dat_;
+      //  $dat_= json_encode($data, true);
+      //  print_r($dat_);
+        return $data;
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

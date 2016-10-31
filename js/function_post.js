@@ -1,8 +1,9 @@
 //---------------------funciones externas------------------------------
-$(document).ready(function(){
+$(document).ready(function(id_dia,id_hora){
         //---------------------defino objeto-----------------------------------
         var AF_post = new todosArt();
 
+        AF_post.verPOST(v_id,v_hora);
         AF_post.verNav();
 
 

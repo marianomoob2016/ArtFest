@@ -127,6 +127,7 @@ var todosArt = (function(){
                  var templateCompile2 = contTemplate2(context);
                  $("#contCategoria1").html(templateCompile);
                  $("#contCategoria2").html(templateCompile2);
+
            })();
         }
 
@@ -281,7 +282,7 @@ var todosArt = (function(){
               $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (){
                    $(".cont_categoria_section_result").html("<div class='progress'><div class='indeterminate' style='background-color:#"+colorFondoPorCategoria_(cat_)+"'></div></div>");
               }).done(function(data){
-                setTimeout(function(){
+                  setTimeout(function(){
                           if(data.length>2){
                               var dat=JSON.parse(data);
                             if(dat[0].length>0 && typeof  dat === 'object'){
@@ -330,11 +331,15 @@ var todosArt = (function(){
                                    $(".cont_categoria_section_result").html(templateCompile);
                              }
                            }
+
+                           setTimeout(function(){ $('.cont_categoria_section_result_post').addClass('contCatResult_on'); },10);
+
+
                 }, 500);
              }).fail(function() {
-                 console.log("error");
+                  console.log("error");
              }).always(function() {
-                 console.log("fin: result sel cat");
+
              });
            }
        }
@@ -403,6 +408,53 @@ var todosArt = (function(){
                     $(".cont_sideBar_Categorias").html(templateCompile);
               })();
            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------POST---------------POST----------------POST--------------POST----------POST----------POST---------------POST----------------POST---------------------POST------
+
+
+
+
+
+
+
+//--------------------------------lista de categorias para nav sidebar---------------------------------
+this.verPOST=function(id_dia,id_hora){
+  (function() {
+       $.post("include/restApi/result_post_template.php",{id:id_dia,hora:id_hora}, function (data){
+        if(data.length>0){
+           var dat=JSON.parse(data);  
+           if(typeof  dat === 'object'){
+               var template_ = document.getElementById("template_Post_Script").innerHTML;
+               var contTemplate = Handlebars.compile(template_);
+               //---------------json para los resultados destacados del index-------------------
+               var context=dat;//bd_post;
+               var templateCompile = contTemplate(context);
+               $("#cont_post_result_template").html(templateCompile);
+            }
+          }
+
+       });
+   })();
+}
+
+
+
+
+
+
+
 
 
 

@@ -56,7 +56,7 @@
                                  <div class="result_post_01 col s12 m6 s6">
                                      <div class="result_post_01_contenido">
                                            <div class="result_post_01_contCat">
-                                             <div class="result_post_01_contCat_subCont">
+                                              <div class="result_post_01_contCat_subCont">
                                                       {{#each this.categorias}}
                                                           {{modulo_Categoria_resultado_cat categorias}}
                                                       {{/each}}
@@ -228,8 +228,8 @@
     require_once('include/footer.php');
 ?>
 <script>
-        var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>'
-        var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>'
+        var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>';
+        var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>';
 </script>
 
 <script src="js/function_categoria.js" type="text/javascript" charset="utf-8"></script>
