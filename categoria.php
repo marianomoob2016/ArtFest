@@ -26,7 +26,9 @@
            <div class="cont_categoria_head_navBar_subCategorias">
               <ul class="col s12 m12 l12">
                       {{#each this.subCat}}
+                        {{#ifCond @index '>' 0}}
                               {{modulo_categoria_subcat this.subCat this.colorFondo }}
+                        {{/ifCond}}
                       {{/each}}
               </ul>
            </div>

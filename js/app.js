@@ -119,27 +119,27 @@ var todosArt = (function(){
                          return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
                      });
 
-                     $.post("include/restApi/cantidad_cat.php",{}, function (data){
-                               console.log(data);
+                   $.post("include/restApi/cantidad_cat.php",{}, function (data){
+                            console.log(data);
 
-                               var template_ = document.getElementById("template_categoria_index").innerHTML;
-                               var template2_ = document.getElementById("template_categoria_index2").innerHTML;
-                               var contTemplate = Handlebars.compile(template_);
-                               var contTemplate2 = Handlebars.compile(template2_);
-                               //---------------json para los resultados destacados del index-------------------
-                               var context=bd_categorias;
-                               var templateCompile = contTemplate(context);
-                               var templateCompile2 = contTemplate2(context);
-                               $("#contCategoria1").html(templateCompile);
-                               $("#contCategoria2").html(templateCompile2);
+                                        var template_ = document.getElementById("template_categoria_index").innerHTML;
+                                        var template2_ = document.getElementById("template_categoria_index2").innerHTML;
+                                        var contTemplate = Handlebars.compile(template_);
+                                        var contTemplate2 = Handlebars.compile(template2_);
+                                        //---------------json para los resultados destacados del index-------------------
+                                        var context=bd_categorias;
+                                        var templateCompile = contTemplate(context);
+                                        var templateCompile2 = contTemplate2(context);
+                                        $("#contCategoria1").html(templateCompile);
+                                        $("#contCategoria2").html(templateCompile2);
 
-                     }).done(function() {
-                        // console.log("load: cat");
-                     }).fail(function() {
-                      //   console.log("error cat");
-                     }).always(function() {
-                      //  console.log("fin: cat");
-                     });
+                            }).done(function() {
+                                 // console.log("load: cat");
+                              }).fail(function() {
+                               //   console.log("error cat");
+                              }).always(function() {
+                               //  console.log("fin: cat");
+                             });
 
            })();
         }
@@ -412,17 +412,15 @@ var todosArt = (function(){
 
        //---------------------------lista de subcategorias en la categoria selccionada--------------------------------------
 
-           this.listarResult_totalSubcat=function(cat_,sub_){
+       this.listarResult_totalSubcat=function(cat_,sub_){
+            (function() {
 
-                (function() {
-
-        //----------------
-          if(cat_.length>0){
-              $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
-                console.log(cat_,data);
-                  if(data.length>0){
-                  var dat=JSON.parse(data);
-
+                //----------------
+                  if(cat_.length>0){
+                      $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
+                      //  console.log(cat_,data);
+                          if(data.length>0){
+                          var dat=JSON.parse(data);
 
 
                       //----------------
@@ -532,6 +530,64 @@ this.verPOST=function(id_dia,id_hora){
        });
    })();
 }
+
+
+
+
+
+
+
+
+
+
+
+        //-----------------------------------------------------------------
+        this.listar_Dest_Post=function(){
+          (function(){
+             $.post("include/restApi/result_dest_index.php",{}, function (data){
+
+                    Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
+                         return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                    });
+
+                    Handlebars.registerHelper("moduloDestacado_index", function(value){
+                                  return new Handlebars.SafeString(
+                                  "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
+                                    colorFondoPorCategoria_(this)+
+                                  "; color:#"+
+                                    colorTextoPorCategoria_(this)+
+                                  ";'>"+
+                                    this +
+                                    "</div>"
+                                  );
+                     });
+
+                     if(data.length>0){
+                         var dat=JSON.parse(data);
+
+                         //-----------convert array el string ','---------------
+                         for(var i=0;i < dat.length;i++){  dat[i].categorias=dat[i].categorias.split(',');  }
+
+                         //console.log(dat.length);
+                        if(dat.length>0){
+                               var template_ = document.getElementById("template_destacado_post").innerHTML;
+                               var contTemplate = Handlebars.compile(template_);
+                               //---------------json para los resultados destacados del index-------------
+                               var context=dat;//bd_result_destacado_index;
+                               var templateCompile = contTemplate(context);
+                               $("#cont_post_section_destacado").html(templateCompile);
+                         }
+                    }
+
+             }).done(function() {
+                // console.log("load: result dest index");
+             }).fail(function() {
+                // console.log("error dest index");
+             }).always(function() {
+                //console.log("fin: result dest index");
+             });
+           })();
+        }
 
 
 

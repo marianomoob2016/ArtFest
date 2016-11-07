@@ -51,10 +51,12 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                      {{/ifCond}}
+                                    {{/ifCond}}
                                   {{/ifCond}}
                               {{/each}}
                           </script>
+
+
 
                           <script id="template_categoria_index2" type="text/x-handlebars-template">
                               {{#each categorias}}
@@ -100,7 +102,9 @@
                                    </h1>
                                    <h4>
                                    {{#each this.categorias}}
-                                        {{moduloDestacado_index this.categorias}}
+                                        {{#ifCond @index '>=' 0}}
+                                             {{moduloDestacado_index this.categorias}}
+                                        {{/ifCond}}
                                    {{/each}}
                                    </h4>
                                    <p>{{titulo}}</p>
