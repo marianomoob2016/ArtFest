@@ -15,8 +15,10 @@ if (isset($_POST['id']) && isset($_POST['hora'])) {
   $hora_ = $_POST['hora'];
   //echo $catSel_;
   $users = $object->resultados_post($id_,$hora_);
-  //echo $users;
 
+
+  //echo $users;
+if(count($users) > 0){
 
           $categorias_ = explode(",", $users[0]['categorias']);
           $subCat_ = explode(",", $users[0]['subCat']);
@@ -43,6 +45,7 @@ if (isset($_POST['id']) && isset($_POST['hora'])) {
      $data= json_encode($miArray, JSON_UNESCAPED_UNICODE);
      //print_r($data);
      echo $data;
+}
 
 }
 

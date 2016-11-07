@@ -5,18 +5,20 @@
 ?>
 
 
+<script>
+        var v_id='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>';
+        var v_hora='<?php if(isset($_GET['hora'])){ echo $_GET['hora']; } ?>';
+</script>
+
 <!-- ......................................................... -->
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
+
+<script type="text/javascript">
+var dir = window.document.URL;
+var dir_URL_Code = encodeURIComponent(dir); //url del post
+</script>
 
 
 
@@ -42,16 +44,24 @@
                <div id="cont_post_head_redsocial" class="col s12 m12 l12">
                   <div class="col s1 m1 l1"></div>
                   <div class="col s2 m2 l2">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmarianoferle.com.ar%2Fpost.php%3Fid%3D{{id}}%26hora%3D{{hora}}&amp;src=sdkpreparse">
+                    <a class='fb-xfbml-parse-ignore' target='_blank' href='http://www.facebook.com/share.php?u='+dir_URL_Code+'&amp;src=sdkpreparse'>
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                     <!--div class="fb-share-button" data-href="http://marianoferle.com.ar/post.php?id={{id}}&amp;hora={{hora}}" data-layout="button_count" data-size="small" data-mobile-iframe="true">
                     </div-->
                   </div>
-                  <div class="col s2 m2 l2"><a href="" alt=""><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
+                  <div class="col s2 m2 l2">
+                    <a href='https://twitter.com/share' data-url='dir_URL_Code' target='_blank'>
+                          <i class='fa fa-twitter' aria-hidden='true'></i>
+                    </a>
+                  </div>
                   <div class="col s2 m2 l2"><a href="" alt=""> <i class="fa fa-pinterest" aria-hidden="true"></i> </a></div>
                   <div class="col s2 m2 l2"><a href="" alt=""> <i class="fa fa-paperclip" aria-hidden="true"></i> </a></div>
-                  <div class="col s2 m2 l2"><a href="" alt=""> <i class="fa fa-whatsapp" aria-hidden="true"></i> </a></div>
+                  <div class="col s2 m2 l2">
+                    <a href="whatsapp://send" data-text="Take a look at this awesome website:" data-href="dir_URL_Code" class="wa_btn wa_btn_s" style="display:none">
+                          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                  </div>
                   <div class="col s1 m1 l1"></div>
                </div>
             </div>
@@ -195,11 +205,6 @@
 
 
 
-
-
-
-
-
      <div id="cont_post_section_destacado" class="col s12 m12 l12">
           <div class="col s12 m4 l4">
 
@@ -211,7 +216,6 @@
 
           </div>
      </div>
-
 
 
 
@@ -259,10 +263,7 @@
     require_once('include/footer.php');
 ?>
 
-<script>
-        var v_id='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>';
-        var v_hora='<?php if(isset($_GET['hora'])){ echo $_GET['hora']; } ?>';
-</script>
+
 
 
 <script src="js/function_post.js" type="text/javascript" charset="utf-8"></script>

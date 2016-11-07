@@ -10,6 +10,8 @@ class CRUD{
     function __destruct(){ $this->db = null; }
 
 
+
+
     //-----------------resultados index----------------
     public function resultados_index(){
         $query = $this->db->prepare("SELECT * FROM lista_videos WHERE id >0 AND id <=10 ORDER BY id ASC ");
@@ -25,6 +27,21 @@ class CRUD{
     }
 
 
+    //-----------------resultados destacados en index----------------
+    public function resultados_destacados_en_index(){
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE destacado_activo=1 ORDER BY destacado_posicion ASC");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
+        $dat_= json_encode($data[0], true);
+        return $dat_;
+    }
+
+
+
 
 
 
@@ -38,8 +55,13 @@ class CRUD{
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $data[] = $row;
         }
+        //$dat_= json_encode($data, true);
         return $data;
     }
+
+
+
+
 
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria($catSel_){
@@ -53,6 +75,7 @@ class CRUD{
         $dat_= json_encode($data, true);
         return $dat_;
     }
+
 
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria_y_subcategoria($catSel_,$subSel_){
@@ -79,13 +102,11 @@ class CRUD{
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $data[] = $row;
         }
-
       //  $dat_= json_encode($data, true);
       //  print_r($dat_);
         return $data;
 
     }
-
 
 
 

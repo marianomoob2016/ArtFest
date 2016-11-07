@@ -5,7 +5,7 @@
     <div class="row">
     <div class="center">
       <div class="navFooterIcon col s12 m12 l3">
-        <a href="index.php" class="col s2 m2 l2">          
+        <a href="index.php" class="col s2 m2 l2">
             <img src="img/template/logo_media_moob.jpg" class="img_logo_footer" />
         </a>
      </div>
@@ -27,6 +27,25 @@
   </div>
 </footer>
 
+
+
+
+
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 

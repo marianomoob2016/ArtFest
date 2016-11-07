@@ -20,16 +20,17 @@
                   <li><a href="categoria.php?cat=gamers">Gamers</a></li>
                   <li><a href="categoria.php?cat=lifestyle">Lifestyle</a></li>
                   <li><a href="categoria.php?cat=clubmediafest">ClubMediaFest</a></li>
-                  <li>
-                    <div id="icon_social_nav" class="">
-                      <div class=""><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
-                      <div class=""><a href="#!" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
-                      <div class=""><a href="#!" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-                      <div class=""><a href="#!" title=""><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
-                      <div class=""><a href="#!" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-                    </div>                    
-                  </li>
                 </ul>
+
+
+                  <div id="icon_social_nav" class="col s2 m2 l2">
+                    <div class=""><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                    <div class=""><a href="#!" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                    <div class=""><a href="#!" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                    <div class=""><a href="#!" title=""><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
+                    <div class=""><a href="#!" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+                  </div>
+
 
 
 

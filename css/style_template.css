@@ -126,10 +126,10 @@ body {
 
 #nav_header_1{ background:#15181d; box-shadow: none; height:90px; line-height:90px; z-index: 999;}
 #nav_header_1 .nav-wrapper{ }
-#nav_header_1 .nav-wrapper .brand-logo{ width:1050px; height:90px; color: #fff; min-width:750px; z-index:99;}
+#nav_header_1 .nav-wrapper .brand-logo{ width:auto; height:90px; color: #fff; min-width:750px; z-index:99;}
 #nav_header_1 .button-collapse{ color: #fff; }
-#nav_desktop_cont a{ color: #ffdf1f; }
-#nav_desktop_cont li{ width:150px; height:90px; }
+#nav_desktop_cont a{ color: #ffdf1f;  margin: 0; padding: 0;}
+#nav_desktop_cont li{ width:110px; height:90px; }
 #nav_desktop_cont li a:hover{background:none;}
 #logo_nav{width:300px!important;}
 
@@ -140,13 +140,32 @@ body {
 #nav_header_1 .side-nav .side-nav-link{ color:#ffdf1f; width:100%; }
 
 
+                  @media (min-width:1680px) {  }
+                  @media (min-width:1280px) AND (max-width:1680px) {  }
+                  @media (min-width:1024px) AND (max-width:1280px) { #nav_header_1 .nav-wrapper .brand-logo{margin-left:20px; }   }
+                  @media (min-width:768px) AND (max-width:1023px) { #nav_header_1 .nav-wrapper .brand-logo{margin-left:100px; }  }
+                  @media (min-width:600px) AND (max-width:799px) {   }
+                  @media (min-width:480px) AND (max-width:599px) {   }
+                  @media (min-width:320px) AND (max-width:479px) {   }
+                  @media (max-width:320px) {  }
+
+
 .img_logo_head_mobile_sidenav{ width:150px; float: none; margin: 10px auto; display: block;}
 
 /*-------------------------------------------*/
 
-#icon_social_nav{  height: 100%; width: 100%; float: left; display: block; margin-left: 25px;}
+#icon_social_nav{  height: 80px;  width: 180px;  float: left;  display: block;  position: absolute;  right: 0px; }
 #icon_social_nav div a{width:20px; float:left; margin: 0; padding: 0;   margin-left: 10px; color:#fff; font-size:18px;}
 #icon_social_nav div a i{margin: 0!important; padding: 0!important; line-height:85px;}
+
+            @media (min-width:1680px) {  }
+            @media (min-width:1280px) AND (max-width:1680px) {  }
+            @media (min-width:1024px) AND (max-width:1280px) {   }
+            @media (min-width:768px) AND (max-width:1023px) { #icon_social_nav{display:none;} }
+            @media (min-width:600px) AND (max-width:799px) {  #icon_social_nav{display:none;} }
+            @media (min-width:480px) AND (max-width:599px) {  #icon_social_nav{display:none;} }
+            @media (min-width:320px) AND (max-width:479px) {  #icon_social_nav{display:none;} }
+            @media (max-width:320px) {  #icon_social_nav{display:none;} }
 
 /*-------------------------------------------*/
 
@@ -492,7 +511,7 @@ body {
                 @media (min-width:320px) AND (max-width:479px) {
                   .contChicoResult{ height:300px;}
                   .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{ width:100%; font-size:20px; line-height:25px; letter-spacing: 1px;}
-                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; font-size:16px; line-height: 20px; }
+                  .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info p{ width:100%; height:20px;  font-size:16px; line-height: 20px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
                 }
 
 
@@ -612,7 +631,7 @@ body {
 
 
 
-.cont_categoria_section_result{ min-height: 1000px; margin:0px!important; padding: 0px!important;}
+.cont_categoria_section_result{ min-height: 100px!important; margin:0px!important; padding: 0px!important;}
 /*.cont_categoria_section_result_post{width: 100%; height:100%; margin:0px!important; padding: 0px!important;  display:block; float:left; position:relative; overflow: hidden; }*/
 .cont_categoria_section_result_post{width:100%; height:|100%; margin:0px!important; padding: 0px!important;  display:block; float:left; position:relative; overflow:hidden; opacity:0.0;}
 
@@ -879,7 +898,7 @@ body {
           @media (min-width:320px) AND (max-width:479px) {   #cont_post{ width:300px;  transition: width 1s;} }
 
 
-   
+
 #cont_post_head{ width:100%; }
 
 #cont_post_head_catSubcat{ position:relative; float:none; margin:0 auto; text-transform: capitalize; }
@@ -916,7 +935,7 @@ body {
           }
           @media (min-width:320px) AND (max-width:479px) {
             #cont_post_section_video_cont{height: 180px; transition: width 1s;}
-            #tituloPost{  font-size: 30px; }
+            #tituloPost{  font-size: 30px; margin: 30px 10px; }
             #categoriaPost{ font-size: 20px; }
           }
 

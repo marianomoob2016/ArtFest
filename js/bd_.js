@@ -400,7 +400,7 @@ var bd_categorias = {"categorias":[
        infoCat:"Bloopers,retos,desafíos, chistes, trolleos y los encuentros más divertidos. Imposible no reírse con ellos.",
        colorFondo:"ffff01",
        colorTexto:"333333",
-       cantidad:10,
+       cantidad:30,
        subCat:["bloopers","fails","bizarro","sketch","vines","parodias","chistes","standUp","desafíos"]
      },{
        categoria:"musica",
@@ -421,7 +421,7 @@ var bd_categorias = {"categorias":[
        infoCat:"Aprendé sobre moda, look, uñas, tendencias, makeup con las mejores de toda habla hispana.",
        colorFondo:"35df89",
        colorTexto:"ffffff",
-       cantidad:10,
+       cantidad:20,
        subCat:["viajes","cocina","salidas","DIY","cine","madres","deco","jardín","bares","cerveza"]
      },{
        categoria:"gamers",

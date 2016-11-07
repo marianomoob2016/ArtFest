@@ -12,7 +12,6 @@
 
 
 
-
 <!-- ...........................cont section index...................................................... -->
     <div id="contSection">
      <div class="col s12 m12 l12">
@@ -87,14 +86,16 @@
 
                   <!-- ...............................modulo dinamico de destacados.............................................-->
                   <script id="template_destacado_index_sideBar" type="text/x-handlebars-template">
-                        {{#each videos}}
+                        {{#each this}}
                           {{#ifCond @index '==' 4}}
                              <img src="{{srcImgDestacado}}" title="Destacado"/>
                              <div class="contAsideBotton_fondo_opacity"></div>
                              <div class="contAsideBotton_info">
                                    <h1>
-                                     {{#each this.autores}}
-                                          {{moduloDestacado_index_autores this.autores}}
+                                    {{#each this.autores}}
+                                          {{#ifCond @index '<=' 1}}
+                                               {{moduloDestacado_index_autores this.autores}}
+                                          {{/ifCond}}
                                      {{/each}}
                                    </h1>
                                    <h4>
@@ -180,7 +181,7 @@
                                                               {{#each this.categorias}}
                                                                    {{moduloResult_itemsCategoria categorias}}
                                                               {{/each}}
-                                                              {{id}}- {{hora_id}} - {{dia_id}}
+                                                            <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                               <h1>{{titulo}}</h1>
                                                               <p>{{subTit}}</p>
                                                             </div>
@@ -198,7 +199,7 @@
                                                         {{#each this.categorias}}
                                                              {{moduloResult_itemsCategoria categorias}}
                                                         {{/each}}
-                                                        {{id}}- {{hora_id}} - {{dia_id}}
+                                                        <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                         <h1>{{titulo}}</h1>
                                                         <p>{{subTit}}</p>
                                                       </div>
@@ -226,7 +227,7 @@
                                                     {{#each this.categorias}}
                                                          {{moduloResult_itemsCategoria categorias}}
                                                     {{/each}}
-                                                    {{id}}- {{hora_id}} - {{dia_id}}
+                                                    <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                     <h1>{{titulo}}</h1>
                                                     <p>{{subTit}}</p>
                                                   </div>
@@ -244,7 +245,7 @@
                                                     {{#each this.categorias}}
                                                          {{moduloResult_itemsCategoria categorias}}
                                                     {{/each}}
-                                                    {{id}}- {{hora_id}} - {{dia_id}}
+                                                      <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                     <h1>{{titulo}}</h1>
                                                     <p>{{subTit}}</p>
                                                   </div>

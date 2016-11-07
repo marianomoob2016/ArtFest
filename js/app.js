@@ -5,10 +5,9 @@ var todosArt = (function(){
 
         "use strict";
 
-        let categoriaVar="";
-        let subCategoriaVar="";
-
-        let urlVar="";
+        var categoriaVar="";
+        var subCategoriaVar="";
+        var urlVar="";
 
 //--------------------------------------------------------------------------------------------------------------------
 
@@ -17,6 +16,8 @@ var todosArt = (function(){
         this.set_subCategoriaVar=function(subcat_){ subCategoriaVar=subcat_;  }
         this.get_categoriaVar=function(){ return categoriaVar;   }
         this.get_subCategoriaVar=function(){ return subCategoriaVar;  }
+
+
 
         //------------------
 
@@ -75,7 +76,7 @@ var todosArt = (function(){
             return color_;
         }
 
-        //-------------------color para cada cateogria------------------
+        //-------------------cantidad por cateogria------------------
         var cantidadPorCategoria_=function(cat_){
             var catSel=cat_;
             var color_=0;
@@ -113,20 +114,32 @@ var todosArt = (function(){
         //-----------------------------------------------------------------
         this.listarCategoria_index=function(){
           (function() {
-                 Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                     return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
-                 });
 
-                 var template_ = document.getElementById("template_categoria_index").innerHTML;
-                 var template2_ = document.getElementById("template_categoria_index2").innerHTML;
-                 var contTemplate = Handlebars.compile(template_);
-                 var contTemplate2 = Handlebars.compile(template2_);
-                 //---------------json para los resultados destacados del index-------------------
-                 var context=bd_categorias;
-                 var templateCompile = contTemplate(context);
-                 var templateCompile2 = contTemplate2(context);
-                 $("#contCategoria1").html(templateCompile);
-                 $("#contCategoria2").html(templateCompile2);
+                     Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
+                         return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
+                     });
+
+                     $.post("include/restApi/cantidad_cat.php",{}, function (data){
+                               console.log(data);
+
+                               var template_ = document.getElementById("template_categoria_index").innerHTML;
+                               var template2_ = document.getElementById("template_categoria_index2").innerHTML;
+                               var contTemplate = Handlebars.compile(template_);
+                               var contTemplate2 = Handlebars.compile(template2_);
+                               //---------------json para los resultados destacados del index-------------------
+                               var context=bd_categorias;
+                               var templateCompile = contTemplate(context);
+                               var templateCompile2 = contTemplate2(context);
+                               $("#contCategoria1").html(templateCompile);
+                               $("#contCategoria2").html(templateCompile2);
+
+                     }).done(function() {
+                        // console.log("load: cat");
+                     }).fail(function() {
+                      //   console.log("error cat");
+                     }).always(function() {
+                      //  console.log("fin: cat");
+                     });
 
            })();
         }
@@ -136,56 +149,108 @@ var todosArt = (function(){
         //-----------------------------------------------------------------
         this.listarDest_index_sideBar=function(){
           (function() {
-                 Handlebars.registerHelper("moduloDestacado_index_linkPost_sideBar", function(value){
-                     return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                 });
+            $.post("include/restApi/result_dest_index.php",{}, function (data){
 
-                 Handlebars.registerHelper("moduloDestacado_index", function(value){
-                              return new Handlebars.SafeString("<div>"+this+"</div>");
-                 });
+                   Handlebars.registerHelper("moduloDestacado_index_linkPost_sideBar", function(value){
+                       return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                   });
 
-                 Handlebars.registerHelper("moduloDestacado_index_autores", function(value){
-                              return new Handlebars.SafeString("<div>"+this+"</div>");
-                 });
+                   Handlebars.registerHelper("moduloDestacado_index", function(value){
+                                return new Handlebars.SafeString("<div>"+this+"</div>");
+                   });
 
-                 var template_ = document.getElementById("template_destacado_index_sideBar").innerHTML;
-                 var contTemplate = Handlebars.compile(template_);
-                 //---------------json para los resultados destacados del index-----------------
-                 var context=bd_result_destacado_index;
-                 var templateCompile = contTemplate(context);
-                 $("#contAsideBotton").html(templateCompile);
+                   Handlebars.registerHelper("moduloDestacado_index_autores", function(value){
+                                return new Handlebars.SafeString("<div>"+this+"</div>");
+                   });
+
+                   if(data.length>0){
+                       var dat=JSON.parse(data);
+
+                       //-----------convert array el string ','---------------
+                       for(var i=0;i < dat.length;i++){
+                         dat[i].categorias=dat[i].categorias.split(',');
+                         dat[i].autores=dat[i].autores.split(',');
+                      }
+
+
+                    //  console.log(dat.length);
+
+                      if(dat.length>0){
+
+                           var template_ = document.getElementById("template_destacado_index_sideBar").innerHTML;
+                           var contTemplate = Handlebars.compile(template_);
+                           //---------------json para los resultados destacados del index-----------------
+                           var context=dat;//bd_result_destacado_index;
+                           var templateCompile = contTemplate(context);
+                           $("#contAsideBotton").html(templateCompile);
+                       }
+                   }
+
+                 }).done(function() {
+                     //console.log("load: result dest sidebar index");
+                 }).fail(function() {
+                     //console.log("error dest sidebar index");
+                 }).always(function() {
+                    //console.log("fin: result dest sidebar index");
+                 });
            })();
         }
+
+
+
+
 
 
 
         //-----------------------------------------------------------------
         this.listarDest_index=function(){
-          (function() {
-                Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
-                     return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                });
+          (function(){
+             $.post("include/restApi/result_dest_index.php",{}, function (data){
 
-                Handlebars.registerHelper("moduloDestacado_index", function(value){
-                              return new Handlebars.SafeString(
-                              "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
-                                colorFondoPorCategoria_(this)+
-                              "; color:#"+
-                                colorTextoPorCategoria_(this)+
-                              ";'>"+
-                                this +
-                                "</div>"
-                              );
-                 });
+                    Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
+                         return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                    });
 
-                 var template_ = document.getElementById("template_destacado_index").innerHTML;
-                 var contTemplate = Handlebars.compile(template_);
-                 //---------------json para los resultados destacados del index-------------
-                 var context=bd_result_destacado_index;
-                 var templateCompile = contTemplate(context);
-                 $("#cont_destacado_header ul").html(templateCompile);
+                    Handlebars.registerHelper("moduloDestacado_index", function(value){
+                                  return new Handlebars.SafeString(
+                                  "<div class='cont_destacado_header_moduloCont_item1' style='background:#"+
+                                    colorFondoPorCategoria_(this)+
+                                  "; color:#"+
+                                    colorTextoPorCategoria_(this)+
+                                  ";'>"+
+                                    this +
+                                    "</div>"
+                                  );
+                     });
+
+                     if(data.length>0){
+                         var dat=JSON.parse(data);
+
+                         //-----------convert array el string ','---------------
+                         for(var i=0;i < dat.length;i++){  dat[i].categorias=dat[i].categorias.split(',');  }
+
+                         //console.log(dat.length);
+                        if(dat.length>0){
+                               var template_ = document.getElementById("template_destacado_index").innerHTML;
+                               var contTemplate = Handlebars.compile(template_);
+                               //---------------json para los resultados destacados del index-------------
+                               var context=dat;//bd_result_destacado_index;
+                               var templateCompile = contTemplate(context);
+                               $("#cont_destacado_header ul").html(templateCompile);
+                         }
+                    }
+
+             }).done(function() {
+                // console.log("load: result dest index");
+             }).fail(function() {
+                // console.log("error dest index");
+             }).always(function() {
+                //console.log("fin: result dest index");
+             });
            })();
         }
+
+
 
 
 
@@ -209,7 +274,7 @@ var todosArt = (function(){
 
                                      //-------------crea URL para lista de post en el index----------
                                       Handlebars.registerHelper("moduloResult_index_linkPost", function(value){
-                                          console.log(this.dia_id,this.hora_id);
+                                          //console.log(this.dia_id,this.hora_id);
                                           return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
                                       });
 
@@ -235,11 +300,11 @@ var todosArt = (function(){
                                 }
                         }
                 }).done(function() {
-                    console.log("load: result index");
+                  //  console.log("load: result index");
                 }).fail(function() {
-                    console.log("error");
+                  //  console.log("error");
                 }).always(function() {
-                   console.log("fin: result index");
+                  // console.log("fin: result index");
                 });
               })();
           }
@@ -285,7 +350,7 @@ var todosArt = (function(){
                   setTimeout(function(){
                           if(data.length>2){
                               var dat=JSON.parse(data);
-                            if(dat[0].length>0 && typeof  dat === 'object'){
+                             if(dat[0].length>0 && typeof  dat === 'object'){
 
                                    //------pre compres a array el string ','-----------
                                    for(var i=0;i < dat[0].length;i++){  dat[0][i].categorias=dat[0][i].categorias.split(',');  }
@@ -309,17 +374,9 @@ var todosArt = (function(){
                                     });
 
                                     Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
-                                                var res_="";
-
-                                                  for(var i=0;i<this.subcat.length;i++){
-                                                        res_+=("&nbsp;&nbsp;#"+this.subcat[i]);
-                                                  }
-
-                                                  return new Handlebars.SafeString(
-                                                 "<div class='result_post_01_contCat_subcat'>"+
-                                                    res_+
-                                                  "</div>"
-                                                );
+                                          var res_="";
+                                          for(var i=0;i<this.subcat.length;i++){ res_+=("&nbsp;&nbsp;#"+this.subcat[i]); }
+                                          return new Handlebars.SafeString("<div class='result_post_01_contCat_subcat'>"+res_+"</div>");
                                    });
 
 
@@ -334,11 +391,16 @@ var todosArt = (function(){
 
                            setTimeout(function(){ $('.cont_categoria_section_result_post').addClass('contCatResult_on'); },10);
 
-
                 }, 500);
-             }).fail(function() {
-                  console.log("error");
-             }).always(function() {
+             }).fail(function(data) {
+              //  console.log("error",data.length);
+             }).always(function(data) {
+
+                if(data.length<=2){
+                      setTimeout(function(){
+                          $(".cont_categoria_section_result").append("<div class='center'><i class='fa fa-hand-o-up' aria-hidden='true' style='font-size:22px;'></i>  Sin Resultados </div>");
+                      },500);
+                }
 
              });
            }
@@ -351,44 +413,51 @@ var todosArt = (function(){
        //---------------------------lista de subcategorias en la categoria selccionada--------------------------------------
 
            this.listarResult_totalSubcat=function(cat_,sub_){
+
                 (function() {
-                  if(cat_.length>0){
-                     $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
 
-                                //----------------
-                                       Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
-                                           return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
-                                       });
-                                //----------------
-                                       Handlebars.registerHelper("modulo_categoria_subcat", function(value){
-                                           if(dat.subCat.length>0 && dat.subCat[0].length>1){
-                                                 return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
-                                                   dat.colorFondo+
-                                                 "; color:#"+
-                                                   dat.colorTexto+
-                                                 "'>"+
-                                                   this+
-                                                 "</a></li>");
-                                           }else{
-                                                return new Handlebars.SafeString("");
-                                           }
-                                       });
-                               //----------------
-                                      if(data.length>0){
-                                          var dat=JSON.parse(data);
-                                          if(typeof  dat === 'object'){
-                                              var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
-                                              var contTemplate = Handlebars.compile(template_);
-                                              //---------------json para los resultados destacados del index-------------------
-                                              var context=dat;
-                                              var templateCompile = contTemplate(context);
-                                              $("#cont_categoria_head").html(templateCompile);
-                                            }
-                                      }
+        //----------------
+          if(cat_.length>0){
+              $.post("include/restApi/sel_tipo_cat.php",{cat:cat_}, function (data){
+                console.log(cat_,data);
+                  if(data.length>0){
+                  var dat=JSON.parse(data);
 
-                      });
 
-                    }
+
+                      //----------------
+                             Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
+                                 return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                             });
+
+                      //----------------
+                             Handlebars.registerHelper("modulo_categoria_subcat", function(value){
+                                 if(dat.subCat.length>0 && dat.subCat[0].length>1){
+                                       return new Handlebars.SafeString("<li><a href='"+urlVar+"categoria.php?cat="+cat_+"&subcat="+this+"' class='waves-effect btn' style='background:#"+
+                                         dat.colorFondo+
+                                       "; color:#"+
+                                         dat.colorTexto+
+                                       "'>"+
+                                         this+
+                                       "</a></li>");
+                                 }else{
+                                      return new Handlebars.SafeString("");
+                                 }
+                             });
+
+                             //----------------------------------------
+                              if(typeof  dat === 'object'){
+                                  var template_ = document.getElementById("template_categoria_subCatList").innerHTML;
+                                  var contTemplate = Handlebars.compile(template_);
+                                  //---------------json para los resultados destacados del index-------------------
+                                  var context=dat;
+                                  var templateCompile = contTemplate(context);
+                                  $("#cont_categoria_head").html(templateCompile);
+                                }
+                      }
+                  });
+                }
+
               })();
             }
 
@@ -429,14 +498,21 @@ var todosArt = (function(){
 
 
 
+
+
+
+
+
+
+
+
 //--------------------------------lista de categorias para nav sidebar---------------------------------
 this.verPOST=function(id_dia,id_hora){
   (function() {
        $.post("include/restApi/result_post_template.php",{id:id_dia,hora:id_hora}, function (data){
         if(data.length>0){
            var dat=JSON.parse(data);
-          console.log(dat);
-           if(typeof  dat === 'object'){
+           if(typeof  dat === 'object'&&dat.dia_id==id_dia&&dat.hora_id==id_hora){
                var template_ = document.getElementById("template_Post_Script").innerHTML;
                var contTemplate = Handlebars.compile(template_);
                //---------------json para los resultados destacados del index-------------------
@@ -444,8 +520,15 @@ this.verPOST=function(id_dia,id_hora){
                var templateCompile = contTemplate(context);
                $("#cont_post_result_template").html(templateCompile);
             }
+          }else{
+               location.replace("index.php");
           }
-
+       }).done(function(data){
+          //console.log("done",data);
+       }).fail(function(data) {
+          //console.log("error",data);
+       }).always(function(data) {
+          //console.log("always",data);
        });
    })();
 }

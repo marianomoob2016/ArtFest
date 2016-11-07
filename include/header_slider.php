@@ -8,26 +8,26 @@
 
                  <div class="carousel-item  white-text" href="#one!">
                    <div class="cont_img_slider img_banner1">
-                       <h2>First Panel</h2>
-                       <p class="white-text">This is your first panel</p>
+                       <!--h2>First Panel</h2>
+                       <p class="white-text">This is your first panel</p-->
                    </div>
                  </div>
                  <div class="carousel-item white-text" href="#two!">
                    <div class="cont_img_slider img_banner2">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
+                     <!--h2>First Panel</h2>
+                     <p class="white-text">This is your first panel</p-->
                    </div>
                  </div>
                  <div class="carousel-item white-text" href="#three!">
                    <div class="cont_img_slider img_banner3">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
+                     <!--h2>First Panel</h2>
+                     <p class="white-text">This is your first panel</p-->
                    </div>
                  </div>
                  <div class="carousel-item white-text" href="#four!">
                    <div class="cont_img_slider img_banner4">
-                       <h2>Second Panel</h2>
-                       <p class="white-text">This is your second panel</p>
+                     <!--h2>First Panel</h2>
+                     <p class="white-text">This is your first panel</p-->
                    </div>
                  </div>
 
@@ -38,13 +38,13 @@
 
         <!-- ...............................modulo dinamico de destacados.............................................-->
         <script id="template_destacado_index" type="text/x-handlebars-template">
-              {{#each videos}}
+              {{#each this}}
               {{#ifCond @index '<' 4}}
                  <li class="col s12 m6 l3">
                      <div class="cont_destacado_header_moduloCont">
 
                          <a href="{{ moduloDestacado_index_linkPost this.categorias }}"target='_self' title=''>
-                             <img src="{{srcImg}}" alt=""/>
+                             <img src="{{urlImgVid}}" alt=""/>
                              <div class="cont_destacado_header_moduloCont_fondo_opacity{{@key}}"></div>
                              <div class="cont_info_destacado_header">
                                {{#each this.categorias}}
