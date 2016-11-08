@@ -180,7 +180,7 @@
 
           <script id="template_categoria_categorias_nav" type="text/x-handlebars-template">
               {{#each this}}
-                    <div class="cont_sideBar_Categorias_individual" style="background:#{{colorFondo}};">
+                        <div class="cont_sideBar_Categorias_individual" style="background:#{{colorFondo}};">
                           <a href="{{moduloCategoria_catNav_link this.categorias }}" target="_self" title="" style="color:#{{colorTexto}};">
                               <div class="cont_sideBar_Categorias_individual_info">
                                     <h1>{{categoria}}</h1>

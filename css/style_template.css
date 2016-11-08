@@ -835,7 +835,7 @@ body {
 .cont_sideBar_Categorias .cont_sideBar_Categorias_individual{ width:100%; float:left; }
 .cont_sideBar_Categorias .cont_sideBar_Categorias_individual a{ color:#fff; }
 .cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info{ width:100%; height:100%; margin: 0; padding: 0 30px;  display: block;  float: left; position:relative; }
-.cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info h1{font-size: 32px; font-weight: bold;}
+.cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info h1{font-size: 32px; font-weight: bold; text-transform: capitalize;}
 .cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info_vid{ bottom: 10px; left: 0; position: absolute;  width:calc(100% - 60px); margin:0 30px;}
 .cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info_vid .cont_sideBar_Categorias_individual_info_vid_icon{width:10px; height:10px; background:#fff; float:right;  margin-top: 3px;}
 .cont_sideBar_Categorias_individual_info_vid p{width:200px; margin:0px!important; padding: 0!important; float: left;}

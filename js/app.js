@@ -379,7 +379,7 @@ var todosArt = (function(){
 
 
        //------------------------------resultados para la seccion-----------------------------------
-       this.listarResult_Categoria=function(cat_){
+       this.listarResult_Categoria=function(cat_,sub_){
 
                  Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
                      return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
@@ -406,7 +406,7 @@ var todosArt = (function(){
 
 
            if(cat_.length>0){
-              $.post("include/restApi/result_sel_cat.php",{cat:cat_}, function (){
+              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (){
                    $(".cont_categoria_section_result").html("<div class='progress'><div class='indeterminate' style='background-color:#"+colorFondoPorCategoria_(cat_)+"'></div></div>");
               }).done(function(data){
                   setTimeout(function(){
