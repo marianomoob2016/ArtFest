@@ -12,7 +12,6 @@
 
 
 
-
 <!-- ......................................................... -->
 
 
@@ -180,14 +179,15 @@
       <!-- ......................................nav categoria en sidebar..................................................... -->
 
           <script id="template_categoria_categorias_nav" type="text/x-handlebars-template">
-              {{#each categorias}}
+              {{#each this}}
                     <div class="cont_sideBar_Categorias_individual" style="background:#{{colorFondo}};">
                           <a href="{{moduloCategoria_catNav_link this.categorias }}" target="_self" title="" style="color:#{{colorTexto}};">
                               <div class="cont_sideBar_Categorias_individual_info">
                                     <h1>{{categoria}}</h1>
-                                    <p>{{infoCat}}</p>
+                                    <p>{{info_cat}}</p>
                                     <div class="cont_sideBar_Categorias_individual_info_vid">
-                                        <p>{{cantidad}} Videos</p>
+                                        <div id="cantidad_videos_cat_{{categoria}}" class="cont_cantidad_vid_navCat"></div>
+                                        <p>Videos</p>
                                         <div class="cont_sideBar_Categorias_individual_info_vid_icon" style="background:#{{colorTexto}};"></div>
                                     </div>
                               </div>

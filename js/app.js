@@ -90,6 +90,35 @@ var todosArt = (function(){
 
 
 
+//-----------------------------------------------------------------
+
+
+
+
+        var cantidad_func=function(datt_, tipo){
+             for(var i=0;i<datt_.length;i++){
+                    var cat_=datt_[i].categoria;
+                    ver(cat_);
+                    function ver(cat2_){
+                         $.post("include/restApi/cantidadPorCategoria.php",{cat:cat2_}, function (data2){
+                           if(tipo=="index"){
+                              $("#cantidad_videos_"+cat2_).html(data2);
+                           }else if(tipo=="categori"){
+                             $("#cantidad_videos_cat_"+cat2_).html(data2);
+                           }
+                          });
+                    }
+             }
+        }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -97,6 +126,8 @@ var todosArt = (function(){
 
 
 //-------INDEX--------------INDEX-----------INDEX--------------INDEX------------INDEX-------------INDEX------------INDEX--------------INDEX---------INDEX-----------INDEX----
+
+
 
 
 
@@ -120,29 +151,35 @@ var todosArt = (function(){
                      });
 
                    $.post("include/restApi/cantidad_cat.php",{}, function (data){
-                            console.log(data);
+
+                      var dat=JSON.parse(data);
 
                                         var template_ = document.getElementById("template_categoria_index").innerHTML;
                                         var template2_ = document.getElementById("template_categoria_index2").innerHTML;
                                         var contTemplate = Handlebars.compile(template_);
                                         var contTemplate2 = Handlebars.compile(template2_);
                                         //---------------json para los resultados destacados del index-------------------
-                                        var context=bd_categorias;
+
+                                        var context=dat;
                                         var templateCompile = contTemplate(context);
                                         var templateCompile2 = contTemplate2(context);
                                         $("#contCategoria1").html(templateCompile);
                                         $("#contCategoria2").html(templateCompile2);
 
-                            }).done(function() {
-                                 // console.log("load: cat");
-                              }).fail(function() {
-                               //   console.log("error cat");
-                              }).always(function() {
-                               //  console.log("fin: cat");
-                             });
+                                        cantidad_func(dat,"index");
+
+                      }).done(function() {
+                           // console.log("load: cat");
+
+                      }).fail(function() {
+                       //   console.log("error cat");
+                      }).always(function() {
+                       //  console.log("fin: cat");
+                     });
 
            })();
         }
+
 
 
 
@@ -342,9 +379,34 @@ var todosArt = (function(){
 
 
        //------------------------------resultados para la seccion-----------------------------------
-       this.listarResult_Categoria=function(cat_,sub_){
+       this.listarResult_Categoria=function(cat_){
+
+                 Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
+                     return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                 });
+
+                 Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
+                                     return new Handlebars.SafeString(
+                                           "<div class='result_post_01_contCat_bot' style='background:#"+
+                                             colorFondoPorCategoria_(this)+
+                                           "; color:#"+
+                                             colorTextoPorCategoria_(this)+
+                                           ";'>"+
+                                             this+
+                                           "</div>"
+                                     );
+                  });
+
+                  Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
+                        var res_="";
+                        for(var i=0;i<this.subcat.length;i++){ res_+=("&nbsp;&nbsp;#"+this.subcat[i]); }
+                        return new Handlebars.SafeString("<div class='result_post_01_contCat_subcat'>"+res_+"</div>");
+                 });
+
+
+
            if(cat_.length>0){
-              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (){
+              $.post("include/restApi/result_sel_cat.php",{cat:cat_}, function (){
                    $(".cont_categoria_section_result").html("<div class='progress'><div class='indeterminate' style='background-color:#"+colorFondoPorCategoria_(cat_)+"'></div></div>");
               }).done(function(data){
                   setTimeout(function(){
@@ -354,31 +416,6 @@ var todosArt = (function(){
 
                                    //------pre compres a array el string ','-----------
                                    for(var i=0;i < dat[0].length;i++){  dat[0][i].categorias=dat[0][i].categorias.split(',');  }
-
-
-                                   Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                                       return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
-                                   });
-
-                                   Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
-
-                                                       return new Handlebars.SafeString(
-                                                             "<div class='result_post_01_contCat_bot' style='background:#"+
-                                                               colorFondoPorCategoria_(this)+
-                                                             "; color:#"+
-                                                               colorTextoPorCategoria_(this)+
-                                                             ";'>"+
-                                                               this+
-                                                             "</div>"
-                                                       );
-                                    });
-
-                                    Handlebars.registerHelper("modulo_Categoria_resultado_subCat", function(value){
-                                          var res_="";
-                                          for(var i=0;i<this.subcat.length;i++){ res_+=("&nbsp;&nbsp;#"+this.subcat[i]); }
-                                          return new Handlebars.SafeString("<div class='result_post_01_contCat_subcat'>"+res_+"</div>");
-                                   });
-
 
                                    var template_ = document.getElementById("template_resultCategoria").innerHTML;
                                    var contTemplate = Handlebars.compile(template_);
@@ -460,6 +497,7 @@ var todosArt = (function(){
             }
 
 
+
            //--------------------------------lista de categorias para nav sidebar---------------------------------
            this.listarCategoria_navLik=function(){
              (function() {
@@ -467,12 +505,21 @@ var todosArt = (function(){
                         return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
                     });
 
-                    var template_ = document.getElementById("template_categoria_categorias_nav").innerHTML;
-                    var contTemplate = Handlebars.compile(template_);
-                    //---------------json para los resultados destacados del index-------------------
-                    var context=bd_categorias;
-                    var templateCompile = contTemplate(context);
-                    $(".cont_sideBar_Categorias").html(templateCompile);
+                    $.post("include/restApi/cantidad_cat.php",{}, function (data){
+
+                          var dat=JSON.parse(data);
+
+                          var template_ = document.getElementById("template_categoria_categorias_nav").innerHTML;
+                          var contTemplate = Handlebars.compile(template_);
+                          //---------------json para los resultados destacados del index-------------------
+                          var context=dat;//bd_categorias;
+                          var templateCompile = contTemplate(context);
+                          $(".cont_sideBar_Categorias").html(templateCompile);
+
+                          cantidad_func(dat,"categori");
+
+                  });
+
               })();
            }
 

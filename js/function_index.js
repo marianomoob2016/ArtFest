@@ -7,8 +7,8 @@ $(document).ready(function(){
         AF_index.listarCategoria_index();
         AF_index.listarDest_index();
         AF_index.listarDest_index_sideBar();
-
         AF_index.listarPost_index();
+
 
 
         //--------------active nav scroll------------

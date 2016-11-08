@@ -42,27 +42,6 @@ class CRUD{
 
 
 
-
-
-
-
-
-    //-----------------busca categoria seleccionada----------------
-    public function categoria_seleccionada($catSel_){
-        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria = '$catSel_'");
-        $query->execute();
-        $data = array();
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-        //$dat_= json_encode($data, true);
-        return $data;
-    }
-
-
-
-
-
     //-----------------busca categoria seleccionada----------------
     public function resultados_por_categoria($catSel_){
         $query = $this->db->prepare("SELECT * FROM lista_videos WHERE categorias LIKE '%{$catSel_}%' ");
@@ -92,8 +71,6 @@ class CRUD{
 
 
 
-
-
     //---------------------------------
     public function resultados_post($id_,$hora_){
         $query = $this->db->prepare("SELECT * FROM lista_videos WHERE dia_id = '{$id_}' AND hora_id ='{$hora_}' ");
@@ -105,8 +82,59 @@ class CRUD{
       //  $dat_= json_encode($data, true);
       //  print_r($dat_);
         return $data;
+    }
+
+
+
+
+
+
+
+
+    //-----------------busca categoria seleccionada----------------
+    public function categorias_tipos(){
+        $query = $this->db->prepare("SELECT * FROM categorias");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+        $dat_= json_encode($data[0], true);
+        return $dat_;
+    }
+
+
+
+    //-----------------busca categoria seleccionada----------------
+    public function categoria_seleccionada($catSel_){
+        $query = $this->db->prepare("SELECT * FROM categorias WHERE categoria = '$catSel_'");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+        //$dat_= json_encode($data, true);
+        return $data;
 
     }
+
+
+
+    //-----------------busca categoria seleccionada----------------
+    public function total_por_categoria($catSel_){
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE categorias LIKE '%{$catSel_}%' ");
+        $query->execute();
+        $data = array();
+        while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {
+            $data[] = $row;
+        }
+
+       $dat_= count($data[0]);
+       return $dat_;
+
+    }
+
+
 
 
 

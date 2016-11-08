@@ -25,19 +25,22 @@
 
                   <div id="contModalCategoria" class="col s12 m12 l8">
 
-
                             <script id="template_categoria_index" type="text/x-handlebars-template">
-                                {{#each categorias}}
-                                  {{#ifCond @index '<' 3}}
-                                     {{#ifCond @index '==' 0}}
+                                {{#each this}}
+                                 {{#ifCond @index '<' 3}}
+                                      {{#ifCond @index '==' 0}}
                                             <div class="contGrandeCat col s12 m12 l12">
                                                   <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
                                                       <img src="{{imgCategoria}}"/>
                                                       <div class="contCat_fondo_opacity"></div>
                                                       <div class="contInfoGrandeCat">
                                                             <h1>{{categoria}}</h1>
-                                                            <p>{{infoCat}}</p>
-                                                            <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon"></div></div>
+                                                            <p>{{info_cat}}</p>
+                                                            <div class="contVidInfo">
+                                                              <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                              <p>Videos</p>
+                                                              <div class="contVidInfo_icon"></div>
+                                                            </div>
                                                       </div>
                                                   </a>
                                             </div>
@@ -46,27 +49,33 @@
                                                 <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
                                                     <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
                                                           <h1>{{categoria}}</h1>
-                                                          <p>{{infoCat}}</p>
-                                                          <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div></div>
+                                                          <p>{{info_cat}}</p>
+                                                          <div class="contVidInfo">
+                                                              <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                              <p>Videos</p>
+                                                              <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
+                                                          </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                    {{/ifCond}}
+                                       {{/ifCond}}
                                   {{/ifCond}}
                               {{/each}}
                           </script>
 
-
-
                           <script id="template_categoria_index2" type="text/x-handlebars-template">
-                              {{#each categorias}}
+                              {{#each this}}
                                 {{#ifCond @index '>' 2}}
                                           <div class="contChicoCat col s12 m12 l12" style="background:#{{colorFondo}};">
                                               <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
                                                   <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
                                                         <h1>{{categoria}}</h1>
-                                                        <p>{{infoCat}}</p>
-                                                        <div class="contVidInfo"><p>{{cantidad}} Videos</p><div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div></div>
+                                                        <p>{{info_cat}}</p>
+                                                        <div class="contVidInfo">
+                                                              <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                              <p>Videos</p>
+                                                              <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
+                                                        </div>
                                                   </div>
                                               </a>
                                           </div>
@@ -74,12 +83,8 @@
                             {{/each}}
                         </script>
 
-
-                          <div id="contCategoria1" class="col s12 m12 l8">
-                          </div>
-
-                          <div  id="contCategoria2" class="col s12 m12 l4">
-                          </div>
+                        <div id="contCategoria1" class="col s12 m12 l8"></div>
+                        <div  id="contCategoria2" class="col s12 m12 l4"></div>
                   </div>
 
 

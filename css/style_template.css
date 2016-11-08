@@ -308,8 +308,10 @@ body {
           .contChicoCat .contInfoChicoCat{ position: absolute; top: 0; left: 0; margin:0px 30px 20px 30px;  width: calc(100% - 60px); height:calc(100% - 20px);}
           .contChicoCat .contInfoChicoCat h1{ font-size:30px; font-weight:bold;text-transform: capitalize;}
           .contChicoCat .contInfoChicoCat p{ float:left; margin:0;padding:0; line-height: 20px; font-size: 18px; font-weight: 300;}
-          .contChicoCat .contInfoChicoCat .contVidInfo{ bottom: 10px; left: 0; position: absolute;  width: 100%; }
+          .contChicoCat .contInfoChicoCat .contVidInfo{ bottom:0px; left: 0; position: absolute;  width: 100%; }
           .contChicoCat .contInfoChicoCat .contVidInfo .contVidInfo_icon{width:10px; height:10px; background:#fff; float:right;  margin-top: 3px;}
+
+          .cont_cantidad_vid{ display: block; float: left; margin-right: 5px;}
 
 
                 @media (min-width:1280px) {  .contChicoCat{ height:280px; transition: height 1s;}  }
@@ -837,6 +839,8 @@ body {
 .cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info_vid{ bottom: 10px; left: 0; position: absolute;  width:calc(100% - 60px); margin:0 30px;}
 .cont_sideBar_Categorias_individual .cont_sideBar_Categorias_individual_info_vid .cont_sideBar_Categorias_individual_info_vid_icon{width:10px; height:10px; background:#fff; float:right;  margin-top: 3px;}
 .cont_sideBar_Categorias_individual_info_vid p{width:200px; margin:0px!important; padding: 0!important; float: left;}
+
+.cont_cantidad_vid_navCat{ display:block; float:left; margin-right: 5px; }
 
       @media (min-width:1280px) {   .cont_sideBar_Categorias_individual{ height:253px; }  }
       @media (min-width:1024px) AND (max-width:1280px) {
