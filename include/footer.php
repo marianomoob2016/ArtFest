@@ -5,13 +5,13 @@
     <div class="row">
     <div class="center">
       <div class="navFooterIcon col s12 m12 l3">
-        <a href="index.php" class="col s2 m2 l2">
+        <a href="index.php" class="col s12 m12 l2">
             <img src="img/template/logo_media_moob.jpg" class="img_logo_footer" />
         </a>
      </div>
-      <a class="navFooterLink col s12 m4 l2" href="#!">Términos y Condiciones</a>
+      <a class="navFooterLink col s12 m4 l2" href="http://www.bennu.tv/byc/?p=17" target="_blank">Términos y Condiciones</a>
       <a class="navFooterLink col s12 m4 l2" href="#!">Baja</a>
-      <a class="navFooterLink col s12 m4 l2" href="#!">Políticas de privacidad</a>
+      <a class="navFooterLink col s12 m4 l2" href="terminos.php">Políticas de privacidad</a>
       <div class="navFooterIcon col s12 m12 l3 center">
           <div class="row">
             <div class="col s2"><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
@@ -25,9 +25,10 @@
     </div>
   </div>
   </div>
+  <div class="cont-footer-legal col s12 m12 l12 center">
+      Club.Media es un sitio de Moob S.A. y Grupo UNO Medios. Todos los derechos reservados
+  </div>
 </footer>
-
-
 
 
 
@@ -49,12 +50,11 @@
 
 
 
+      <!--script src="js/handlebars.js" type="text/javascript" charset="utf-8"></script-->
+      <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-     <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script-->
-     <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
-     <script src="js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
-     <!--script src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js"></script-->
-     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-     <script src="js/function5.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/function5.js" type="text/javascript" charset="utf-8"></script>
+      <!--script src="js/bd_.js" type="text/javascript" charset="utf-8"></script-->
