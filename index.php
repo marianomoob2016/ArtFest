@@ -38,7 +38,7 @@
                                                    <h1>{{cat_nombre}}</h1>
                                                    <p>{{info_cat}}</p>
                                                    <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
                                                      <p>Videos</p>
                                                      <div class="contVidInfo_icon"></div>
                                                    </div>
@@ -52,7 +52,7 @@
                                                  <h1>{{cat_nombre}}</h1>
                                                  <p>{{info_cat}}</p>
                                                  <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
                                                      <p>Videos</p>
                                                      <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
                                                  </div>
@@ -73,7 +73,7 @@
                                                <h1>{{cat_nombre}}</h1>
                                                <p>{{info_cat}}</p>
                                                <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid"></div>
+                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
                                                      <p>Videos</p>
                                                      <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
                                                </div>
@@ -311,7 +311,25 @@
     require_once('include/footer.php');
 ?>
 
-<script src="js/function_index.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+
+    (function($_){
+        $_(document).ready(function(){
+                var AF_index = new todosArt();
+                AF_index.listarCategoria_index();
+                AF_index.listarDest_index();
+                AF_index.listarDest_index_sideBar();
+                AF_index.listarPost_index();
+
+                document.onscroll=function(){  AF_index.scrollBody_(body_);}
+                //---------------------
+                //window.addEventListener('resize', function(event){
+                     //AF.defineContHead_(event);
+                //});
+        });
+    })(jQuery);
+
+  </script>
 
 <?php
     require_once('include/footer_body.php');

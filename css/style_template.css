@@ -248,7 +248,8 @@ body {
 
 #contSection{ width:100%; float:none; margin:50px auto;}
 
-        @media only screen and (min-width:1280px) {  #contSection{ width:1280px; transition: width 1s;} }
+        @media only screen and (min-width:1680px) { #contSection{ width:1480px; transition: width 1s;} }
+        @media only screen and (min-width:1280px) AND (max-width:1680px) {  #contSection{ width:1280px; transition: width 1s;} }
         @media only screen and (min-width:1024px) AND (max-width:1280px) { #contSection{ width:1024px; transition: width 1s;} }
         @media only screen and (min-width:768px) AND (max-width:1023px) { #contSection{ width:800px; transition: width 1s;} }
         @media only screen and (min-width:600px) AND (max-width:799px) {  #contSection{ width:570px; transition: width 1s;} }
@@ -379,8 +380,9 @@ body {
 
               .contChicoResult_moduloPopUp_Aviso{ width:100%; height:100%; overflow: hidden; position:relative;}
               .contChicoResult_moduloPopUp_Aviso a{ position: relative; color:#fff; display: block;}
-              .contChicoResult_moduloPopUp_Aviso a:hover{ }
               .contChicoResult_moduloPopUp_Aviso a img{ width:100%;}
+
+
               .contChicoResult_moduloPopUp_Aviso_info{ width:100%; height:100%; font-size:42px;  transition:all 0.5s ease; font-weight: bold; padding:135px 0px 0px 0px; text-align: center; position:absolute; top: 0; left:0; display:block;}
               .contChicoResult_moduloPopUp_Aviso_info:hover{ font-size:44px;  transition:all 0.5s ease;}
 
@@ -495,7 +497,8 @@ body {
           .contChicoResult{ width:100%; margin:0!important ;padding:0!important; float:left;}
           .contChicoResult .contChicoResult_moduloCont{  position:relative;  overflow: hidden; width: 100%; height: 100%;}
           .contChicoResult .contChicoResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
-          .contChicoResult .contChicoResult_moduloCont img{  position:relative; width:120%!important; }
+          .contChicoResult .contChicoResult_moduloCont img{  position:relative; width:100%!important; }
+          .contChicoResult .contChicoResult_moduloCont a:hover img{  position:relative; width:120%!important; margin:-10% 0 0 -10%; transition: all 0.5s;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #000;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info{ position: absolute; top: 0;  left: 0; margin: 20px 30px; height: calc(100% - 40px);  width: calc(100% - 60px); }
           .contChicoResult .contChicoResult_moduloCont .contChicoResult_moduloContfondo_cont_info h1{width:100%; font-size:20px; line-height:25px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
@@ -533,7 +536,8 @@ body {
           .contGrandeResult{ width:100%; margin:0!important ;padding:0!important; float:left;}
           .contGrandeResult .contGrandeResult_moduloCont{  position:relative;  overflow: hidden; width: 100%; height: 100%;}
           .contGrandeResult .contGrandeResult_moduloCont a{width:100%; display: block; float: left; color:#fff;}
-          .contGrandeResult .contGrandeResult_moduloCont img{  position:relative; width:120%!important; }
+          .contGrandeResult .contGrandeResult_moduloCont img{  position:relative; width:100%!important; }
+          .contGrandeResult .contGrandeResult_moduloCont a:hover img{  position:relative; width:120%!important; margin:-10% 0 0 -10%; transition: all 0.5s;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_opacity{ width: 100%; height: 100%; background: #000;  display: block;  float: left;  position: absolute; top: 0;  left: 0; opacity: 0.5;}
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info{ position: absolute; bottom: 0;  left: 0; margin: 20px 30px; width: calc(100% - 60px); }
           .contGrandeResult .contGrandeResult_moduloCont .contGrandeResult_moduloContfondo_cont_info h1{width:100%; font-size:35px; line-height:40px; color:#fff; float: left; display: block; margin:20px 0px 10px 0px; font-weight: bold;}
@@ -621,18 +625,23 @@ body {
 
 #cont_categoria{ width:100%; float:none; margin:100px auto 50px auto;}
 
+#cont_categoria_head h1{ font-weight: bold; color: #f4206a; font-size: 70px; text-transform: capitalize;  word-wrap: break-word;}
+#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul{}
+#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li{ float: left; margin-left: 5px; margin-bottom: 5px;}
+#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li a{    background: #f4206a;}
+
       @media only screen and (min-width:1280px) {  #cont_categoria{ width:1280px; transition: width 1s;} }
       @media only screen and (min-width:1024px) AND (max-width:1280px) { #cont_categoria{ width:1024px; transition: width 1s;} }
       @media only screen and (min-width:768px) AND (max-width:1023px) {  #cont_categoria{ width:800px;  transition: width 1s;} }
       @media only screen and (min-width:600px) AND (max-width:799px) {   #cont_categoria{ width:570px;  transition: width 1s;} }
       @media only screen and (min-width:480px) AND (max-width:599px) {   #cont_categoria{ width:440px;  transition: width 1s;} }
-      @media only screen and (min-width:320px) AND (max-width:479px) {   #cont_categoria{ width:300px;  transition: width 1s;} }
+      @media only screen and (min-width:320px) AND (max-width:479px) {
+        #cont_categoria{ width:300px;  transition: width 1s;}
+        #cont_categoria_head h1{max-width:300px!important;}
+      }
 
 
-#cont_categoria_head h1{ font-weight: bold; color: #f4206a; font-size: 70px; text-transform: capitalize; }
-#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul{}
-#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li{ float: left; margin-left: 5px; margin-bottom: 5px;}
-#cont_categoria_head .cont_categoria_head_navBar_subCategorias ul li a{    background: #f4206a;}
+
 
 
 

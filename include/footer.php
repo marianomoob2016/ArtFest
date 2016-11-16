@@ -54,7 +54,5 @@
       <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>
       <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
       <script src="js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
-
+      
       <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-      <script src="js/function5.js" type="text/javascript" charset="utf-8"></script>
-      <!--script src="js/bd_.js" type="text/javascript" charset="utf-8"></script-->

@@ -26,7 +26,6 @@
 
 
 
-
   <?php
       require_once('include/nav.php');
   ?>

@@ -21,13 +21,13 @@
   <div class="row">
 
     <script id="template_categoria_subCatList" type="text/x-handlebars-template">
-           <h1 class="center" style="color:#{{colorFondo}};">{{categoria}}</h1>
+           <h1 class="center" style="color:#{{colorFondo}};">{{cat_nombre}}</h1>
            <div class="cont_categoria_head_navBar_subCategorias">
               <ul class="col s12 m12 l12">
                       {{#each this.subCat}}
-                        {{#ifCond @index '>=' 0}}
-                              {{modulo_categoria_subcat this.subCat this.colorFondo }}
-                        {{/ifCond}}
+                      <li><a href='{{modulo_categoria_subcat_link ../this }}' class='waves-effect btn' style='background:#{{../colorFondo}}; color:#{{../colorTexto}};'>
+                              {{modulo_categoria_subcat this }}
+                      </a></li>
                       {{/each}}
               </ul>
            </div>
@@ -183,10 +183,10 @@
                         <div class="cont_sideBar_Categorias_individual" style="background:#{{colorFondo}};">
                           <a href="{{moduloCategoria_catNav_link this.categorias }}" target="_self" title="" style="color:#{{colorTexto}};">
                               <div class="cont_sideBar_Categorias_individual_info">
-                                    <h1>{{categoria}}</h1>
+                                    <h1>{{cat_nombre}}</h1>
                                     <p>{{info_cat}}</p>
                                     <div class="cont_sideBar_Categorias_individual_info_vid">
-                                        <div id="cantidad_videos_cat_{{categoria}}" class="cont_cantidad_vid_navCat"></div>
+                                        <div id="cantidad_videos_cat_{{categoria}}" class="cont_cantidad_vid_navCat">{{cantidad}}</div>
                                         <p>Videos</p>
                                         <div class="cont_sideBar_Categorias_individual_info_vid_icon" style="background:#{{colorTexto}};"></div>
                                     </div>
@@ -229,13 +229,24 @@
 <?php
     require_once('include/footer.php');
 ?>
-<script>
-        var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>';
-        var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>';
-</script>
 
-<script src="js/function_categoria.js" type="text/javascript" charset="utf-8"></script>
+    <script>
 
+        (function($_){
+            var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>';
+            var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>';
+
+            $_(document).ready(function(){
+                    var AF_cat = new todosArt();
+                    AF_cat.listarResult_Categoria(v1,v2);
+                    AF_cat.listarResult_totalSubcat(v1,v2);
+                    AF_cat.listarCategoria_navLik();
+                    AF_cat.verNav();
+
+            });
+          })(jQuery);
+
+    </script>
 
 <?php
     require_once('include/footer_body.php');
