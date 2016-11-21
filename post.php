@@ -180,8 +180,11 @@ var dir_URL_Code = encodeURIComponent(dir); //url del post
 
 
 
-</div>
-</div>
+
+
+      </div>
+      </div>
+      <!-- .............................fin cont section index............................. -->
 
 
 

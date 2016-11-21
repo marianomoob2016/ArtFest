@@ -13,8 +13,9 @@ class CRUD{
 
 
     //-----------------resultados index----------------
-    public function resultados_index(){
-        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE id >0 AND id <=10 ORDER BY id ASC ");
+    public function resultados_index($posi_){
+        $pos=$posi_;
+        $query = $this->db->prepare("SELECT * FROM lista_videos WHERE id >$pos AND id <=$pos+10 ORDER BY id ASC ");
         $query->execute();
         $data = array();
         while ($row = $query->fetchAll(PDO::FETCH_ASSOC)) {

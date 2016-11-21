@@ -33,7 +33,7 @@
            </div>
    </script>
 
-   <div id="cont_categoria_head" class="col s12 m12 l12"></div>
+   <div id="cont_categoria_head" class="col s12 m12 l12">   </div>
 
 
 
@@ -207,8 +207,13 @@
 
 
 
-</div>
-</div>
+
+
+
+  </div>
+  </div>
+  <!-- .............................fin cont section index............................. -->
+
 
 
 

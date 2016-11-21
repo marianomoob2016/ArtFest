@@ -7,10 +7,13 @@ $object = new CRUD();
 
 $users=[];
 
+if (isset($_POST['pos'])) {
+  $posi_ = $_POST['pos'];
+  $users = $object->resultados_index($posi_);
 
-  $users = $object->resultados_index();
+}
+
   echo $users;
-
 
 //----------------
 

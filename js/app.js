@@ -14,6 +14,8 @@
         this.get_categoriaVar=function(){ return categoriaVar;   }
         this.get_subCategoriaVar=function(){ return subCategoriaVar;  }
 
+        localStorage.setItem("cantidadPost", true);
+
 
         //------------------
 
@@ -67,34 +69,48 @@
             $.post("include/restApi/cantidad_cat.php",{}, function (data){
             }).done(function(data) {
                     if(data.length>0){
-                            var categ_=JSON.parse(data);
-                            for(var i=0 ; i< categ_.length ; i++){
-                                var jsonCat = {};
-                                jsonCat.cat_nombre=categ_[i].cat_nombre;
-                                jsonCat.categoria=categ_[i].categoria;
-                                jsonCat.colorFondo=categ_[i].colorFondo;
-                                jsonCat.colorTexto=categ_[i].colorTexto;
-                                jsonCat.imgCategoria=categ_[i].imgCategoria;
-                                jsonCat.info_cat=categ_[i].info_cat;
-                                jsonCat.subCat=categ_[i].subCat;
-                                jsonCat.cantidad=0;
-                                jsonCat.id=categ_[i].id;
-                                col_Fondo.push(jsonCat);
-                                var colFondo=JSON.stringify(col_Fondo);
-                                localStorage.setItem("colorFondoList", colFondo);
+                        var categ_=JSON.parse(data);
+
+                              for(var i=0 ; i< categ_.length ; i++){
+                                  var jsonCat = {};
+                                  jsonCat.cat_nombre=categ_[i].cat_nombre;
+                                  jsonCat.categoria=categ_[i].categoria;
+                                  jsonCat.colorFondo=categ_[i].colorFondo;
+                                  jsonCat.colorTexto=categ_[i].colorTexto;
+                                  jsonCat.imgCategoria=categ_[i].imgCategoria;
+                                  jsonCat.info_cat=categ_[i].info_cat;
+                                  jsonCat.subCat=categ_[i].subCat;
+                                  jsonCat.cantidad=0;
+                                  jsonCat.id=categ_[i].id;
+                                  col_Fondo.push(jsonCat);
+                                  var colFondo=JSON.stringify(col_Fondo);
+
+                                  if(typeof Storage !== "undefined"){
+                                    localStorage.setItem("colorFondoList", colFondo);
+                                  }else{
+                                    console.log(col_Fondo);
+                                  }
+
+                              }
+
+                            if(typeof Storage !== "undefined"){
+                              listColCat=JSON.parse(localStorage.colorFondoList);
+                            }else{
+                              listColCat=JSON.parse();
                             }
+
+
+                        cantCat_();
+                        arraySubCat();
                      }
 
-                  listColCat=JSON.parse(localStorage.colorFondoList);
-                  cantCat_();
-                  arraySubCat();
+
 
              }).fail(function() {
              }).always(function() {
              },'json');
         }
         setColCat();
-
 
 
 
@@ -116,7 +132,6 @@
         }
 
 
-
         //-----------------------------------------------------------------------
         var arraySubCat=function(){
             for(var i=0 ; i< listColCat.length ; i++){
@@ -124,46 +139,40 @@
                   listColCat[i].subCat=listColCat[i].subCat.split(',');
             }
         }
-
-
         //console.log(listColCat);
-
-
 
         //-------------------color para cada cateogria---------------------------
         var colorFondoPorCategoria_=function(cat_){
                  var color_="fff";
-                 var catSel=cat_;
+                 var catSel=cat_.valueOf();
                  for(var i=0 ; i< listColCat.length ; i++){
                    //console.log(colorFondo[i].Nombre);
                    if(listColCat[i].categoria==catSel){
                          return listColCat[i].colorFondo;
-
                    }
                  }
-       }
+        }
 
         //-------------------color para cada cateogria---------------------------
         var colorTextoPorCategoria_=function(cat_){
-              var color_="333";
-              var catSel=cat_;
-              for(var i=0 ; i< listColCat.length ; i++){
-                if(listColCat[i].categoria==catSel){
-                      return listColCat[i].colorTexto;
+                var color_="333";
+                var catSel=cat_.valueOf();
+                for(var i=0 ; i< listColCat.length ; i++){
+                  if(listColCat[i].categoria==catSel){
+                        return listColCat[i].colorTexto;
 
+                  }
                 }
-              }
          }
 
+         //----------------------------------------------------------------------
          var jsonCatSel=function(cat_){
            for(var i=0 ; i< listColCat.length ; i++){
              if(listColCat[i].categoria==cat_){
                   return listColCat[i];
              }
            }
-        }
-
-
+         }
 
 
 
@@ -227,7 +236,7 @@
 
                            setTimeout(function(){ $('#contCategoria1').addClass('contCatResult_on'); },10);
                            setTimeout(function(){ $('#contCategoria2').addClass('contCatResult_on'); },10);
-                      }, 500);
+                      }, 2000);
 
 
 
@@ -277,7 +286,7 @@
                                    }
 
                            setTimeout(function(){ $('#contAsideBotton').addClass('contCatResult_on'); },10);
-                        }, 500);
+                        },2000);
 
 
                      //console.log("load: result dest sidebar index");
@@ -341,7 +350,7 @@
                          }
 
                    setTimeout(function(){ $('#cont_destacado_header ul').addClass('contCatResult_on'); },10);
-                }, 500);
+                }, 2000);
 
 
                 // console.log("load: result dest index");
@@ -362,23 +371,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
        //------------------------------------------------------
-       this.listarPost_index=function(){
+       this.listarPost_index=function(posicion_result_list_){
+             var pos_=posicion_result_list_;
+             $.post("include/restApi/result_index.php",{pos:pos_}, function (data){
 
-             $.post("include/restApi/result_index.php",{}, function (data){
-
-               $(".fila1").html("<div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div>");
+               $(".fila1_load").css({'display':'block'});
 
 
              }).done(function(data) {
@@ -401,11 +399,16 @@
                              "</div>");
                          });
 
+
+
                  setTimeout(function(){
 
                          if(data.length>0){
                                var dat=JSON.parse(data);
-                                   if(dat[0].length>0 && typeof  dat === 'object'){
+                               //console.log(dat[0]);
+                                 if(dat[0] != undefined){
+                                     if(dat[0].length>0 && typeof  dat === 'object'){
+
                                           //-----------convert array el string ','---------------
                                           for(var i=0;i < dat[0].length;i++){
                                             dat[0][i].categorias=dat[0][i].categorias.split(',');
@@ -415,13 +418,20 @@
                                           //---------------json para los resultados del index-------------------
                                           var context=dat[0];//bd_result_index;
                                           var templateCompile = contTemplate(context);
-                                          $(".fila1").html(templateCompile);
+                                          $(".fila1").append(templateCompile);
+
+                                          //---------------ultimo array-----------
+                                          var ultimo_ = dat[0].pop();
+                                          var primero_=dat[0].shift();
+                                          $("#numResult_pos").html(primero_.id+" / "+ultimo_.id);
+                                          $(".fila1_load").css({'display':'none'});
+
                                    }
+                                 }
                            }
 
                    setTimeout(function(){ $('.fila1').addClass('contCatResult_on'); },10);
-                }, 500);
-
+                }, 2000);
 
 
                   //  console.log("load: result index");
@@ -466,12 +476,13 @@
 
 
 
+
        //------------------------------resultados para la seccion-----------------------------------
        this.listarResult_Categoria=function(cat_,sub_){
 
            if(cat_.length>0){
 
-              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (){
+              $.post("include/restApi/result_sel_cat.php",{cat:cat_,sub:sub_}, function (data){
 
                    $(".cont_categoria_section_result").html("<div class='progress'><div class='indeterminate' style='background-color:#"+colorFondoPorCategoria_(cat_)+"'></div></div>");
 
@@ -520,7 +531,7 @@
 
                            setTimeout(function(){ $('.cont_categoria_section_result_post').addClass('contCatResult_on'); },10);
 
-                }, 500);
+                }, 2000);
 
              }).fail(function(data) {
               //  console.log("error",data.length);
@@ -577,7 +588,7 @@
                                       $("#cont_categoria_head").html(templateCompile);
 
 
-                          },500);
+                          },2000);
 
                 }
 
@@ -685,7 +696,7 @@ this.verPOST=function(id_dia,id_hora){
           (function(){
              $.post("include/restApi/result_dest_index.php",{}, function (data){
 
-             }).done(function() {
+             }).done(function(data) {
 
                setTimeout(function(){
 

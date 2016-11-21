@@ -144,7 +144,7 @@
 
                             <div id="contAsideUp" class="col s12 m12 l12">
 
-                                         <form id="contAsideUp_search">
+                                         <form id="contAsideUp_search" action="#!">
                                            <div class="input-field">
                                              <input id="search" type="search" required>
                                              <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
@@ -208,7 +208,7 @@
                                                             <div class="contGrandeResult_moduloContfondo_opacity"></div>
                                                             <div class="contGrandeResult_moduloContfondo_cont_info">
                                                               {{#each this.categorias}}
-                                                                   {{moduloResult_itemsCategoria categorias}}
+                                                                   {{moduloResult_itemsCategoria this.categorias}}
                                                               {{/each}}
                                                             <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                               <h1>{{titulo}}</h1>
@@ -226,7 +226,7 @@
                                                       <div class="contChicoResult_moduloContfondo_opacity"></div>
                                                       <div class="contChicoResult_moduloContfondo_cont_info">
                                                         {{#each this.categorias}}
-                                                             {{moduloResult_itemsCategoria categorias}}
+                                                             {{moduloResult_itemsCategoria this.categorias}}
                                                         {{/each}}
                                                         <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
                                                         <h1>{{titulo}}</h1>
@@ -288,6 +288,15 @@
              </script>
              <!-- contenedor para modulos de resultado index-->
              <div class="fila1"></div>
+             <div class="fila1_load"><div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div></div>
+
+             <div id="cont_page_pos" class="col s12 m12 l12 center">
+                   <!--div id="prev_pos" class="col s4 m4 l4"> <i class="fa fa-angle-double-left" aria-hidden="true"></i> </div>
+                   <div id="numResult_pos" class="col s4 m4 l4">  </div-->
+                   <div id="next_pos" class="col s12 m12 l12">
+                     <a class="btn-floating btn-large waves-effect waves-light yellow">+</a>
+                   </div>
+             </div>
 
 
 
@@ -296,10 +305,15 @@
          <!-- .......................................................... -->
 
 
-     </div>
-   </div>
-   <!-- .............................fin cont section index............................. -->
 
+
+
+
+
+
+        </div>
+         </div>
+         <!-- .............................fin cont section index............................. -->
 
 
 
@@ -313,21 +327,50 @@
 
   <script>
 
-    (function($_){
+    var pos_pag=0;
+
+
+    (function($_, post_page_){
         $_(document).ready(function(){
                 var AF_index = new todosArt();
                 AF_index.listarCategoria_index();
                 AF_index.listarDest_index();
                 AF_index.listarDest_index_sideBar();
-                AF_index.listarPost_index();
 
+
+                //-----------------------cantidad de resultados por pagina de 10 en 10-----------------------------------
+                AF_index.listarPost_index(post_page_);
+
+
+                $("#next_pos").click(function(){
+                    if(localStorage.cantidadPost=='true'){
+                        if(post_page_<100){
+                              post_page_+=10;
+                              var nn_=post_page_+10;
+                              AF_index.listarPost_index(post_page_);
+                              $("#numResult_pos").html('/');
+                        }
+                    }
+                });
+
+
+                $("#prev_pos").click(function(){
+                    if(post_page_>=10){
+                          post_page_-=10;
+                          var nn_=post_page_+10;
+                          AF_index.listarPost_index(post_page_);
+                          $("#numResult_pos").html('/');
+                    }
+                });
+
+                //--------------------nav on onscroll document----------------------------------------------
                 document.onscroll=function(){  AF_index.scrollBody_(body_);}
                 //---------------------
                 //window.addEventListener('resize', function(event){
                      //AF.defineContHead_(event);
                 //});
         });
-    })(jQuery);
+    })(jQuery,pos_pag);
 
   </script>
 
