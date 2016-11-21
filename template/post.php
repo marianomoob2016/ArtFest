@@ -1,24 +1,3 @@
-<!-- ......................................................... -->
-
-<?php
-    require_once('include/head.php');
-?>
-
-
-<script>
-        var v_id='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>';
-        var v_hora='<?php if(isset($_GET['hora'])){ echo $_GET['hora']; } ?>';
-</script>
-
-<!-- ......................................................... -->
-
-
-
-
-<script type="text/javascript">
-var dir = window.document.URL;
-var dir_URL_Code = encodeURIComponent(dir); //url del post
-</script>
 
 
 
@@ -131,7 +110,7 @@ var dir_URL_Code = encodeURIComponent(dir); //url del post
                  <div class="cont_destacado_post_moduloFooter col s12 m12 l4">
                    <a href="{{ moduloDestacado_index_linkPost this.categorias }}" target='_self' title=''>
                      <div class="contDestFooter_Img col s12 m6 l12   {{#ifCond @index '==' 1}} right{{/ifCond}}">
-                         <img src="img/post/{{urlImgVid}}" alt=""/>
+                         <img src="https://s3-sa-east-1.amazonaws.com/club.media/post/{{urlImgVid}}" alt=""/>
                          <div class="cont_destacado_footer_moduloCont_fondo_opacity"></div>
                      </div>
                      <div class="cont_info_destacado_header col s12 m6 l12">
@@ -174,46 +153,6 @@ var dir_URL_Code = encodeURIComponent(dir); //url del post
 
 
 
-
-
-
-
-
-
-
-
       </div>
       </div>
       <!-- .............................fin cont section index............................. -->
-
-
-
-
-
-
-
-
-
-
-
-<!-- ..................footer del document y footer de post......................... -->
-<?php
-    require_once('include/footer.php');
-?>
-
-
-    <script>
-     (function($_){
-        $_(document).ready(function(id_dia,id_hora){
-                var AF_post = new todosArt();
-                AF_post.verPOST(v_id,v_hora);
-                AF_post.listar_Dest_Post();
-                AF_post.verNav();
-        });
-      })(jQuery);
-    </script>
-
-
-<?php
-    require_once('include/footer_body.php');
-?>

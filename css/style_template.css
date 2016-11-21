@@ -40,7 +40,7 @@ body {
    position:fixed;
    top:0;
    left:0;
-   background: url("../img/template/fondo-body.jpg") no-repeat;
+   background: url("https://s3-sa-east-1.amazonaws.com/club.media/template/fondo-body.jpg") no-repeat;
    z-index: -9999;
    background-size: 100%;
  }
@@ -105,11 +105,11 @@ body {
 .cont_img_slider{width:100%;height:100%; display: block; margin: 0; padding: 0; float: left;}
 /*#slider_header_car{width:100%!important; height:auto!important;}*/
 
-.img_banner1{background: url("../img/banner_header/banner_01.jpg"); background-size:100%; background-repeat: no-repeat;}
-.img_banner2{background: url("../img/banner_header/banner_02.jpg"); background-size:100%; background-repeat: no-repeat; }
-.img_banner3{background: url("../img/banner_header/banner_03.jpg"); background-size:100%; background-repeat: no-repeat; }
-.img_banner4{background: url("../img/banner_header/banner_01.jpg"); background-size:100%; background-repeat: no-repeat; }
-.img_banner5{background: url("../img/banner_header/banner_02.jpg"); background-size:100%; background-repeat: no-repeat; }
+.img_banner1{background: url("https://s3-sa-east-1.amazonaws.com/club.media/banner_header/banner_01.jpg"); background-size:100%; background-repeat: no-repeat;}
+.img_banner2{background: url("https://s3-sa-east-1.amazonaws.com/club.media/banner_header/banner_02.jpg"); background-size:100%; background-repeat: no-repeat; }
+.img_banner3{background: url("https://s3-sa-east-1.amazonaws.com/club.media/banner_header/banner_03.jpg"); background-size:100%; background-repeat: no-repeat; }
+.img_banner4{background: url("https://s3-sa-east-1.amazonaws.com/club.media/banner_header/banner_01.jpg"); background-size:100%; background-repeat: no-repeat; }
+.img_banner5{background: url("https://s3-sa-east-1.amazonaws.com/club.media/banner_header/banner_02.jpg"); background-size:100%; background-repeat: no-repeat; }
 
 
 #prev_header_car{font-size:40px; z-index:1; position:absolute; z-index:1; left:5px; color:#999;}
@@ -895,7 +895,7 @@ body {
 
     .cont_sideBar_Destacado{width:100%; height:auto; margin: 0; padding: 0; overflow: hidden; position:relative;}
     .cont_sideBar_Destacado .contAsideBotton_fondo_opacity{ width: 100%;  height: 100%;  background:#200944; display: block; float: left; position: absolute;  top: 0;  left: 0; opacity: 0.5;}
-    .cont_sideBar_Destacado img{ position:absolute; top:0; left:0; width:100%; }
+    .cont_sideBar_Destacado img{ position:absolute; top:0; left:0; width: 160%; }
     .cont_sideBar_Destacado .contAsideBotton_info{ width: 100%; height:100%; text-align:center; position:absolute; top:0; left:0;}
     .cont_sideBar_Destacado .contAsideBotton_info h1{  margin: 160px 0px 20px 0px;  font-size: 60px; font-weight: bold;  letter-spacing: 4px;}
     .cont_sideBar_Destacado .contAsideBotton_info h4{ font-size:20px; }

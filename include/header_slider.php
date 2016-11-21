@@ -44,7 +44,7 @@
                      <div class="cont_destacado_header_moduloCont">
 
                          <a href="{{ moduloDestacado_index_linkPost this.categorias }}"target='_self' title=''>
-                             <img src="img/post/{{urlImgVid}}" alt=""/>
+                             <img src="https://s3-sa-east-1.amazonaws.com/club.media/post/{{urlImgVid}}" alt=""/>
                              <div class="cont_destacado_header_moduloCont_fondo_opacity{{@key}}"></div>
                              <div class="cont_info_destacado_header">
                                {{#each this.categorias}}

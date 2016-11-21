@@ -6,12 +6,12 @@
     <div class="center">
       <div class="navFooterIcon col s12 m12 l3">
         <a href="index.php" class="col s12 m12 l2">
-            <img src="img/template/logo_media_moob.jpg" class="img_logo_footer" />
+            <img src="https://s3-sa-east-1.amazonaws.com/club.media/template/logo_media_moob.jpg" class="img_logo_footer" />
         </a>
      </div>
       <a class="navFooterLink col s12 m4 l2" href="http://www.bennu.tv/byc/?p=17" target="_blank">Términos y Condiciones</a>
       <a class="navFooterLink col s12 m4 l2" href="#!">Baja</a>
-      <a class="navFooterLink col s12 m4 l2" href="terminos.php">Políticas de privacidad</a>
+      <a class="navFooterLink col s12 m4 l2" href="index.php?page=terminos_">Políticas de privacidad</a>
       <div class="navFooterIcon col s12 m12 l3 center">
           <div class="row">
             <div class="col s2"><a href="#!" title=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
@@ -54,5 +54,5 @@
       <script src="js/handlebars-v4.0.5.js" type="text/javascript" charset="utf-8"></script>
       <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
       <script src="js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
-      
+
       <script src="js/app.js" type="text/javascript" charset="utf-8"></script>

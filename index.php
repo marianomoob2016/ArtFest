@@ -4,316 +4,50 @@
     require_once('include/head.php');
 ?>
 
-<!-- ........................header slider................................. -->
-<?php
-    require_once('include/header_slider.php');
-?>
 
+        <!-- ..............................page............................... -->
+        <?php if(isset($_GET['page'])){
+            $page= $_GET['page'];
+        ?>
 
+                <?php if($page=='categoria_'){ ?>  <!-- .................page categoria.................. -->
 
+                                <script>
+                                    var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>';
+                                    var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>';
+                                </script>
 
-<!-- ...........................cont section index...................................................... -->
-    <div id="contSection">
-     <div class="col s12 m12 l12">
+                                <!-- .....................header del document y nav.................................... -->
+                                <?php  require_once('template/categoria.php');  ?>
 
 
-          <div class="col s12 m12 l12">
-            <div id="contModalSubHead" class="row">
+                <?php }else if($page=='post_'){ ?>    <!-- .................page post................... -->
 
+                                <script type="text/javascript">
+                                    var v_id='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>';
+                                    var v_hora='<?php if(isset($_GET['hora'])){ echo $_GET['hora']; } ?>';
 
-                  <!-- .......................categorias - index...................................-->
+                                    var dir = window.document.URL;
+                                    var dir_URL_Code = encodeURIComponent(dir); //url del post
+                                </script>
 
-                  <div id="contModalCategoria" class="col s12 m12 l8">
+                                <!-- .....................header del document y nav.................................... -->
+                                <?php  require_once('template/post.php');  ?>
 
+                <?php }else if($page=='terminos_'){ ?>
 
-                  <script id="template_categoria_index" type="text/x-handlebars-template">
-                       {{#each this}}
-                        {{#ifCond @index '<' 3}}
-                             {{#ifCond @index '==' 0}}
-                                   <div class="contGrandeCat col s12 m12 l12">
-                                         <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
-                                             <img src="img/template/{{imgCategoria}}"/>
-                                             <div class="contCat_fondo_opacity"></div>
-                                             <div class="contInfoGrandeCat">
-                                                   <h1>{{cat_nombre}}</h1>
-                                                   <p>{{info_cat}}</p>
-                                                   <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
-                                                     <p>Videos</p>
-                                                     <div class="contVidInfo_icon"></div>
-                                                   </div>
-                                             </div>
-                                         </a>
-                                   </div>
-                              {{else}}
-                                   <div class="contChicoCat col s12 m12 l6" style="background:#{{colorFondo}}; ">
-                                       <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
-                                           <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
-                                                 <h1>{{cat_nombre}}</h1>
-                                                 <p>{{info_cat}}</p>
-                                                 <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
-                                                     <p>Videos</p>
-                                                     <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
-                                                 </div>
-                                           </div>
-                                       </a>
-                                   </div>
-                              {{/ifCond}}
-                         {{/ifCond}}
-                     {{/each}}
-                 </script>
+                                <?php  require_once('template/terminos.php');  ?>
 
-                 <script id="template_categoria_index2" type="text/x-handlebars-template">
-                     {{#each this}}
-                       {{#ifCond @index '>' 2}}
-                                 <div class="contChicoCat col s12 m12 l12" style="background:#{{colorFondo}};">
-                                     <a href="{{moduloCategoria_index_linkPost this.categorias }}" target="_self" title="">
-                                         <div class="contInfoChicoCat"  style="color:#{{colorTexto}};">
-                                               <h1>{{cat_nombre}}</h1>
-                                               <p>{{info_cat}}</p>
-                                               <div class="contVidInfo">
-                                                     <div id="cantidad_videos_{{categoria}}" class="cont_cantidad_vid">{{cantidad}}</div>
-                                                     <p>Videos</p>
-                                                     <div class="contVidInfo_icon" style="background:#{{colorTexto}};"></div>
-                                               </div>
-                                         </div>
-                                     </a>
-                                 </div>
-                       {{/ifCond}}
-                   {{/each}}
-               </script>
+                <?php } ?>
 
+      <?php }else{?>
 
+                      <!-- .....................header del document y nav.................................... -->
+                      <?php  require_once('template/index_cont.php'); ?>
 
+      <?php }?>
 
-                        <div id="contCategoria1" class="col s12 m12 l8">   </div>
-                        <div  id="contCategoria2" class="col s12 m12 l4">   </div>
 
-
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!-- .......................sidebar index...................................-->
-
-
-
-
-                  <!-- ...............................modulo dinamico de destacados.............................................-->
-                  <script id="template_destacado_index_sideBar" type="text/x-handlebars-template">
-                        {{#each this}}
-                          {{#ifCond @index '==' 4}}
-                             <img src="img/post/{{urlImgVid}}" title="Destacado"/>
-                             <!--img src="img/template/{{srcImgDestacado}}" title="Destacado"/-->
-
-                             <div class="contAsideBotton_fondo_opacity"></div>
-                             <div class="contAsideBotton_info">
-                                   <h1>
-                                    {{#each this.autores}}
-                                          {{#ifCond @index '<=' 1}}
-                                               {{moduloDestacado_index_autores this.autores}}
-                                          {{/ifCond}}
-                                     {{/each}}
-                                   </h1>
-                                   <h4>
-                                   {{#each this.categorias}}
-                                        {{#ifCond @index '>=' 0}}
-                                             {{moduloDestacado_index this.categorias}}
-                                        {{/ifCond}}
-                                   {{/each}}
-                                   </h4>
-                                   <p>{{titulo}}</p>
-                               <a href="{{ moduloDestacado_index_linkPost_sideBar this.categorias }}" title="" class="waves-effect waves-light btn">Leer más</a>
-                             </div>
-                          {{/ifCond}}
-                        {{/each}}
-                  </script>
-
-
-                  <div id="contModalAside" class="col s12 m12 l4">
-
-                            <div id="contAsideUp" class="col s12 m12 l12">
-
-                                         <form id="contAsideUp_search" action="#!">
-                                           <div class="input-field">
-                                             <input id="search" type="search" required>
-                                             <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
-                                             <i class="material-icons">X</i>
-                                           </div>
-                                         </form>
-
-                            </div>
-
-                            <div id="contAsideBotton" class="col s12 m12 l12">
-
-                            </div>
-
-                  </div>
-
-
-            </div>
-         </div>
-
-         <!-- ................................................................................. -->
-
-
-
-
-
-
-
-
-
-
-         <!-- .........................modulo resultados cont.................................... -->
-         <div class="col s12 m12 l12">
-           <div id="contModalResult" class="row">
-
-             <!-- ...................................modulo de resultado A....................................................-->
-             <script id="template_ContChicoResult" type="text/x-handlebars-template">
-              {{#each this}}
-              {{#ifCond @index '<' 10}}
-                  {{#ifCond @index '<' 5}}
-                                    {{#ifCond @index '==' 2}}
-                                            <!-- .........modulo conectate en posicion 3 antes de seguir con el each.....................-->
-                                            <div class="contChicoResult col s12 m12 l4">
-                                                    <div class="contChicoResult_moduloPopUp_Conectate">
-                                                        <h1>Conectate</h1>
-                                                        <div class="col s12 m12 l2 center iconCont">
-                                                            <div class="row ">
-                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
-                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-pinterest" aria-hidden="true"></i></a></div>
-                                                              <div class="col s3"><a href="#!" alt="" target="_self"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            </div>
-
-                                            <!--.................... modulo de resultado grande...................-->
-                                            <div class="contGrandeResult col s12 m12 l8">
-                                                    <div class="contGrandeResult_moduloCont">
-                                                        <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
-                                                            <img src="img/post/{{urlImgVid}}"/>
-                                                            <div class="contGrandeResult_moduloContfondo_opacity"></div>
-                                                            <div class="contGrandeResult_moduloContfondo_cont_info">
-                                                              {{#each this.categorias}}
-                                                                   {{moduloResult_itemsCategoria this.categorias}}
-                                                              {{/each}}
-                                                            <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
-                                                              <h1>{{titulo}}</h1>
-                                                              <p>{{subTit}}</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            </div>
-                                    {{else}}
-                                          <!--.................... modulo de resultado chico................-->
-                                            <div class="contChicoResult col s12 m12 l4">
-                                              <div class="contChicoResult_moduloCont">
-                                                 <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
-                                                      <img src="img/post/{{urlImgVid}}"/>
-                                                      <div class="contChicoResult_moduloContfondo_opacity"></div>
-                                                      <div class="contChicoResult_moduloContfondo_cont_info">
-                                                        {{#each this.categorias}}
-                                                             {{moduloResult_itemsCategoria this.categorias}}
-                                                        {{/each}}
-                                                        <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
-                                                        <h1>{{titulo}}</h1>
-                                                        <p>{{subTit}}</p>
-                                                      </div>
-                                                  </a>
-                                              </div>
-                                            </div>
-                                  {{/ifCond}}
-                {{else}}
-                <!-- mayor a 5 resultados-->
-                              {{#ifCond @index '==' 8}}
-                                    <div class="contChicoResult col s12 m12 l4">
-                                            <div class="contChicoResult_moduloPopUp_Aviso">
-                                                <a href="#!" alt="">
-                                                    <img src="img/template/bot_aviso.jpg"/>
-                                                    <div class="contChicoResult_moduloPopUp_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
-                                                </a>
-                                            </div>
-                                    </div>
-                                    <div class="contGrandeResult contGrandeResult_2b col s12 m12 l8">
-                                          <div class="contGrandeResult_moduloCont">
-                                              <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
-                                                  <img src="img/post/{{urlImgVid}}"/>
-                                                  <div class="contGrandeResult_moduloContfondo_opacity"></div>
-                                                  <div class="contGrandeResult_moduloContfondo_cont_info">
-                                                    {{#each this.categorias}}
-                                                         {{moduloResult_itemsCategoria categorias}}
-                                                    {{/each}}
-                                                    <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
-                                                    <h1>{{titulo}}</h1>
-                                                    <p>{{subTit}}</p>
-                                                  </div>
-                                              </a>
-                                          </div>
-                                    </div>
-                              {{else}}
-                                      <!--.................... modulo de resultado chico................-->
-                                        <div class="contChicoResult col s12 m12 l4">
-                                          <div class="contChicoResult_moduloCont">
-                                               <a href="{{moduloResult_index_linkPost this.categorias}}" target="_self" title="link post">
-                                                  <img src="img/post/{{urlImgVid}}"/>
-                                                  <div class="contChicoResult_moduloContfondo_opacity"></div>
-                                                  <div class="contChicoResult_moduloContfondo_cont_info">
-                                                    {{#each this.categorias}}
-                                                         {{moduloResult_itemsCategoria categorias}}
-                                                    {{/each}}
-                                                      <!--  {{id}}- {{hora_id}} - {{dia_id}} -->
-                                                    <h1>{{titulo}}</h1>
-                                                    <p>{{subTit}}</p>
-                                                  </div>
-                                              </a>
-                                          </div>
-                                        </div>
-                              {{/ifCond}}
-                  {{/ifCond}}
-              {{/ifCond}}
-              {{/each}}
-             </script>
-             <!-- contenedor para modulos de resultado index-->
-             <div class="fila1"></div>
-             <div class="fila1_load"><div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div></div>
-
-             <div id="cont_page_pos" class="col s12 m12 l12 center">
-                   <!--div id="prev_pos" class="col s4 m4 l4"> <i class="fa fa-angle-double-left" aria-hidden="true"></i> </div>
-                   <div id="numResult_pos" class="col s4 m4 l4">  </div-->
-                   <div id="next_pos" class="col s12 m12 l12">
-                     <a class="btn-floating btn-large waves-effect waves-light yellow">+</a>
-                   </div>
-             </div>
-
-
-
-          </div>
-         </div>
-         <!-- .......................................................... -->
-
-
-
-
-
-
-
-
-        </div>
-         </div>
-         <!-- .............................fin cont section index............................. -->
 
 
 
@@ -325,54 +59,28 @@
     require_once('include/footer.php');
 ?>
 
-  <script>
-
-    var pos_pag=0;
 
 
-    (function($_, post_page_){
-        $_(document).ready(function(){
-                var AF_index = new todosArt();
-                AF_index.listarCategoria_index();
-                AF_index.listarDest_index();
-                AF_index.listarDest_index_sideBar();
 
 
-                //-----------------------cantidad de resultados por pagina de 10 en 10-----------------------------------
-                AF_index.listarPost_index(post_page_);
+          <?php if(isset($_GET['page'])){  ?>
+                    <?php if($page=='categoria_'){ ?>       <!-- .................page categoria.................. -->
+                                  <script src="js/function_cat.js" type="text/javascript" charset="utf-8"></script>
+                    <?php }else if($page=='post_'){ ?>            <!-- .................page post................... -->
+                                  <script src="js/function_post.js" type="text/javascript" charset="utf-8"></script>
+                    <?php }else if($page=='terminos_'){ ?>
+                                  <script src="js/function_terminos.js" type="text/javascript" charset="utf-8"></script>
+                    <?php } ?>
 
 
-                $("#next_pos").click(function(){
-                    if(localStorage.cantidadPost=='true'){
-                        if(post_page_<100){
-                              post_page_+=10;
-                              var nn_=post_page_+10;
-                              AF_index.listarPost_index(post_page_);
-                              $("#numResult_pos").html('/');
-                        }
-                    }
-                });
+          <?php }else{ ?>
+                    <script src="js/function_index.js" type="text/javascript" charset="utf-8"></script>
+          <?php } ?>
 
 
-                $("#prev_pos").click(function(){
-                    if(post_page_>=10){
-                          post_page_-=10;
-                          var nn_=post_page_+10;
-                          AF_index.listarPost_index(post_page_);
-                          $("#numResult_pos").html('/');
-                    }
-                });
 
-                //--------------------nav on onscroll document----------------------------------------------
-                document.onscroll=function(){  AF_index.scrollBody_(body_);}
-                //---------------------
-                //window.addEventListener('resize', function(event){
-                     //AF.defineContHead_(event);
-                //});
-        });
-    })(jQuery,pos_pag);
 
-  </script>
+
 
 <?php
     require_once('include/footer_body.php');

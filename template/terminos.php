@@ -1,15 +1,4 @@
 
-<!-- .....................header del document y nav.................................... -->
-<?php
-    require_once('include/head.php');
-?>
-
-
-
-<!-- ......................................................... -->
-
-
-
 
 <div id="cont_terminos"  class="col s12 m12 l12">
   <div class="row">
@@ -27,7 +16,7 @@
       Nos reservamos el derecho, a nuestra discreción, de modificar o eliminar partes de esta Política de Privacidad de Internet en cualquier momento. Esta Política de Privacidad de Internet es en adición a cualquiera de los otros términos y condiciones aplicables al sitio. No hacemos ninguna representación acerca de sitios Web y Móviles de terceros que pueden estar enlazados con el sitio.
       Reconocemos la importancia de proteger la privacidad de la información recopilada sobre los visitantes de nuestro sitio, en particular la información que es capaz de identificar a un individuo ( “información personal”). Esta Política de Privacidad de Internet regula la forma en que su información personal, obtenida a través del sitio, será tratada. Esta Política de Privacidad de Internet debe ser revisada periódicamente a fin de que usted este actualizado con los cambios. Agradecemos sus comentarios y opiniones.
     </p>
-    
+
     <h2>Propiedad de la Información de la Compañía</h2>
     <p>La información relacionada a Media Moob S.A. y sus servicios, incluidos los textos, imágenes, iconos, videos en streaming y descargas digitales, compilaciones de datos y logotipos que se denomina como “Información de la Compañía.” Media Moob es propietario de todos los derechos de autor, marcas comerciales, marcas de servicio, nombres comerciales relacionados con la Información de la Compañía, y la Información de la Compañía son propiedad de Media Moob S.A.</p>
 
@@ -74,34 +63,3 @@
 
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ..................footer del document y footer de categoria......................... -->
-<?php
-    require_once('include/footer.php');
-?>
-
-<script>
-$(document).ready(function(){
-        var AF_term = new todosArt();
-        AF_term.verNav();
-});
-</script>
-
-<?php
-    require_once('include/footer_body.php');
-?>

@@ -1,22 +1,6 @@
 
 
 
-
-<!-- ......................................................... -->
-
-
-    <?php
-        require_once('include/head.php');
-    ?>
-
-
-
-
-<!-- ......................................................... -->
-
-
-
-
 <div id="cont_categoria"  class="col s12 m12 l12">
   <div class="row">
 
@@ -75,7 +59,7 @@
                                  </div>
 
                                  <div class="result_post_02 col s12 m6 s6">
-                                     <img src="img/post/{{urlImgVid}}" alt=""/>
+                                     <img src="https://s3-sa-east-1.amazonaws.com/club.media/post/{{urlImgVid}}" alt=""/>
                                      <div class="result_post_02_contOpacity"></div>
                                  </div>
                            </a>
@@ -87,7 +71,7 @@
                            <a href="{{moduloCategoria_index_linkPost this.categorias}}" target="_self" title="link post">
 
                                  <div class="result_post_02 col s12 m6 s6">
-                                     <img src="img/post/{{urlImgVid}}" alt=""/>
+                                     <img src="https://s3-sa-east-1.amazonaws.com/club.media/post/{{urlImgVid}}" alt=""/>
                                      <div class="result_post_02_contOpacity"></div>
                                  </div>
 
@@ -146,8 +130,8 @@
 
       <div class="cont_sideBar_Aviso col s12 m6 l12">
                     <a href="#!" alt="">
-                        <img src="img/template/bot_aviso.jpg"/>
-                        <div class="cont_sideBar_Aviso_info"> ¡Conseguí <br> tus entradas! </div>
+                        <img src="https://s3-sa-east-1.amazonaws.com/club.media/template/bot_aviso.jpg"/>
+                        <div class="cont_sideBar_Aviso_info"> ¡Vos podés der el próximo! </div>
                     </a>
       </div>
 
@@ -163,15 +147,46 @@
               </div>
       </div>
 
+
+
+
+
+
+
+
+
+      <!-- ...............................modulo dinamico de destacados.............................................-->
+      <script id="template_destacado_indexCat_sideBar" type="text/x-handlebars-template">
+            {{#each this}}
+              {{#ifCond @index '==' 4}}
+                 <img src="https://s3-sa-east-1.amazonaws.com/club.media/post/{{urlImgVid}}" title="Destacado"/>
+                 <!--img src="img/template/{{srcImgDestacado}}" title="Destacado"/-->
+
+                 <div class="contAsideBotton_fondo_opacity"></div>
+                 <div class="contAsideBotton_info">
+                       <h1>
+                        {{#each this.autores}}
+                              {{#ifCond @index '<=' 1}}
+                                   {{moduloDestacado_index_autores this.autores}}
+                              {{/ifCond}}
+                         {{/each}}
+                       </h1>
+                       <h4>
+                       {{#each this.categorias}}
+                            {{#ifCond @index '>=' 0}}
+                                 {{moduloDestacado_index this.categorias}}
+                            {{/ifCond}}
+                       {{/each}}
+                       </h4>
+                       <p>{{titulo}}</p>
+                   <a href="{{ moduloDestacado_index_linkPost_sideBar this.categorias }}" title="" class="waves-effect waves-light btn">Leer más</a>
+                 </div>
+              {{/ifCond}}
+            {{/each}}
+      </script>
+
+
       <div class="cont_sideBar_Destacado col s12 m6 l12">
-              <img src="img/template/asideBottomImg.jpg" title="Destacado"/>
-              <div class="contAsideBotton_fondo_opacity"></div>
-              <div class="contAsideBotton_info">
-                    <h1>Dai <br> Hernández</h1>
-                    <h4>Humor argentino</h4>
-                    <p>Entrevistamos a Dani para que nos cuente cómo es su vida desde que es estrella en las redes. ¿Qué pensarán su familia y sus amigos?</p>
-                    <a href="#!" title="" class="waves-effect waves-light btn">Leer más</a>
-              </div>
       </div>
 
 
@@ -213,46 +228,3 @@
   </div>
   </div>
   <!-- .............................fin cont section index............................. -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ..................footer del document y footer de categoria......................... -->
-<?php
-    require_once('include/footer.php');
-?>
-
-    <script>
-
-        (function($_){
-            var v1='<?php if(isset($_GET['cat'])){ echo $_GET['cat']; } ?>';
-            var v2='<?php if(isset($_GET['subcat'])){ echo $_GET['subcat']; } ?>';
-
-            $_(document).ready(function(){
-                    var AF_cat = new todosArt();
-                    AF_cat.listarResult_Categoria(v1,v2);
-                    AF_cat.listarResult_totalSubcat(v1,v2);
-                    AF_cat.listarCategoria_navLik();
-                    AF_cat.verNav();
-
-            });
-          })(jQuery);
-
-    </script>
-
-<?php
-    require_once('include/footer_body.php');
-?>

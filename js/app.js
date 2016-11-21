@@ -219,7 +219,7 @@
                       setTimeout(function(){
 
                               Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                                  return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
+                                  return new Handlebars.SafeString(urlVar+"index.php?page=categoria_&amp;cat="+this.categoria);
                               });
 
                               var template_ = document.getElementById("template_categoria_index").innerHTML;
@@ -246,65 +246,6 @@
 
 
         //-----------------------------------------------------------------
-        this.listarDest_index_sideBar=function(){
-
-            $.post("include/restApi/result_dest_index.php",{}, function (data){
-
-              $("#contAsideBotton").html("<div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div>");
-
-            }).done(function(data) {
-
-                          setTimeout(function(){
-
-                                    Handlebars.registerHelper("moduloDestacado_index_linkPost_sideBar", function(value){
-                                        return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
-                                    });
-                                    Handlebars.registerHelper("moduloDestacado_index", function(value){
-                                                 return new Handlebars.SafeString("<div>"+this+"</div>");
-                                    });
-                                    Handlebars.registerHelper("moduloDestacado_index_autores", function(value){
-                                                 return new Handlebars.SafeString("<div>"+this+"</div>");
-                                    });
-
-
-                                    if(data.length>0){
-                                      var dat=JSON.parse(data);
-                                       //-----------convert array el string ','---------------
-                                    if(dat != null && dat.length > 0) {
-                                             for(var i=0;i < dat.length;i++){
-                                               dat[i].categorias=dat[i].categorias.split(',');
-                                               dat[i].autores=dat[i].autores.split(',');
-                                             }
-
-                                             var template_ = document.getElementById("template_destacado_index_sideBar").innerHTML;
-                                             var contTemplate = Handlebars.compile(template_);
-                                             //---------------json para los resultados destacados del index-----------------
-                                             var context=dat;//bd_result_destacado_index;
-                                             var templateCompile = contTemplate(context);
-                                             $("#contAsideBotton").html(templateCompile);
-                                       }
-                                   }
-
-                           setTimeout(function(){ $('#contAsideBotton').addClass('contCatResult_on'); },10);
-                        },2000);
-
-
-                     //console.log("load: result dest sidebar index");
-                 }).fail(function() {
-                     //console.log("error dest sidebar index");
-                 }).always(function() {
-                    //console.log("fin: result dest sidebar index");
-                 },'json');
-
-        }
-
-
-
-
-
-
-
-        //-----------------------------------------------------------------
         this.listarDest_index=function(){
 
              $.post("include/restApi/result_dest_index.php",{}, function (data){
@@ -317,7 +258,7 @@
                setTimeout(function(){
 
                          Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
-                              return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                              return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.dia_id+'&hora='+this.hora_id);
                          });
 
                          Handlebars.registerHelper("moduloDestacado_index", function(value){
@@ -364,13 +305,6 @@
 
 
 
-
-
-
-
-
-
-
        //------------------------------------------------------
        this.listarPost_index=function(posicion_result_list_){
              var pos_=posicion_result_list_;
@@ -384,7 +318,7 @@
                         //-------------crea URL para lista de post en el index----------
                          Handlebars.registerHelper("moduloResult_index_linkPost", function(value){
                              //console.log(this.dia_id,this.hora_id);
-                             return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                             return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.dia_id+'&hora='+this.hora_id);
                          });
 
                          //-----------------crea subcategorias en modulo POST index---------------------
@@ -460,6 +394,79 @@
 
 
 
+                  //-----------------------------------------------------------------
+                  this.listarDest_indexCat_sideBar=function(page_){
+
+                      $.post("include/restApi/result_dest_index.php",{}, function (data){
+
+                      if(page_=='index_'){
+                          $("#contAsideBotton").html("<div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div>");
+                      }else if(page_=='categoria_'){
+                          $(".cont_sideBar_Destacado").html("<div class='progress'><div class='indeterminate' style='background-color:#ffdf1f;'></div></div>");
+                      }
+
+                      }).done(function(data) {
+
+                                    setTimeout(function(){
+
+                                              Handlebars.registerHelper("moduloDestacado_index_linkPost_sideBar", function(value){
+                                                  return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.dia_id+'&hora='+this.hora_id);
+                                              });
+                                              Handlebars.registerHelper("moduloDestacado_index", function(value){
+                                                           return new Handlebars.SafeString("<div>"+this+"</div>");
+                                              });
+                                              Handlebars.registerHelper("moduloDestacado_index_autores", function(value){
+                                                           return new Handlebars.SafeString("<div>"+this+"</div>");
+                                              });
+
+
+                                              if(data.length>0){
+                                                var dat=JSON.parse(data);
+                                                 //-----------convert array el string ','---------------
+                                              if(dat != null && dat.length > 0) {
+                                                       for(var i=0;i < dat.length;i++){
+                                                         dat[i].categorias=dat[i].categorias.split(',');
+                                                         dat[i].autores=dat[i].autores.split(',');
+                                                       }
+
+                                                       var template_ = document.getElementById("template_destacado_indexCat_sideBar").innerHTML;
+                                                       var contTemplate = Handlebars.compile(template_);
+                                                       //---------------json para los resultados destacados del index-----------------
+                                                       var context=dat;//bd_result_destacado_index;
+                                                       var templateCompile = contTemplate(context);
+
+                                                       if(page_=='index_'){
+                                                            $("#contAsideBotton").html(templateCompile);
+                                                       }else if(page_=='categoria_'){
+                                                            $(".cont_sideBar_Destacado").html(templateCompile);
+                                                       }
+
+                                                 }
+                                             }
+
+                                     if(page_=='index_'){
+                                          setTimeout(function(){ $('#contAsideBotton').addClass('contCatResult_on'); },10);
+                                     }else if(page_=='categoria_'){
+                                          setTimeout(function(){  $(".cont_sideBar_Destacado").addClass('contCatResult_on'); },10);
+                                     }
+
+                                  },2000);
+
+
+                               //console.log("load: result dest sidebar index");
+                           }).fail(function() {
+                               //console.log("error dest sidebar index");
+                           }).always(function() {
+                              //console.log("fin: result dest sidebar index");
+                           },'json');
+                  }
+
+
+
+
+
+
+
 
 
 
@@ -490,7 +497,7 @@
 
 
                          Handlebars.registerHelper("moduloCategoria_index_linkPost", function(value){
-                             return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                             return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.dia_id+'&hora='+this.hora_id);
                          });
 
                          Handlebars.registerHelper("modulo_Categoria_resultado_cat", function(value){
@@ -564,11 +571,11 @@
 
                                       //----------------
                                        Handlebars.registerHelper("modulo_categoria_head_linkPost", function(value){
-                                           return new Handlebars.SafeString(urlVar+"post.php?id="+this.id+'&hora='+this.hora);
+                                           return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.id+'&hora='+this.hora);
                                        });
 
                                        Handlebars.registerHelper("modulo_categoria_subcat_link", function(value){
-                                           return new Handlebars.SafeString(urlVar+"categoria.php?cat="+cat_+'&subcat='+this);
+                                           return new Handlebars.SafeString(urlVar+"index.php?page=categoria_&amp;cat="+cat_+'&subcat='+this);
                                        });
 
                                        Handlebars.registerHelper("modulo_categoria_subcat", function(value){
@@ -603,7 +610,7 @@
              (function() {
 
                      Handlebars.registerHelper("moduloCategoria_catNav_link", function(value){
-                         return new Handlebars.SafeString(urlVar+"categoria.php?cat="+this.categoria);
+                         return new Handlebars.SafeString(urlVar+"index.php?page=categoria_&amp;cat="+this.categoria);
                      });
 
                 setTimeout(function(){
@@ -701,7 +708,7 @@ this.verPOST=function(id_dia,id_hora){
                setTimeout(function(){
 
                        Handlebars.registerHelper("moduloDestacado_index_linkPost", function(value){
-                            return new Handlebars.SafeString(urlVar+"post.php?id="+this.dia_id+'&hora='+this.hora_id);
+                            return new Handlebars.SafeString(urlVar+"index.php?page=post_&amp;id="+this.dia_id+'&hora='+this.hora_id);
                        });
                        Handlebars.registerHelper("moduloDestacado_index", function(value){
                                      return new Handlebars.SafeString(
